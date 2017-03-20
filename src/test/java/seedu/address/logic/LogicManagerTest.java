@@ -46,7 +46,7 @@ import seedu.address.model.tag.UniqueTagList;
 import seedu.address.model.task.Name;
 import seedu.address.model.task.ReadOnlyTask;
 import seedu.address.model.task.Task;
-import seedu.address.model.task.Time;
+import seedu.address.model.task.Date;
 import seedu.address.storage.StorageManager;
 
 
@@ -189,7 +189,7 @@ public class LogicManagerTest {
     public void execute_add_invalidArgsFormat() {
         String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE);
         assertCommandFailure("add wrong args wrong args", expectedMessage);
-        assertCommandFailure("add Valid Name 12345 e/valid@email.butNoTimePrefix a/valid,address", expectedMessage);
+        assertCommandFailure("add Valid Name 12345 e/valid@email.butNoDatePrefix a/valid,address", expectedMessage);
         assertCommandFailure("add Valid Name p/12345 valid@email.butNoPrefix a/valid, address", expectedMessage);
         assertCommandFailure("add Valid Name p/12345 e/valid@email.butNoAddressPrefix valid, address", expectedMessage);
     }
@@ -199,7 +199,7 @@ public class LogicManagerTest {
         assertCommandFailure("add []\\[;] d/12/12/2023",
                 Name.MESSAGE_NAME_CONSTRAINTS);
         assertCommandFailure("add Valid Name d/not_numbers",
-                Time.MESSAGE_TIME_CONSTRAINTS);
+                Date.MESSAGE_DATE_CONSTRAINTS);
         assertCommandFailure("add Valid Name d/12/12/2023 t/invalid_-[.tag",
                 Tag.MESSAGE_TAG_CONSTRAINTS);
 
@@ -414,11 +414,11 @@ public class LogicManagerTest {
 
         Task adam() throws Exception {
             Name name = new Name("Adam Brown");
-            Time privateTime = new Time("12/12/2012");
+            Date privateDate = new Date("12/12/2012");
             Tag tag1 = new Tag("tag1");
             Tag tag2 = new Tag("longertag2");
             UniqueTagList tags = new UniqueTagList(tag1, tag2);
-            return new Task(name, privateTime, tags);
+            return new Task(name, privateDate, tags);
         }
 
         /**
@@ -431,7 +431,7 @@ public class LogicManagerTest {
         Task generateTask(int seed) throws Exception {
             return new Task(
                     new Name("Task " + seed),
-                    new Time("0" + (Math.abs(seed) % 30 + 1) + "/0" +
+                    new Date("0" + (Math.abs(seed) % 30 + 1) + "/0" +
                     (Math.abs(seed) % 12 + 1) + "/" + (Math.abs(seed) % 3000 + 1000)),
                     new UniqueTagList(new Tag("tag" + Math.abs(seed)), new Tag("tag" + Math.abs(seed + 1)))
             );
@@ -445,7 +445,7 @@ public class LogicManagerTest {
 
             cmd.append(p.getName().toString());
 
-            cmd.append(" d/").append(p.getTime());
+            cmd.append(" d/").append(p.getDate());
 
             UniqueTagList tags = p.getTags();
             for (Tag t: tags) {
@@ -528,7 +528,7 @@ public class LogicManagerTest {
         Task generateTaskWithName(String name) throws Exception {
             return new Task(
                     new Name(name),
-                    new Time("01/01/2012"),
+                    new Date("01/01/2012"),
                     new UniqueTagList(new Tag("tag"))
             );
         }

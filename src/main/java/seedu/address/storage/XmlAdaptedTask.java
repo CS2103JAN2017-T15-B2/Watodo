@@ -11,7 +11,7 @@ import seedu.address.model.tag.UniqueTagList;
 import seedu.address.model.task.Name;
 import seedu.address.model.task.ReadOnlyTask;
 import seedu.address.model.task.Task;
-import seedu.address.model.task.Time;
+import seedu.address.model.task.Date;
 
 /**
  * JAXB-friendly version of the Task.
@@ -21,7 +21,7 @@ public class XmlAdaptedTask {
     @XmlElement(required = true)
     private String name;
     @XmlElement(required = true)
-    private String time;
+    private String date;
     @XmlElement(required = true)
     private String email;
     @XmlElement(required = true)
@@ -44,7 +44,7 @@ public class XmlAdaptedTask {
      */
     public XmlAdaptedTask(ReadOnlyTask source) {
         name = source.getName().fullName;
-        time = source.getTime().value;
+        date = source.getDate().value;
         tagged = new ArrayList<>();
         for (Tag tag : source.getTags()) {
             tagged.add(new XmlAdaptedTag(tag));
@@ -62,8 +62,8 @@ public class XmlAdaptedTask {
             taskTags.add(tag.toModelType());
         }
         final Name name = new Name(this.name);
-        final Time time = new Time(this.time);
+        final Date date = new Date(this.date);
         final UniqueTagList tags = new UniqueTagList(taskTags);
-        return new Task(name, time, tags);
+        return new Task(name, date, tags);
     }
 }

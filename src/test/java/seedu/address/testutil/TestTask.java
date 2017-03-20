@@ -5,7 +5,7 @@ import seedu.address.model.task.Address;
 import seedu.address.model.task.Email;
 import seedu.address.model.task.Name;
 import seedu.address.model.task.ReadOnlyTask;
-import seedu.address.model.task.Time;
+import seedu.address.model.task.Date;
 
 /**
  * A mutable task object. For testing only.
@@ -15,7 +15,7 @@ public class TestTask implements ReadOnlyTask {
     private Name name;
     private Address address;
     private Email email;
-    private Time time;
+    private Date date;
     private UniqueTagList tags;
 
     public TestTask() {
@@ -27,7 +27,7 @@ public class TestTask implements ReadOnlyTask {
      */
     public TestTask(TestTask taskToCopy) {
         this.name = taskToCopy.getName();
-        this.time = taskToCopy.getTime();
+        this.date = taskToCopy.getDate();
         this.tags = taskToCopy.getTags();
     }
 
@@ -35,8 +35,8 @@ public class TestTask implements ReadOnlyTask {
         this.name = name;
     }
 
-    public void setTime(Time time) {
-        this.time = time;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public void setTags(UniqueTagList tags) {
@@ -49,8 +49,8 @@ public class TestTask implements ReadOnlyTask {
     }
 
     @Override
-    public Time getTime() {
-        return time;
+    public Date getDate() {
+        return date;
     }
 
     @Override
@@ -66,7 +66,7 @@ public class TestTask implements ReadOnlyTask {
     public String getAddCommand() {
         StringBuilder sb = new StringBuilder();
         sb.append("add " + this.getName().fullName + " ");
-        sb.append("d/" + this.getTime().value + " ");
+        sb.append("d/" + this.getDate().value + " ");
         this.getTags().asObservableList().stream().forEach(s -> sb.append("t/" + s.tagName + " "));
         return sb.toString();
     }

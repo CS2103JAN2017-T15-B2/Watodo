@@ -14,7 +14,7 @@ import seedu.address.model.tag.Tag;
 //import seedu.address.model.task.Address;
 //import seedu.address.model.task.Email;
 import seedu.address.model.task.Name;
-import seedu.address.model.task.Time;
+import seedu.address.model.task.Date;
 import seedu.address.testutil.TaskBuilder;
 import seedu.address.testutil.TestTask;
 
@@ -30,7 +30,7 @@ public class EditCommandTest extends TaskManagerGuiTest {
         String detailsToEdit = "Alice Pauline d/04/06/2013 t/husband";
         int taskManagerIndex = 1;
 
-        TestTask editedTask = new TaskBuilder().withName("Alice Pauline").withTime("04/06/2013")
+        TestTask editedTask = new TaskBuilder().withName("Alice Pauline").withDate("04/06/2013")
                 .withTags("husband").build();
 
         assertEditSuccess(taskManagerIndex, taskManagerIndex, detailsToEdit, editedTask);
@@ -96,7 +96,7 @@ public class EditCommandTest extends TaskManagerGuiTest {
         assertResultMessage(Name.MESSAGE_NAME_CONSTRAINTS);
 
         commandBox.runCommand("edit 1 d/abcd");
-        assertResultMessage(Time.MESSAGE_TIME_CONSTRAINTS);
+        assertResultMessage(Date.MESSAGE_DATE_CONSTRAINTS);
 
         commandBox.runCommand("edit 1 t/*&");
         assertResultMessage(Tag.MESSAGE_TAG_CONSTRAINTS);

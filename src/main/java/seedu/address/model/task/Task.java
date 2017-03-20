@@ -12,7 +12,7 @@ import seedu.address.model.tag.UniqueTagList;
 public class Task implements ReadOnlyTask {
 
     private Name name;
-    private Time time;
+    private Date date;
     private Email email;
     private Address address;
 
@@ -21,10 +21,10 @@ public class Task implements ReadOnlyTask {
     /**
      * Every field must be present and not null.
      */
-    public Task(Name name, Time time, UniqueTagList tags) {
-        assert !CollectionUtil.isAnyNull(name, time, tags);
+    public Task(Name name, Date date, UniqueTagList tags) {
+        assert !CollectionUtil.isAnyNull(name, date, tags);
         this.name = name;
-        this.time = time;
+        this.date = date;
         this.tags = new UniqueTagList(tags); // protect internal tags from changes in the arg list
     }
 
@@ -32,7 +32,7 @@ public class Task implements ReadOnlyTask {
      * Creates a copy of the given ReadOnlyTask.
      */
     public Task(ReadOnlyTask source) {
-        this(source.getName(), source.getTime(), source.getTags());
+        this(source.getName(), source.getDate(), source.getTags());
     }
 
     public void setName(Name name) {
@@ -45,14 +45,14 @@ public class Task implements ReadOnlyTask {
         return name;
     }
 
-    public void setTime(Time time) {
-        assert time != null;
-        this.time = time;
+    public void setDate(Date date) {
+        assert date != null;
+        this.date = date;
     }
 
     @Override
-    public Time getTime() {
-        return time;
+    public Date getDate() {
+        return date;
     }
 
     @Override
@@ -74,7 +74,7 @@ public class Task implements ReadOnlyTask {
         assert replacement != null;
 
         this.setName(replacement.getName());
-        this.setTime(replacement.getTime());
+        this.setDate(replacement.getDate());
         //this.setEmail(replacement.getEmail());
         //this.setAddress(replacement.getAddress());
         this.setTags(replacement.getTags());
@@ -90,7 +90,7 @@ public class Task implements ReadOnlyTask {
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, time, email, address, tags);
+        return Objects.hash(name, date, email, address, tags);
     }
 
     @Override

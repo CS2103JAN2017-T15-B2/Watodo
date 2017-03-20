@@ -35,7 +35,7 @@ import seedu.address.model.tag.UniqueTagList;
 import seedu.address.model.task.Name;
 import seedu.address.model.task.ReadOnlyTask;
 import seedu.address.model.task.Task;
-import seedu.address.model.task.Time;
+import seedu.address.model.task.Date;
 import seedu.address.storage.XmlSerializableTaskManager;
 
 /**
@@ -73,7 +73,7 @@ public class TestUtil {
         try {
             //CHECKSTYLE.OFF: LineLength
             return new Task[]{
-                new Task(new Name("Ali Muster"), new Time("09/08/1990"), new UniqueTagList()),
+                new Task(new Name("Ali Muster"), new Date("09/08/1990"), new UniqueTagList()),
 
             };
             //CHECKSTYLE.ON: LineLength
@@ -194,12 +194,12 @@ public class TestUtil {
         field.set(null, newValue);
     }
 
-    public static void initRuntime() throws TimeoutException {
+    public static void initRundate() throws TimeoutException {
         FxToolkit.registerPrimaryStage();
         FxToolkit.hideStage();
     }
 
-    public static void tearDownRuntime() throws Exception {
+    public static void tearDownRundate() throws Exception {
         FxToolkit.cleanupStages();
     }
 

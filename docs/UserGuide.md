@@ -50,7 +50,7 @@ Format: `help`
 ### 2.2. Adding a task: `add`
 
 Adds a task to the Task Manager<br>
-Format: `add NAME from [s/START_TIME] [s/START_DATE]  [e/END_TIME] [e/END_DATE]...` <br>
+Format: `add NAME from [s/START_DATE] [s/START_DATE]  [e/END_DATE] [e/END_DATE]...` <br>
 
 > * Task can have any number of tags (including 0)
 > * Tasks cannot have `START_DATE` without `END_DATE`
@@ -83,7 +83,7 @@ Examples:
   Change name of task at index 1 to "go home"
 
 * `edit 2 -start 3pm 5 sept -end 4pm 6 sept`<br>
-  Change start and end times of timed tasks
+  Change start and end dates of dated tasks
 
 
 
@@ -162,7 +162,7 @@ There is no need to save manually.
 
 ## 4. Command Summary
 
-* **Add**  `add NAME from [s/START_TIME] [s/START_DATE]  [e/END_TIME] [e/END_DATE]...` <br>
+* **Add**  `add NAME from [s/START_DATE] [s/START_DATE]  [e/END_DATE] [e/END_DATE]...` <br>
   e.g. `add school camp from 3pm today to 5pm tomorrow`
 
 * **Clear** : `clear`

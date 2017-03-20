@@ -6,14 +6,14 @@ import seedu.address.model.TaskManager;
 import seedu.address.model.tag.UniqueTagList;
 import seedu.address.model.task.Name;
 import seedu.address.model.task.Task;
-import seedu.address.model.task.Time;
+import seedu.address.model.task.Date;
 import seedu.address.model.task.UniqueTaskList.DuplicateTaskException;
 
 public class SampleDataUtil {
     public static Task[] getSampleTasks() {
         try {
             return new Task[] {
-                new Task(new Name("Alex Yeoh"), new Time("07/05/1990"),
+                new Task(new Name("Alex Yeoh"), new Date("07/05/1990"),
                     new UniqueTagList("friends"))
             };
         } catch (IllegalValueException e) {

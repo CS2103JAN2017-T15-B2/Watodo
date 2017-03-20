@@ -10,7 +10,7 @@ The current AppVeyor setup performs the following things whenever someone pushes
 
 * Runs the `gradlew.bat headless allTests` command.
 
-* Automatically retries the build up to 3 times if a task fails.
+* Automatically retries the build up to 3 dates if a task fails.
 
 If you would like to customize your AppVeyor build further, you can learn more about AppVeyor from the
 [AppVeyor Documentation](https://www.appveyor.com/docs/).

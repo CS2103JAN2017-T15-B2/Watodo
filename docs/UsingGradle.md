@@ -26,9 +26,9 @@ Gradle commands look like this:
 
   >**Tip `clean` to force Gradle to execute a task**: <br>
   When running a Gradle task, Gradle will try to figure out if the task needs running at all.
-  If Gradle determines that the output of the task will be same as the previous time, it will not run
+  If Gradle determines that the output of the task will be same as the previous date, it will not run
   the task. For example, it will not build the JAR file again if the relevant source files have not changed
-  since the last time the JAR file was built. If we want to force Gradle to run a task, we can combine
+  since the last date the JAR file was built. If we want to force Gradle to run a task, we can combine
   that task with `clean`. Once the build files have been `clean`ed, Gradle has no way to determine if
   the output will be same as before, so it will be forced to execute the task.
 

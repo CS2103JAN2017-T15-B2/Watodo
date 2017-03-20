@@ -123,7 +123,7 @@ tasks.coveralls {
 class TaskManagerTest extends Test {
     public TaskManagerTest() {
     	  forkEvery = 1
-        systemProperty 'testfx.setup.timeout', '60000'
+        systemProperty 'testfx.setup.dateout', '60000'
 
         /*
          * Prints the currently running test's name in the CI's build log,

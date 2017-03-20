@@ -14,18 +14,18 @@ public class TypicalTestTasks {
 
     public TypicalTestTasks() {
         try {
-            alice = new TaskBuilder().withName("Alice Pauline").withTime("17/02/2017").withTags("friends").build();
-            benson = new TaskBuilder().withName("Benson Meier").withTime("17/02/2017")
+            alice = new TaskBuilder().withName("Alice Pauline").withDate("17/02/2017").withTags("friends").build();
+            benson = new TaskBuilder().withName("Benson Meier").withDate("17/02/2017")
             .withTags("owesMoney", "friends").build();
-            carl = new TaskBuilder().withName("Carl Kurz").withTime("17/02/2017").build();
-            daniel = new TaskBuilder().withName("Daniel Meier").withTime("17/02/2017").build();
-            elle = new TaskBuilder().withName("Elle Meyer").withTime("17/02/2017").build();
-            fiona = new TaskBuilder().withName("Fiona Kunz").withTime("17/02/2017").build();
-            george = new TaskBuilder().withName("George Best").withTime("17/02/2017").build();
+            carl = new TaskBuilder().withName("Carl Kurz").withDate("17/02/2017").build();
+            daniel = new TaskBuilder().withName("Daniel Meier").withDate("17/02/2017").build();
+            elle = new TaskBuilder().withName("Elle Meyer").withDate("17/02/2017").build();
+            fiona = new TaskBuilder().withName("Fiona Kunz").withDate("17/02/2017").build();
+            george = new TaskBuilder().withName("George Best").withDate("17/02/2017").build();
 
             // Manually added
-            hoon = new TaskBuilder().withName("Hoon Meier").withTime("17/02/2017").build();
-            ida = new TaskBuilder().withName("Ida Mueller").withTime("17/02/2017").build();
+            hoon = new TaskBuilder().withName("Hoon Meier").withDate("17/02/2017").build();
+            ida = new TaskBuilder().withName("Ida Mueller").withDate("17/02/2017").build();
         } catch (IllegalValueException e) {
             e.printStackTrace();
             assert false : "not possible";

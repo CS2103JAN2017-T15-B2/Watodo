@@ -4,7 +4,7 @@ import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.tag.UniqueTagList;
 import seedu.address.model.task.Name;
-import seedu.address.model.task.Time;
+import seedu.address.model.task.Date;
 
 /**
  *
@@ -38,8 +38,8 @@ public class TaskBuilder {
     }
 
 
-    public TaskBuilder withTime(String time) throws IllegalValueException {
-        this.task.setTime(new Time(time));
+    public TaskBuilder withDate(String date) throws IllegalValueException {
+        this.task.setDate(new Date(date));
         return this;
     }
 

@@ -54,7 +54,7 @@ public class StringUtilTest {
     /*
      * Invalid equivalence partitions for word: null, empty, multiple words
      * Invalid equivalence partitions for sentence: null
-     * The four test cases below test one invalid input at a time.
+     * The four test cases below test one invalid input at a date.
      */
 
     @Test

@@ -61,7 +61,7 @@ Note how the AddressBook app uses Java `assert`s to verify assumptions.
 #### Exercise: Add more assertions
 
  * Make sure assertions are enabled in Eclipse by forcing an assertion failure (e.g. add `assert false;` somewhere in
- the code and run the code to ensure the runtime reports an assertion failure).
+ the code and run the code to ensure the rundate reports an assertion failure).
 
  * Add more assertions to AddressBook as you see fit.
 

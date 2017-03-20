@@ -9,7 +9,7 @@ The current Travis CI set up performs the following things whenever someone push
 
   * Runs the `./gradlew clean headless allTests coverage coveralls -i` command
     (see [UsingGradle.md](UsingGradle.md) for more details on what this command means).
-  * Automatically retries the build up to 3 times if a task fails.
+  * Automatically retries the build up to 3 dates if a task fails.
   * Runs additional [repository-wide checks](#repository-wide-checks).
 
 If you would like to customise your travis build further, you can learn more about Travis

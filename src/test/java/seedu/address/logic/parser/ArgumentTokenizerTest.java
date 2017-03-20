@@ -105,7 +105,7 @@ public class ArgumentTokenizerTest {
         assertArgumentPresent(tokenizer, dashT, "dashT-Value");
         assertArgumentPresent(tokenizer, hatQ, "111");
 
-        /* Also covers: Reusing of the tokenizer multiple times */
+        /* Also covers: Reusing of the tokenizer multiple dates */
 
         // Reuse tokenizer on an empty string to ensure state is correctly reset
         //   (i.e. no stale values from the previous tokenizing remain in the state)
