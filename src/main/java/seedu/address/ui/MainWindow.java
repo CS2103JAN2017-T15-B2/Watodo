@@ -198,11 +198,11 @@ public class MainWindow extends UiPart<Region> {
     public TaskListPanel getTaskListPanel() {
         return this.taskListPanel;
     }
-
+/** browser panel use for other display
     void loadTaskPage(ReadOnlyTask task) {
         browserPanel.loadTaskPage(task);
     }
-
+*/
     void releaseResources() {
         browserPanel.freeResources();
     }

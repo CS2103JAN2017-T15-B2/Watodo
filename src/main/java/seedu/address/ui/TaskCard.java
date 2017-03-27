@@ -25,12 +25,15 @@ public class TaskCard extends UiPart<Region> {
     private Label email;
     @FXML
     private FlowPane tags;
-
+    //@FXML
+    //private Label complete;
+    
     public TaskCard(ReadOnlyTask task, int displayedIndex) {
         super(FXML);
         name.setText(task.getName().fullName);
         id.setText(displayedIndex + ". ");
         time.setText(task.getTime().value);
+        //complete.setSelection(true);
         initTags(task);
     }
 
