@@ -351,7 +351,8 @@ Priority | As a ... | I want to ... | So that I can...
 `* * *` | user | remove a task | remove entries that I no longer need
 `* * *` | user | mark a task as complete | mark a task as complete when I finish it
 `* * *` | user | find a task by keyword | search for specific task especially when the list is huge
-`* * *` | user | change the due time of a task | set the due time of a task to a new one
+`* * *` | user | add a start and end time | add events with deadlines
+`* *` | user | change the due time of a task | set the due time of a task to a new one
 `* *` | user | edit a task | edit a task if there are any changes
 `* *` | user | clear all tasks | start from a clean slate
 `* *` | user | list all tasks | see all tasks at one glance and consider if I want to make any adjustment
