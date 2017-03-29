@@ -59,7 +59,7 @@ public class Task implements ReadOnlyTask {
      */
     public Task(ReadOnlyTask source) {
 
-        this(source.getName(), source.getTime(), source.getClockTime(),
+        this(source.getName(), source.getTime(), source.getClockTime(), source.getEndTime(),
              source.getPriority(), source.getTags(), source.getStatus());
     }
 
