@@ -54,7 +54,7 @@ public class TestTask implements ReadOnlyTask {
     public void setClockTime(ClockTime clockTime) {
         this.clockTime = clockTime;
     }
-    //@@author A0143873Y
+    //@@author
     public void setPriority(Priority priority) {
         this.priority = priority;
     }
@@ -119,6 +119,7 @@ public class TestTask implements ReadOnlyTask {
         sb.append("add " + this.getName().fullName + " ");
         sb.append("d/" + this.getTime().value + " ");
         sb.append("c/" + this.getClockTime().value + " ");
+        sb.append("to/" + this.getEndTime().toString() + " ");
         sb.append("p/" + this.getPriority().priorityLevel + " ");
         this.getTags().asObservableList().stream().forEach(s -> sb.append("t/" + s.tagName + " "));
         return sb.toString();
