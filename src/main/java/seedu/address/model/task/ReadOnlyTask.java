@@ -33,6 +33,7 @@ public interface ReadOnlyTask {
                 || (other != null // this is first to avoid NPE below
                 && other.getName().equals(this.getName()) // state checks here onwards
                 && other.getTime().equals(this.getTime())
+                && other.getEndTime().equals(this.getEndTime())
                 && other.getClockTime().equals(this.getClockTime())
                 );
     }
