@@ -1,5 +1,7 @@
 package seedu.address.testutil;
 
+import java.time.LocalTime;
+
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.tag.UniqueTagList;
@@ -35,6 +37,11 @@ public class TaskBuilder {
     //@@author A0143873Y
     public TaskBuilder withClockTime(String clockTime) throws IllegalValueException {
         this.task.setClockTime(new ClockTime(clockTime));
+        return this;
+    }
+
+    public TaskBuilder withEndTime(String endTime) throws IllegalValueException {
+        this.task.setEndTime(LocalTime.parse(endTime));
         return this;
     }
     //@@author

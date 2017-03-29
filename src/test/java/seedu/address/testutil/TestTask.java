@@ -1,6 +1,8 @@
 /* @@author A0119505J */
 package seedu.address.testutil;
 
+import java.time.LocalTime;
+
 import seedu.address.model.tag.UniqueTagList;
 import seedu.address.model.task.ClockTime;
 import seedu.address.model.task.Name;
@@ -17,6 +19,8 @@ public class TestTask implements ReadOnlyTask {
     private Name name;
     private ClockTime clockTime;
     private Time time;
+    private LocalTime endTime;
+    private LocalTime startTime;
     private Priority priority;
     private UniqueTagList tags;
     private Status status;
@@ -32,6 +36,7 @@ public class TestTask implements ReadOnlyTask {
         this.name = taskToCopy.getName();
         this.time = taskToCopy.getTime();
         this.clockTime = taskToCopy.getClockTime();
+        this.endTime = taskToCopy.getEndTime();
         this.priority = taskToCopy.getPriority();
         this.tags = taskToCopy.getTags();
         this.status = taskToCopy.getStatus();
@@ -75,6 +80,19 @@ public class TestTask implements ReadOnlyTask {
     @Override
     public ClockTime getClockTime() {
         return clockTime;
+    }
+
+    public LocalTime getStartTime() {
+        return startTime;
+    }
+
+    public void setEndTime(LocalTime endTime) {
+        assert endTime != null;
+        this.endTime = endTime;
+    }
+
+    public LocalTime getEndTime() {
+        return endTime;
     }
 
     public Priority getPriority() {

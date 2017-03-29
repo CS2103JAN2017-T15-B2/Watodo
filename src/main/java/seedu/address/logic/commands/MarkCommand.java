@@ -17,16 +17,16 @@ import seedu.address.model.task.UniqueTaskList.DuplicateTaskException;
 //@@author A0164394Y
 
 /**
- * Finds and lists all tasks in address book whose name contains any of the argument keywords.
- * Keyword matching is case sensitive.
+ * Finds and lists all tasks in address book whose name contains any of the
+ * argument keywords. Keyword matching is case sensitive.
  */
 public class MarkCommand extends Command {
 
     public static final String COMMAND_WORD = "mark";
     public static final String MESSAGE_DUPLICATE_TASK = "This task already exists in the address book.";
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Marks the task completed or not completed \n"
-            + "Parameters: KEYWORD [MORE_KEYWORDS]...\n"
-            + "Example: " + COMMAND_WORD + " task_number completed OR not_completed";
+            + "Parameters: KEYWORD [MORE_KEYWORDS]...\n" + "Example: " + COMMAND_WORD
+            + " task_number completed OR not_completed";
 
     private final Set<String> keywords;
 
@@ -56,14 +56,14 @@ public class MarkCommand extends Command {
      * Creates and returns a {@code Task} with the details of {@code taskToEdit}
      * edited with {@code editTaskDescriptor}.
      */
-    private static Task createEditedTask(ReadOnlyTask taskToEdit,
-                                             String status) {
+    private static Task createEditedTask(ReadOnlyTask taskToEdit, String status) {
         assert taskToEdit != null;
         int flag;
-        if (status.equals("completed"))
+        if (status.equals("completed")) {
             flag = 1;
-        else
+        } else {
             flag = 0;
+        }
         Status stat = new Status(flag);
         Name updatedName = taskToEdit.getName();
         Time updatedTime = taskToEdit.getTime();

@@ -1,5 +1,6 @@
 package seedu.address.logic.parser;
 
+import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -75,7 +76,7 @@ public class ParserUtil {
     }
 
     /**
-     * Parses a {@code Optional<String> phone} into an {@code Optional<Time>} if {@code phone} is present.
+     * Parses a {@code Optional<String> date} into an {@code Optional<Time>} if {@code phone} is present.
      */
     public static Optional<Time> parseTime(Optional<String> phone) throws IllegalValueException {
         assert phone != null;
@@ -91,12 +92,19 @@ public class ParserUtil {
     }
 
     /**
-     * Parses a {@code Optional<String> email} into an {@code Optional<ClockTime>} if {@code email} is present.
+     * Parses a {@code Optional<String> clockTime} into an {@code Optional<ClockTime>} if {@code email} is present.
      */
     public static Optional<ClockTime> parseClockTime(Optional<String> email) throws IllegalValueException {
         assert email != null;
         return email.isPresent() ? Optional.of(new ClockTime(email.get())) : Optional.empty();
     }
+
+    //@@author A0143873Y
+    public static Optional<LocalTime> parseEndTime(Optional<String> endTime) throws IllegalValueException {
+        assert endTime != null;
+        return endTime.isPresent() ? Optional.of(LocalTime.parse(endTime.get())) : Optional.empty();
+    }
+    //@@author
 
     /**
      * Parses {@code Collection<String> tags} into an {@code UniqueTagList}.
