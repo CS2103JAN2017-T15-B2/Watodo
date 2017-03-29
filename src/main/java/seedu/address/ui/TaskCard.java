@@ -24,6 +24,8 @@ public class TaskCard extends UiPart<Region> {
     @FXML
     private Label clockTime;
     @FXML
+    private Label endTime;
+    @FXML
     private FlowPane tags;
 
     public TaskCard(ReadOnlyTask task, int displayedIndex) {
@@ -32,6 +34,7 @@ public class TaskCard extends UiPart<Region> {
         id.setText(displayedIndex + ". ");
         time.setText(task.getTime().value);
         clockTime.setText(task.getClockTime().value);
+        endTime.setText(task.getEndTime().toString());
         initTags(task);
     }
 
