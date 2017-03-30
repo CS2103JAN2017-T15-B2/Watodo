@@ -6,21 +6,38 @@ Hello from the developers of Watodo! We are an international software engineerin
 
 #### [He Xing Darius](https://github.com/hesingon) <br>
 <img src="images/hesingon.png" width="150"><br>
-Role: Team Lead, Deliverables and deadlines, Developer
-
+Role: Team Lead, Deliverables and deadlines, Developer <br>
+*Components in charge of:
+*Features implemented: 
+   * [Add persons]()
+   * [Edit person]()
+*Code written:
+*Other major contributions:
+   * Set up Travis and Coveralls
 -----
 
 #### [Li Wentong](http://github.com/Wentong-DST) <br>
 <img src="images/wentong.png" width="150"><br>
 Role: Developer, Integration, Scheduling and tracking, Final version software, some documentation <br>
+*Components in charge of:
+*Features implemented: 
+*Code written:
+*Other major contributions:
 -----
 
 #### [Oguz Yuksek](http://github.com/yuksek) <br>
 <img src="images/OguzYuksek.png" width="150"><br>
 Role: Developer, Integration, Scheduling and tracking, Final version software, some documentation <br>
-
+*Components in charge of:
+*Features implemented: 
+*Code written:
+*Other major contributions:
 -----
 
 #### [Lin Minhui](http://github.com/lmh1234) <br>
 <img src="images/minhui.png" width="150"><br>
 Role: Developer<br>
+*Components in charge of:
+*Features implemented: 
+*Code written:
+*Other major contributions:
