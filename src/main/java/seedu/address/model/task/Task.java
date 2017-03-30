@@ -1,5 +1,6 @@
 package seedu.address.model.task;
 
+import java.time.LocalTime;
 import java.util.Objects;
 
 import seedu.address.commons.util.CollectionUtil;
@@ -9,36 +10,56 @@ import seedu.address.model.tag.UniqueTagList;
  * Represents a Person in the address book.
  * Guarantees: details are present and not null, field values are validated.
  */
+/**
+ * @author Darius
+ *
+ */
 public class Task implements ReadOnlyTask {
 
     private Name name;
     private Time time;
     private ClockTime clockTime;
+    private LocalTime startTime;
+    private LocalTime endTime;
     private Address address;
     private Status status;
     private UniqueTagList tags;
     private Priority priority;
 
+
     /**
-     * Every field must be present and not null.
-     * @param priority
+     * constructing a task without a specified end time.
+     * @param
      */
     public Task(Name name, Time time, ClockTime clockTime, Priority priority, UniqueTagList tags, Status status) {
+        this(name, time, clockTime, null, priority, tags, status);
+
+    }
+
+    /**
+     * Constructor with all parameters, allowing null inputs.
+     * @param
+     */
+
+    public Task(Name name, Time time, ClockTime clockTime, LocalTime endTime,
+        Priority priority, UniqueTagList tags, Status status) {
         assert !CollectionUtil.isAnyNull(name, time, priority, tags, status);
         this.name = name;
         this.time = time;
         this.clockTime = clockTime;
+        this.endTime = endTime;
         this.priority = priority;
         this.tags = new UniqueTagList(tags); // protect internal tags from changes in the arg list
         this.status = status;
     }
+
 
     /**
      * Creates a copy of the given ReadOnlyTask.
      */
     public Task(ReadOnlyTask source) {
 
-        this(source.getName(), source.getTime(), source.getClockTime(),
+        this(source.getName(), source.getTime(), source.getClockTime(), source.getEndTime(),
              source.getPriority(), source.getTags(), source.getStatus());
     }
 
@@ -81,6 +102,26 @@ public class Task implements ReadOnlyTask {
     public ClockTime getClockTime() {
         return clockTime;
     }
+
+    public void setStartTime(LocalTime startTime) {
+        assert startTime != null;
+        this.startTime = startTime;
+    }
+
+    public LocalTime getStartTime() {
+        return startTime;
+    }
+
+    public void setEndTime(LocalTime endTime) {
+        assert endTime != null;
+        this.endTime = endTime;
+    }
+
+    public LocalTime getEndTime() {
+        return endTime;
+    }
+
+
     //@@author
 
     @Override
@@ -123,6 +164,19 @@ public class Task implements ReadOnlyTask {
         return other == this // short circuit if same object
                 || (other instanceof ReadOnlyTask // instanceof handles nulls
                 && this.isSameStateAs((ReadOnlyTask) other));
+    }
+
+
+    public boolean isFloating() {
+        return (this.clockTime != null && this.endTime != null); //eventually will startTime will replace clockTime.
+    }
+
+    public boolean isDeadline() {
+        return (this.endTime != null && this.clockTime == null);
+    }
+
+    public boolean isEvent() {
+        return (this.clockTime != null && this.endTime != null);
     }
 
     @Override

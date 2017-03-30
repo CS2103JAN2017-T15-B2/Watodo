@@ -20,8 +20,7 @@ public class Priority {
                 throw new IllegalValueException(MESSAGE_PRIORITY_CONSTRAINTS);
             }
             this.priorityLevel = priority;
-        }
-        else {
+        } else {
             this.priorityLevel = "low";
         }
     }
@@ -37,7 +36,8 @@ public class Priority {
     public boolean equals(Object other) {
         return other == this // short circuit if same object
                 || (other instanceof Priority // instanceof handles nulls
-                && this.priorityLevel.equals(((Priority) other).priorityLevel)); // state check
+                        && this.priorityLevel.equals(((Priority) other).priorityLevel)); // state
+                                                                                         // check
     }
 
     @Override
@@ -48,17 +48,13 @@ public class Priority {
     public int compareTo(Priority priority) {
         if (this.priorityLevel.equals(priority.priorityLevel)) {
             return 0;
-        }
-        else if (this.priorityLevel.equals("high")) {
+        } else if (this.priorityLevel.equals("high")) {
             return -1;
-        }
-        else if (priority.priorityLevel.equals("high")) {
+        } else if (priority.priorityLevel.equals("high")) {
             return 1;
-        }
-        else if (this.priorityLevel.equals("med")) {
+        } else if (this.priorityLevel.equals("med")) {
             return -1;
-        }
-        else {
+        } else {
             return 1;
         }
     }

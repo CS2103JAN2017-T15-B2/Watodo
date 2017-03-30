@@ -1,5 +1,6 @@
 package seedu.address.storage;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +30,8 @@ public class XmlAdaptedTask {
     @XmlElement(required = true)
     private String clockTime;
     @XmlElement(required = true)
+    private String endTime;
+    @XmlElement(required = true)
     private String address;
     @XmlElement(required = true)
     private String status;
@@ -54,6 +57,7 @@ public class XmlAdaptedTask {
         name = source.getName().fullName;
         time = source.getTime().value;
         clockTime = source.getClockTime().value;
+        endTime = source.getEndTime().toString();
         priority = source.getPriority().priorityLevel;
         tagged = new ArrayList<>();
         for (Tag tag : source.getTags()) {
@@ -82,9 +86,10 @@ public class XmlAdaptedTask {
         final Name name = new Name(this.name);
         final Time time = new Time(this.time);
         final ClockTime clockTime = new ClockTime(this.clockTime);
+        final LocalTime endTime = LocalTime.parse(this.endTime);
         final Priority priority = new Priority(this.priority);
         final UniqueTagList tags = new UniqueTagList(taskTags);
         final Status status = new Status(0);
-        return new Task(name, time, clockTime, priority, tags, status);
+        return new Task(name, time, clockTime, endTime, priority, tags, status);
     }
 }

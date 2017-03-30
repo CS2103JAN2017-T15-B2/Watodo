@@ -1,5 +1,6 @@
 package seedu.address.logic.commands;
 
+import java.time.LocalTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -38,7 +39,7 @@ public class AddCommand extends Command {
      *
      * @throws IllegalValueException if any of the raw values are invalid
      */
-    public AddCommand(String name, String phone, String clocktime, String priority, Set<String> tags)
+    public AddCommand(String name, String phone, String clocktime, String endTime, String priority, Set<String> tags)
             throws IllegalValueException {
         final Set<Tag> tagSet = new HashSet<>();
         for (String tagName : tags) {
@@ -48,6 +49,7 @@ public class AddCommand extends Command {
                 new Name(name),
                 new Time(phone),
                 new ClockTime(clocktime),
+                LocalTime.parse(endTime),
                 new Priority(priority),
                 new UniqueTagList(tagSet),
                 new Status(0)

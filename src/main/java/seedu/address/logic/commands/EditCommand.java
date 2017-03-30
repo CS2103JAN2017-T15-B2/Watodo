@@ -1,5 +1,6 @@
 package seedu.address.logic.commands;
 
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -82,6 +83,7 @@ public class EditCommand extends Command {
         Name updatedName = editTaskDescriptor.getName().orElseGet(taskToEdit::getName);
         Time updatedTime = editTaskDescriptor.getTime().orElseGet(taskToEdit::getTime);
         ClockTime updatedClockTime = editTaskDescriptor.getClockTime().orElseGet(taskToEdit::getClockTime);
+        LocalTime updatedEndTime = editTaskDescriptor.getEndTime().orElseGet(taskToEdit::getEndTime);
         Status updatedStatus = editTaskDescriptor.getStatus().orElseGet(taskToEdit::getStatus);
         Priority updatedPriority = editTaskDescriptor.getPriority().orElseGet(taskToEdit::getPriority);
         UniqueTagList updatedTags = editTaskDescriptor.getTags().orElseGet(taskToEdit::getTags);
@@ -96,6 +98,7 @@ public class EditCommand extends Command {
         private Optional<Name> name = Optional.empty();
         private Optional<Time> phone = Optional.empty();
         private Optional<ClockTime> email = Optional.empty();
+        private Optional<LocalTime> endTime = Optional.empty();
         private Optional<Address> address = Optional.empty();
         private Optional<Priority> priority = Optional.empty();
         private Optional<UniqueTagList> tags = Optional.empty();
@@ -107,6 +110,7 @@ public class EditCommand extends Command {
             this.name = toCopy.getName();
             this.phone = toCopy.getTime();
             this.email = toCopy.getClockTime();
+            this.endTime = toCopy.getEndTime();
             this.address = toCopy.getAddress();
             this.priority = toCopy.getPriority();
             this.tags = toCopy.getTags();
@@ -117,7 +121,8 @@ public class EditCommand extends Command {
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyPresent(this.name, this.phone, this.email, this.address, this.tags);
+            return CollectionUtil.isAnyPresent(this.name, this.phone, this.email,
+                    this.endTime, this.address, this.tags);
         }
 
         public void setName(Optional<Name> name) {
@@ -145,6 +150,15 @@ public class EditCommand extends Command {
 
         public Optional<ClockTime> getClockTime() {
             return email;
+        }
+
+        public void setEndTime(Optional<LocalTime> endTime) {
+            assert endTime != null;
+            this.endTime = endTime;
+        }
+
+        public Optional<LocalTime> getEndTime() {
+            return endTime;
         }
 
         public void setPriority(Optional<Priority> priority) {

@@ -3,8 +3,8 @@ package seedu.address.model.task;
 import seedu.address.commons.exceptions.IllegalValueException;
 
 /**
- * Represents a Task's status in the task manager.
- * Guarantees: transaction between states are doable.
+ * Represents a Task's status in the task manager. Guarantees: transaction
+ * between states are doable.
  */
 public class Status {
 
@@ -16,7 +16,8 @@ public class Status {
     /**
      * Validates given name.
      *
-     * @throws IllegalValueException if given name string is invalid.
+     * @throws IllegalValueException
+     *             if given name string is invalid.
      */
     public Status(int status) {
         this.status = status;
@@ -26,12 +27,12 @@ public class Status {
      * Returns true if a given string is a valid task name.
      */
     public boolean isValidTransaction(int status) {
-        if (this.status == status)
+        if (this.status == status) {
             return false;
-        else
+        } else {
             return true;
+        }
     }
-
 
     @Override
     public String toString() {

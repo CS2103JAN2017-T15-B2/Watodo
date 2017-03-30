@@ -17,19 +17,19 @@ public class TypicalTestTasks {
         try {
 
             alice = new TaskBuilder().withName("Alice Pauline").withTime("17/02/2017").withClockTime("23:59")
-              .withPriority("high").withTags("friends").withPriority("med").withStatus(0).build();
+              .withEndTime("00:39").withPriority("high").withTags("friends").withPriority("med").withStatus(0).build();
             benson = new TaskBuilder().withName("Benson Meier").withTime("17/02/2017").withClockTime("23:59")
-              .withTags("owesMoney", "friends").withPriority("med").withStatus(0).build();
+              .withEndTime("00:39").withTags("owesMoney", "friends").withPriority("med").withStatus(0).build();
             carl = new TaskBuilder().withName("Carl Kurz").withTime("17/02/2017").withClockTime("23:59")
-              .withPriority("med").withStatus(0).build();
+                    .withEndTime("00:39").withPriority("med").withStatus(0).build();
             daniel = new TaskBuilder().withName("Daniel Meier").withTime("17/02/2017").withClockTime("23:59")
-              .withPriority("low").withStatus(0).build();
+                    .withEndTime("00:39").withPriority("low").withStatus(0).build();
 
             // Manually added
             hoon = new TaskBuilder().withName("Hoon Meier").withTime("17/02/2017").withClockTime("23:59")
-              .withPriority("med").withStatus(0).build();
+                    .withEndTime("00:39").withPriority("med").withStatus(0).build();
             ida = new TaskBuilder().withName("Ida Mueller").withTime("17/02/2017").withClockTime("23:59")
-              .withPriority("low").withStatus(0).build();
+                    .withEndTime("00:39").withPriority("low").withStatus(0).build();
         } catch (IllegalValueException e) {
             e.printStackTrace();
             assert false : "not possible";

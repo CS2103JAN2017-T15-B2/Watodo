@@ -19,6 +19,7 @@ public class TaskCardHandle extends GuiHandle {
     private static final String ADDRESS_FIELD_ID = "#address";
     private static final String TIME_FIELD_ID = "#time";
     private static final String CLOCKTIME_FIELD_ID = "#clockTime";
+    private static final String ENDTIME_FIELD_ID = "#endTime";
     private static final String PRIORITY_FIELD_ID = "#priority";
     private static final String TAGS_FIELD_ID = "#tags";
 
@@ -45,9 +46,15 @@ public class TaskCardHandle extends GuiHandle {
         return getTextFromLabel(TIME_FIELD_ID);
     }
 
+    //@@author A0143873Y
     public String getClockTime() {
         return getTextFromLabel(CLOCKTIME_FIELD_ID);
     }
+
+    public String getEndTime() {
+        return getTextFromLabel(ENDTIME_FIELD_ID);
+    }
+    //@@author
 
     public String getPriority() {
         return getTextFromLabel(PRIORITY_FIELD_ID);
@@ -81,6 +88,7 @@ public class TaskCardHandle extends GuiHandle {
         return getFullName().equals(task.getName().fullName)
                 && getTime().equals(task.getTime().value)
                 && getClockTime().equals(task.getClockTime().value)
+                && getEndTime().equals(task.getEndTime().toString())
                 && getTags().equals(getTags(task.getTags()));
     }
 
@@ -91,6 +99,7 @@ public class TaskCardHandle extends GuiHandle {
             return getFullName().equals(handle.getFullName())
                     && getTime().equals(handle.getTime())
                     && getClockTime().equals(handle.getClockTime())
+                    && getEndTime().equals(handle.getEndTime().toString())
                     && getAddress().equals(handle.getAddress())
                     && getPriority().equals(handle.getPriority())
                     && getTags().equals(handle.getTags());
