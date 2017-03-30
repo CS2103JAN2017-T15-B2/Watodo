@@ -41,6 +41,7 @@ Other major contributions:<br>
 #### [Lin Minhui](http://github.com/lmh1234) <br>
 <img src="images/minhui.png" width="150"><br>
 Role: Developer<br>
-Components in charge of:
+Components in charge of:<br>
 Features implemented: <br>
+Code written:<br>
 Other major contributions:<br>
