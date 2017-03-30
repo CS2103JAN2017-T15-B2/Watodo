@@ -14,7 +14,8 @@ Features implemented: <br>
 
 Code written:<br>
 Other major contributions:<br>
-   * Set up Travis and Coveralls<br>
+   Set up Travis and Coveralls<br>
+
 -----
 
 #### [Li Wentong](http://github.com/Wentong-DST) <br>
@@ -24,6 +25,7 @@ Components in charge of:<br>
 Features implemented: <br>
 Code written:<br>
 Other major contributions:<br>
+
 -----
 
 #### [Oguz Yuksek](http://github.com/yuksek) <br>
@@ -33,6 +35,7 @@ Components in charge of:<br>
 Features implemented: <br>
 Code written:<br>
 Other major contributions:<br>
+
 -----
 
 #### [Lin Minhui](http://github.com/lmh1234) <br>
