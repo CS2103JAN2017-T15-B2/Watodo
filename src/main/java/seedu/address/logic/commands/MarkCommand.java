@@ -17,13 +17,13 @@ import seedu.address.model.task.UniqueTaskList.DuplicateTaskException;
 //@@author A0164394Y
 
 /**
- * Finds and lists all tasks in address book whose name contains any of the
+ * Finds and lists all tasks in task manager whose name contains any of the
  * argument keywords. Keyword matching is case sensitive.
  */
 public class MarkCommand extends Command {
 
     public static final String COMMAND_WORD = "mark";
-    public static final String MESSAGE_DUPLICATE_TASK = "This task already exists in the address book.";
+    public static final String MESSAGE_DUPLICATE_TASK = "This task already exists in the task manager.";
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Marks the task completed or not completed \n"
             + "Parameters: KEYWORD [MORE_KEYWORDS]...\n" + "Example: " + COMMAND_WORD
             + " task_number completed OR not_completed";

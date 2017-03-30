@@ -54,7 +54,7 @@ public class TestTask implements ReadOnlyTask {
     public void setClockTime(ClockTime clockTime) {
         this.clockTime = clockTime;
     }
-    //@@author
+    //@@author A0119505J
     public void setPriority(Priority priority) {
         this.priority = priority;
     }

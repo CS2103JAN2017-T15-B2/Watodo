@@ -9,8 +9,8 @@ Hello from the developers of Watodo! We are an international software engineerin
 Role: Team Lead, Deliverables and deadlines, Developer <br>
 Components in charge of:<br>
 Features implemented: <br>
-   * [Add persons]()<br>
-   * [Edit person]()<br>
+   * [Add tasks]()<br>
+   * [Edit task]()<br>
 
 Code written:<br>
 Other major contributions:<br>
