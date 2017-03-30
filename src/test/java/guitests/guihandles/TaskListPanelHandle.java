@@ -1,7 +1,6 @@
 /* @@author A0119505J */
 package guitests.guihandles;
 
-
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;

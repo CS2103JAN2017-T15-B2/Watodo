@@ -38,8 +38,7 @@ public class Status {
     public String toString() {
         if (this.status == 0) {
             return NOT_COMPLETED_MESSAGE;
-        }
-        else if (this.status == 1) {
+        } else if (this.status == 1) {
             return COMPLETED_MESSAGE;
         }
         return UNDEFINED_STATUS_MESSAGE;
