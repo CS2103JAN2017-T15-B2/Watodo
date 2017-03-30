@@ -14,7 +14,7 @@ Features implemented: <br>
 
 Code written:<br>
 Other major contributions:<br>
-   Set up Travis and Coveralls<br>
+  ** Set up Travis and Coveralls<br>
 
 -----
 
