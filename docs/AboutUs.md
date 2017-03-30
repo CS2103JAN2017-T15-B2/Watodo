@@ -45,3 +45,4 @@ Components in charge of:<br>
 Features implemented: <br>
 Code written:<br>
 Other major contributions:<br>
+//refer to http://www.comp.nus.edu.sg/~cs2103/AY1617S2/contents/AboutUs.md for format
