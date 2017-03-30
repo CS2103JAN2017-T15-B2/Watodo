@@ -15,29 +15,29 @@ import seedu.address.model.task.Task;
  */
 public class UndoInfo {
 
-    private int undo_ID;
+    private int undoID;
     private String filePath;
     private ArrayList<Task> tasks;
-    
-    public UndoInfo(int undo_ID, String filePath, Task... tasks) {
-        this.undo_ID = undo_ID;
+
+    public UndoInfo(int undoID, String filePath, Task... tasks) {
+        this.undoID = undoID;
         Collection<Task> collection = Arrays.asList(tasks);
         this.filePath = filePath;
         this.tasks = new ArrayList<Task>(collection);
     }
-    
+
     public int getUndoID() {
-        return undo_ID;
+        return undoID;
     }
-    
+
     public ArrayList<Task> getTasks() {
         return tasks;
     }
-    
+
     public String getFilePath() {
         return filePath;
     }
-    
+
     public void setFilePath(String filePath) {
         this.filePath = filePath;
     }

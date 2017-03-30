@@ -49,7 +49,7 @@ public interface Model {
     /** Updates the status
      * @throws DuplicateTaskException */
     void markTask(int index, Task editedTask) throws UniqueTaskList.DuplicateTaskException;
-    
+
     //@@author A0119505J
     void addTaskUndo(Task task) throws DuplicateTaskException;
 
@@ -61,7 +61,7 @@ public interface Model {
     void clearTaskUndo(ArrayList<Task> tasks) throws TaskNotFoundException;
 
     LinkedList<UndoInfo> getUndoStack();
-    
+
     void addToUndoStack(int strCmdId, String currentFilePath, Task... tasks);
 
 }

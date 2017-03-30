@@ -26,10 +26,9 @@ import seedu.address.model.task.UniqueTaskList.TaskNotFoundException;
  */
 public class ModelManager extends ComponentManager implements Model {
     private static final Logger logger = LogsCenter.getLogger(ModelManager.class);
-    
-    //@@author A0119505J
-	public static LinkedList<UndoInfo> undoStack = new LinkedList<UndoInfo>();
 
+    //@@author A0119505J
+    private static LinkedList<UndoInfo> undoStack = new LinkedList<UndoInfo>();
     private final TaskManager taskManager;
     private final FilteredList<ReadOnlyTask> filteredTasks;
 
@@ -50,13 +49,13 @@ public class ModelManager extends ComponentManager implements Model {
         this(new TaskManager(), new UserPrefs());
     }
 
-	//@@author A0119505J
+    //@@author A0119505J
     @Override
     public void resetData(ReadOnlyTaskManager newData) {
-		if (newData.isEmpty()) { // clear was executed
-			List<Task> listOfTasks = (List<Task>) (List<?>) taskManager.getTaskList();
-			addToUndoStack(UndoCommand.CLR_CMD_ID, null, listOfTasks.toArray(new Task[listOfTasks.size()]));
-		}
+        if (newData.isEmpty()) { // clear was executed
+            List<Task> listOfTasks = (List<Task>) (List<?>) taskManager.getTaskList();
+            addToUndoStack(UndoCommand.CLR_CMD_ID, null, listOfTasks.toArray(new Task[listOfTasks.size()]));
+        }
         taskManager.resetData(newData);
         indicateTaskManagerChanged();
     }
@@ -65,33 +64,33 @@ public class ModelManager extends ComponentManager implements Model {
     public ReadOnlyTaskManager getTaskManager() {
         return taskManager;
     }
-    
-	//@@author A0119505J
 
-	@Override
-	public void clearTaskUndo(ArrayList<Task> tasks) throws TaskNotFoundException {
-		TaskManager oldTaskList = new TaskManager();
-		try {
-			oldTaskList.setTasks(tasks);
-		} catch (DuplicateTaskException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		taskManager.resetData(oldTaskList);
-	}
+    //@@author A0119505J
+
+    @Override
+    public void clearTaskUndo(ArrayList<Task> tasks) throws TaskNotFoundException {
+        TaskManager oldTaskList = new TaskManager();
+        try {
+            oldTaskList.setTasks(tasks);
+        } catch (DuplicateTaskException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        taskManager.resetData(oldTaskList);
+    }
 
     /** Raises an event to indicate the model has changed */
     private void indicateTaskManagerChanged() {
         raise(new TaskManagerChangedEvent(taskManager));
     }
-    
-	//@@author A0119505J
-	@Override
-	public void deleteTaskUndo(ReadOnlyTask target) throws TaskNotFoundException {
-		taskManager.removeTask(target);
-		updateFilteredListToShowAll();
-		indicateTaskManagerChanged();
-	}
+
+    //@@author A0119505J
+    @Override
+    public void deleteTaskUndo(ReadOnlyTask target) throws TaskNotFoundException {
+        taskManager.removeTask(target);
+        updateFilteredListToShowAll();
+        indicateTaskManagerChanged();
+    }
 
     @Override
     public synchronized void deleteTask(ReadOnlyTask target) throws TaskNotFoundException {
@@ -100,14 +99,14 @@ public class ModelManager extends ComponentManager implements Model {
         addToUndoStack(UndoCommand.DEL_CMD_ID, null, (Task) target);
     }
 
-	//@@author A0119505J
-	@Override
-	public void addTaskUndo(Task task) throws UniqueTaskList.DuplicateTaskException {
-		taskManager.addTask(task);
-		updateFilteredListToShowAll();
-		indicateTaskManagerChanged();
-	}
-	
+    //@@author A0119505J
+    @Override
+    public void addTaskUndo(Task task) throws UniqueTaskList.DuplicateTaskException {
+        taskManager.addTask(task);
+        updateFilteredListToShowAll();
+        indicateTaskManagerChanged();
+    }
+
     @Override
     public synchronized void addTask(Task task) throws UniqueTaskList.DuplicateTaskException {
         taskManager.addTask(task);
@@ -129,13 +128,13 @@ public class ModelManager extends ComponentManager implements Model {
         taskManager.markTask(index, editedTask);
         indicateTaskManagerChanged();
     }
-    
+
     //@@author A0119505J
-	@Override
-	public void addToUndoStack(int undoID, String filePath, Task... tasks) {
-		UndoInfo undoInfo = new UndoInfo(undoID, filePath, tasks);
-		undoStack.push(undoInfo);
-	}
+    @Override
+    public void addToUndoStack(int undoID, String filePath, Task... tasks) {
+        UndoInfo undoInfo = new UndoInfo(undoID, filePath, tasks);
+        undoStack.push(undoInfo);
+    }
 
     //=========== Filtered Task List Accessors =============================================================
 
@@ -209,11 +208,11 @@ public class ModelManager extends ComponentManager implements Model {
             return "name=" + String.join(", ", nameKeyWords);
         }
     }
-    
-	//@@author A0119505J
-	@Override
-	public LinkedList<UndoInfo> getUndoStack() {
-		return undoStack;
-	}
+
+    //@@author A0119505J
+    @Override
+    public LinkedList<UndoInfo> getUndoStack() {
+        return undoStack;
+    }
 
 }

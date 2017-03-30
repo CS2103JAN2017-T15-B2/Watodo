@@ -91,6 +91,11 @@ public class TaskManagerTest {
         public ObservableList<Tag> getTagList() {
             return tags;
         }
+
+        //@@author A0119505J
+        public boolean isEmpty() {
+            return tasks.isEmpty();
+        }
     }
 
 }

@@ -28,7 +28,7 @@ public class UndoCommand extends Command {
     public static final int DONE_CMD_ID = 4;
     public static final int CLR_CMD_ID = 5;
     public static final int STR_CMD_ID = 6;
-    
+
     private static final int CURRENT_TASK = 0;
     private UndoInfo undoInfo;
 
@@ -36,49 +36,52 @@ public class UndoCommand extends Command {
     @Override
     public CommandResult execute() {
         assert model != null;
-        if((model.getUndoStack().isEmpty()))
-           return new CommandResult(MESSAGE_FAILURE);
+        if (model.getUndoStack().isEmpty()) {
+            return new CommandResult(MESSAGE_FAILURE);
+        }
         undoInfo = model.getUndoStack().pop();
-        // model.getRedoStack().push(undoInfo);
         int undoID = undoInfo.getUndoID();
         switch (undoID) {
-            case ADD_CMD_ID:               
-                undoAdd(undoInfo.getTasks().get(CURRENT_TASK));
-                return new CommandResult(MESSAGE_SUCCESS);
-            case DEL_CMD_ID:
-                undoDelete(undoInfo.getTasks().get(CURRENT_TASK));
-                return new CommandResult(MESSAGE_SUCCESS);    
-            // case UPD_CMD_ID:
-                // undoUpdate(undoInfo.getTasks().get(CURRENT_TASK), undoInfo.getTasks().get(ORIGINAL_TASK_INDEX));
-                // return new CommandResult(MESSAGE_SUCCESS);
-            // case DONE_CMD_ID:
-                // undoDone(undoInfo.getTasks().get(CURRENT_TASK));
-                // return new CommandResult(MESSAGE_SUCCESS);
-            case CLR_CMD_ID:
-                undoClear(undoInfo.getTasks());
-                return new CommandResult(MESSAGE_SUCCESS);
-            // case STR_CMD_ID:
-                // undoSetStorage();
-                // return new CommandResult(MESSAGE_SUCCESS);
-            default:
-                return new CommandResult(MESSAGE_FAILURE);
+        case ADD_CMD_ID : {
+            undoAdd(undoInfo.getTasks().get(CURRENT_TASK));
+            return new CommandResult(MESSAGE_SUCCESS);
+        }
+        case DEL_CMD_ID : {
+            undoDelete(undoInfo.getTasks().get(CURRENT_TASK));
+            return new CommandResult(MESSAGE_SUCCESS);
+        }
+        // case UPD_CMD_ID:
+            // undoUpdate(undoInfo.getTasks().get(CURRENT_TASK), undoInfo.getTasks().get(ORIGINAL_TASK_INDEX));
+            // return new CommandResult(MESSAGE_SUCCESS);
+        // case DONE_CMD_ID:
+            // undoDone(undoInfo.getTasks().get(CURRENT_TASK));
+            // return new CommandResult(MESSAGE_SUCCESS);
+        case CLR_CMD_ID : {
+            undoClear(undoInfo.getTasks());
+            return new CommandResult(MESSAGE_SUCCESS);
+        }
+        // case STR_CMD_ID:
+            // undoSetStorage();
+            // return new CommandResult(MESSAGE_SUCCESS);
+        default :
+            return new CommandResult(MESSAGE_FAILURE);
         }
     }
-    
+
     // private void undoSetStorage() {
         // try {
             // String filePath = model.changeFileStorageUndo(undoInfo.getFilePath());
             // undoInfo.setFilePath(filePath);
-    	// } catch (IOException | ParseException | JSONException e) {
-    	    // e.printStackTrace();
-    	// }
+        // } catch (IOException | ParseException | JSONException e) {
+            // e.printStackTrace();
+        // }
     // }
-    
+
     private void undoClear(ArrayList<Task> tasks) {
         try {
             model.clearTaskUndo(tasks);
         } catch (TaskNotFoundException e) {
-            assert false: "The target task cannot be missing";
+            assert false : "The target task cannot be missing";
         }
     }
 
@@ -86,26 +89,29 @@ public class UndoCommand extends Command {
         try {
             model.deleteTaskUndo(task);
         } catch (TaskNotFoundException e) {
-            assert false: "The target task cannot be missing";
+            assert false : "The target task cannot be missing";
         }
     }
-    
+
     private void undoDelete(Task task) {
         try {
-            model.addTaskUndo(task);  
+            model.addTaskUndo(task);
         } catch (UniqueTaskList.DuplicateTaskException e) {
             e.printStackTrace();
         }
     }
 
     // private void undoUpdate(Task newTask, Task originalTask) {
-        // Task stubTask = new Task (newTask.getTaskDetails(), newTask.getStartTime(), newTask.getEndTime(), newTask.getPriority(), newTask.getRecurringFrequency());
+        // Task stubTask = new Task (newTask.getTaskDetails(), newTask.getStartTime(), newTask.getEndTime(),
+        // newTask.getPriority(), newTask.getRecurringFrequency());
         // try {
-            // model.updateTaskUndo(newTask, originalTask.getTaskDetails(), originalTask.getStartTime(), originalTask.getEndTime(), originalTask.getPriority(), originalTask.getRecurringFrequency());
-            // model.updateTaskUndo(originalTask, stubTask.getTaskDetails(), stubTask.getStartTime(), stubTask.getEndTime(), stubTask.getPriority(), originalTask.getRecurringFrequency());
+            // model.updateTaskUndo(newTask, originalTask.getTaskDetails(), originalTask.getStartTime(),
+            // originalTask.getEndTime(), originalTask.getPriority(), originalTask.getRecurringFrequency());
+            // model.updateTaskUndo(originalTask, stubTask.getTaskDetails(), stubTask.getStartTime(),
+            // stubTask.getEndTime(), stubTask.getPriority(), originalTask.getRecurringFrequency());
         // } catch (IllegalValueException e) {
-			// e.printStackTrace();
-		// }
+            // e.printStackTrace();
+        // }
     // }
 
     // private void undoDone(ReadOnlyTask task) {
@@ -117,3 +123,4 @@ public class UndoCommand extends Command {
     // }
 
 }
+
