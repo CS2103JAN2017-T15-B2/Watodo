@@ -28,6 +28,11 @@ public class LogicManager extends ComponentManager implements Logic {
     }
 
     @Override
+    /**
+     * First parse the command line to find the corresponding command
+     * Second send the model to the command, for it to accordingly make changes on.
+     * Lastly, execute() will make the changes in the model, then return message result
+     */
     public CommandResult execute(String commandText) throws CommandException {
         logger.info("----------------[USER COMMAND][" + commandText + "]");
         Command command = parser.parseCommand(commandText);
@@ -35,6 +40,9 @@ public class LogicManager extends ComponentManager implements Logic {
         return command.execute();
     }
 
+    /**
+     * 
+     */
     @Override
     public ObservableList<ReadOnlyTask> getFilteredTaskList() {
         return model.getFilteredTaskList();

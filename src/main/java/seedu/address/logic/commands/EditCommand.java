@@ -87,7 +87,7 @@ public class EditCommand extends Command {
         Status updatedStatus = editTaskDescriptor.getStatus().orElseGet(taskToEdit::getStatus);
         Priority updatedPriority = editTaskDescriptor.getPriority().orElseGet(taskToEdit::getPriority);
         UniqueTagList updatedTags = editTaskDescriptor.getTags().orElseGet(taskToEdit::getTags);
-        return new Task(updatedName, updatedTime, updatedClockTime, updatedPriority, updatedTags, updatedStatus);
+        return new Task(updatedName, updatedTime, updatedClockTime, updatedEndTime, updatedPriority, updatedTags, updatedStatus);
     }
 
     /**

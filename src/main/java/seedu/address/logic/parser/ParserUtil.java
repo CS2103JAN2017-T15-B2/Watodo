@@ -19,6 +19,7 @@ import seedu.address.model.tag.UniqueTagList;
 import seedu.address.model.task.Address;
 import seedu.address.model.task.ClockTime;
 import seedu.address.model.task.Name;
+import seedu.address.model.task.Priority;
 import seedu.address.model.task.Time;
 
 /**
@@ -103,6 +104,11 @@ public class ParserUtil {
     public static Optional<LocalTime> parseEndTime(Optional<String> endTime) throws IllegalValueException {
         assert endTime != null;
         return endTime.isPresent() ? Optional.of(LocalTime.parse(endTime.get())) : Optional.empty();
+    }
+
+    public static Optional<Priority> parsePriority(Optional<String> priority) throws IllegalValueException {
+        assert priority != null;
+        return priority.isPresent() ? Optional.of(new Priority(priority.get())) : Optional.empty();
     }
     //@@author
 
