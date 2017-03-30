@@ -41,6 +41,7 @@ public class AddCommand extends Command {
      */
     public AddCommand(String name, String phone, String clocktime, String endTime, String priority, Set<String> tags)
             throws IllegalValueException {
+
         final Set<Tag> tagSet = new HashSet<>();
         for (String tagName : tags) {
             tagSet.add(new Tag(tagName));
