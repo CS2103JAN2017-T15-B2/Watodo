@@ -144,6 +144,7 @@ public class EditCommand extends Command {
             return phone;
         }
 
+        //@@author A0143873Y
         public void setClockTime(Optional<ClockTime> email) {
             assert email != null;
             this.email = email;
@@ -161,6 +162,7 @@ public class EditCommand extends Command {
         public Optional<LocalTime> getEndTime() {
             return endTime;
         }
+        //@@author
 
         public void setPriority(Optional<Priority> priority) {
             assert priority != null;

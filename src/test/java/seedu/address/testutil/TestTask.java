@@ -77,6 +77,7 @@ public class TestTask implements ReadOnlyTask {
         return time;
     }
 
+    //@@author A0143873Y
     @Override
     public ClockTime getClockTime() {
         return clockTime;
@@ -94,6 +95,7 @@ public class TestTask implements ReadOnlyTask {
     public LocalTime getEndTime() {
         return endTime;
     }
+    //@@author
 
     public Priority getPriority() {
         return priority;

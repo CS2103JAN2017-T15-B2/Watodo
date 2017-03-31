@@ -167,7 +167,7 @@ public class Task implements ReadOnlyTask {
                 && this.isSameStateAs((ReadOnlyTask) other));
     }
 
-
+    //@@author A0143873Y
     public boolean isFloating() {
         return (this.clockTime != null && this.endTime != null); //eventually will startTime will replace clockTime.
     }
@@ -179,6 +179,7 @@ public class Task implements ReadOnlyTask {
     public boolean isEvent() {
         return (this.clockTime != null && this.endTime != null);
     }
+    //@@author
 
     @Override
     public int hashCode() {
