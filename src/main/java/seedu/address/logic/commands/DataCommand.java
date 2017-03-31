@@ -9,7 +9,7 @@ import seedu.address.commons.util.ConfigUtil;
 import seedu.address.logic.commands.exceptions.CommandException;
 
 /**
- * Deletes a task identified using it's last displayed index from the address book.
+ * Deletes a task identified using it's last displayed index from the task manager.
  */
 public class DataCommand extends Command {
 

@@ -10,13 +10,13 @@ public class PriorityTest {
 
     @Test
     public void isPriorityLevel() {
-        // invalid phone numbers
+        // invalid priority cases
         assertFalse(Priority.isPriorityLevel("")); // empty string
         assertFalse(Priority.isPriorityLevel(" ")); // spaces only
         assertFalse(Priority.isPriorityLevel("priority")); // not expected a string
         assertFalse(Priority.isPriorityLevel("9011p041")); // alphabets within digits
 
-        // valid phone numbers
+        // valid priority cases
         assertTrue(Priority.isPriorityLevel("high"));
         assertTrue(Priority.isPriorityLevel("med"));
         assertTrue(Priority.isPriorityLevel("low"));
