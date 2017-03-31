@@ -46,7 +46,7 @@ public class ParserUtil {
         return Optional.of(Integer.parseInt(index));
 
     }
-    
+
     public static String parsePath(String path) {
         assert path != null;
         return path.trim();

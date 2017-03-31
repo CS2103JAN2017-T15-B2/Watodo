@@ -79,7 +79,7 @@ public class Parser {
 
         case MarkCommand.COMMAND_WORD:
             return new MarkCommandParser().parse(arguments);
-            
+
         case DataCommand.COMMAND_WORD:
             return new DataCommandParser().parse(arguments);
 

@@ -27,7 +27,6 @@ public class DataCommand extends Command {
     public static final String MESSAGE_CHANGE_PATH_FAIL = "Config file at " + path +
             " is not in the correct format. \n"+"Using default config properties";
     private Config initializedConfig;
-    
 
     public DataCommand(String path) {
         this.path = path;
