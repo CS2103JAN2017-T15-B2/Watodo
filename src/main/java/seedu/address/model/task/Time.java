@@ -52,7 +52,7 @@ public class Time {
         return value;
     }
 
-    public String getStoredValue(){
+    public String getStoredValue() {
         return dateTime.toString();
     }
 
