@@ -37,6 +37,7 @@ public class TaskBuilder {
         return this;
     }
 
+    // needs special attention
     public TaskBuilder withEndTime(String endTime) throws IllegalValueException {
         this.task.setEndTime(new Time(endTime));
         return this;

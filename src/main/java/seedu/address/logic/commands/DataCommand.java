@@ -4,14 +4,12 @@ import java.io.IOException;
 import java.util.Optional;
 
 import seedu.address.commons.core.Config;
-import seedu.address.commons.core.Messages;
-import seedu.address.commons.core.UnmodifiableObservableList;
 import seedu.address.commons.exceptions.DataConversionException;
+import seedu.address.commons.util.ConfigUtil;
 import seedu.address.logic.commands.exceptions.CommandException;
-import seedu.address.commons.util.*;
 
 /**
- * Deletes a task identified using it's last displayed index from the address book.
+ * Deletes a task identified using it's last displayed index from the task manager.
  */
 public class DataCommand extends Command {
 
@@ -23,11 +21,12 @@ public class DataCommand extends Command {
             + "Parameters: PATH (system directory)\n"
             + "Example: " + COMMAND_WORD + "/Users/[username]/Documents/TaskManager";
 
-    public static final String MESSAGE_CHANGE_PATH_SUCCESS = "Changed data file location. You need to restart the app for changes to take effect.";
+    public static final String MESSAGE_CHANGE_PATH_SUCCESS = "Changed data file location."
+      + " You need to restart the app for changes to take effect.";
+
     public static final String MESSAGE_CHANGE_PATH_FAIL = "Config file at " + path +
-            " is not in the correct format. \n"+"Using default config properties";
+            " is not in the correct format. \n" + "Using default config properties";
     private Config initializedConfig;
-    
 
     public DataCommand(String path) {
         this.path = path;

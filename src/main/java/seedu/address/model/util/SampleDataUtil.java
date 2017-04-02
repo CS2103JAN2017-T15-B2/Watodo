@@ -1,5 +1,7 @@
 package seedu.address.model.util;
 
+import java.time.LocalTime;
+
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.ReadOnlyTaskManager;
 import seedu.address.model.TaskManager;
@@ -17,6 +19,7 @@ public class SampleDataUtil {
             return new Task[] {
                 new Task(new Name("Alex Yeoh"), new Time("17/02/2017 10:00"), 
                         new Time("17/02/2017 23:59"), new Priority("high"), new UniqueTagList("friends"), new Status(0))
+
             };
         } catch (IllegalValueException e) {
             throw new AssertionError("sample data cannot be invalid", e);
