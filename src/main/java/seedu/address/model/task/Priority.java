@@ -14,7 +14,7 @@ public class Priority {
     public final String priorityLevel;
 
     public Priority(String priority) throws IllegalValueException {
-        if (priority != null) {
+        if (priority != null && priority != "") {
             priority = priority.trim().toLowerCase();
             if (!isPriorityLevel(priority)) {
                 throw new IllegalValueException(MESSAGE_PRIORITY_CONSTRAINTS);
