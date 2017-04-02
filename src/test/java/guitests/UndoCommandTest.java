@@ -16,7 +16,7 @@ public class UndoCommandTest extends TaskManagerGuiTest {
         commandBox.runCommand("undo");
         assertResultMessage(UndoCommand.MESSAGE_FAILURE);
         //undo one change
-        commandBox.runCommand("add attend yoga session d/01/01/2001 c/01:00 to/02:00 p/high t/friends");
+        commandBox.runCommand("add Attend Pokemon Summit from/02/05/2017 10:00 to/02/05/2017 12:00 p/high t/friends");
         commandBox.runCommand("undo");
         assertResultMessage(UndoCommand.MESSAGE_SUCCESS);
         commandBox.runCommand("undo");
