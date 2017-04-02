@@ -31,7 +31,7 @@ public class TimeTest {
     }
 
     @Test
-    public void timeConstructor(){
+    public void timeConstructor() {
 
         try {
             Time time1 = new Time("06/01/2026 03:00");
@@ -41,7 +41,7 @@ public class TimeTest {
             String output2 = time2.getStoredValue();
             assertEquals("Two Strings not equal", output2, "2016-03-06T15:00");
 
-        } catch (IllegalValueException e){
+        } catch (IllegalValueException e) {
             fail("Failure in constructing time class");
         }
     }

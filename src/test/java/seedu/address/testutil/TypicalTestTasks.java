@@ -17,9 +17,11 @@ public class TypicalTestTasks {
         try {
 
             alice = new TaskBuilder().withName("Alice Pauline").withStartTime("17/02/2017 22:00")
-                    .withEndTime("17/02/2017 23:59").withPriority("high").withTags("friends").withPriority("med").withStatus(0).build();
+                    .withEndTime("17/02/2017 23:59").withPriority("high")
+                    .withTags("friends").withPriority("med").withStatus(0).build();
             benson = new TaskBuilder().withName("Benson Meier").withStartTime("17/02/2017 22:00")
-                    .withEndTime("17/02/2017 23:59").withTags("owesMoney", "friends").withPriority("med").withStatus(0).build();
+                    .withEndTime("17/02/2017 23:59").withTags("owesMoney", "friends")
+                    .withPriority("med").withStatus(0).build();
             carl = new TaskBuilder().withName("Carl Kurz").withStartTime("17/02/2017 22:00")
                     .withEndTime("17/02/2017 23:59").withPriority("med").withStatus(0).build();
             daniel = new TaskBuilder().withName("Daniel Meier").withStartTime("17/02/2017 22:00")

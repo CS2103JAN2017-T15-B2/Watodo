@@ -14,8 +14,8 @@ import seedu.address.commons.exceptions.IllegalValueException;
 //@@author A0143873Y
 public class Time {
 
-    public static final String pattern = "dd/MM/yyyy HH:mm";
-    public static final String MESSAGE_TIME_CONSTRAINTS = "Task time should follow '" + pattern + "' format.";
+    public static final String PATTERN = "dd/MM/yyyy HH:mm";
+    public static final String MESSAGE_TIME_CONSTRAINTS = "Task time should follow '" + PATTERN + "' format.";
     public static final String TIME_VALIDATION_REGEX =
             "^([1-9]|([012][0-9])|(3[01]))/([0]{0,1}[1-9]|1[012])/\\d\\d\\d\\d ([01]\\d|2[0-3]):?([0-5]\\d)$";
 
@@ -23,7 +23,7 @@ public class Time {
     public final String value;
 
     private static DateTimeFormatter format = new DateTimeFormatterBuilder().parseCaseInsensitive()
-            .appendPattern(pattern).toFormatter();
+            .appendPattern(PATTERN).toFormatter();
 
     /**
      * Validates given Time string.

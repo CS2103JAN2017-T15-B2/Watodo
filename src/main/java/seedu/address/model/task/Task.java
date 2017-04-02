@@ -24,8 +24,8 @@ public class Task implements ReadOnlyTask {
      * constructing a task without a specified end time.
      * @param
      */
-    public Task(Name name, Time StartTime, Priority priority, UniqueTagList tags, Status status) {
-        this(name, StartTime, null, priority, tags, status);
+    public Task(Name name, Time startTime, Priority priority, UniqueTagList tags, Status status) {
+        this(name, startTime, null, priority, tags, status);
 
     }
 
