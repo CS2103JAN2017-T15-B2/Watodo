@@ -13,7 +13,7 @@ import seedu.address.commons.exceptions.IllegalValueException;
 
 //@@author A0143873Y
 public class Time {
-    
+
     public static final String pattern = "dd/MM/yyyy HH:mm";
     public static final String MESSAGE_TIME_CONSTRAINTS = "Task time should follow '" + pattern + "' format.";
     public static final String TIME_VALIDATION_REGEX =
@@ -21,7 +21,7 @@ public class Time {
 
     public final LocalDateTime dateTime;
     public final String value;
-    
+
     private static DateTimeFormatter format = new DateTimeFormatterBuilder().parseCaseInsensitive()
             .appendPattern(pattern).toFormatter();
 
@@ -51,7 +51,7 @@ public class Time {
     public String toString() {
         return value;
     }
-    
+
     public String getStoredValue(){
         return dateTime.toString();
     }

@@ -14,7 +14,7 @@ public class TimeTest {
         // invalid phone numbers
         assertFalse(Time.isValidTime("")); // empty string
         assertFalse(Time.isValidTime(" ")); // spaces only
-        //boundary values 
+        //boundary values
         assertFalse(Time.isValidTime("10/13/1996 05:00")); // invalid month
         assertFalse(Time.isValidTime("32/08/1996 05:00")); // invalid day
         assertFalse(Time.isValidTime("10/00/1996 05:00")); // invalid month #2
@@ -26,14 +26,14 @@ public class TimeTest {
         assertTrue(Time.isValidTime("10/08/1996 05:00"));
         assertTrue(Time.isValidTime("01/12/2015 23:59"));
     }
-    
+
     @Test
     public void timeConstructor(){
-        
+
         try {
             Time time1 = new Time("06/01/2026 03:00");
             assertEquals("Two Strings not equal", time1.toString(), "06/01/2026 03:00");
-            
+
             Time time2 = new Time("06/03/2016 15:00");
             String output2 = time2.getStoredValue();
             assertEquals("Two Strings not equal", output2, "2016-03-06T15:00");
@@ -41,6 +41,5 @@ public class TimeTest {
         } catch (IllegalValueException e){
             fail("Failure in constructing time class");
         }
-        
     }
 }

@@ -36,7 +36,7 @@ public class Task implements ReadOnlyTask {
 
     public Task(Name name, Time startTime, Time endTime,
         Priority priority, UniqueTagList tags, Status status) {
-        
+
         assert !CollectionUtil.isAnyNull(name, startTime, priority, tags, status);
         this.name = name;
         this.startTime = startTime;

@@ -103,7 +103,7 @@ public class ParserUtil {
         assert startTime != null;
         return startTime.isPresent() ? Optional.of(new Time(startTime.get())) : Optional.empty();
     }
-    
+
     public static Optional<Time> parseEndTime(Optional<String> endTime) throws IllegalValueException {
         assert endTime != null;
         return endTime.isPresent() ? Optional.of(new Time(endTime.get())) : Optional.empty();
