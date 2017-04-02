@@ -435,9 +435,8 @@ public class LogicManagerTest {
         Task generateTask(int seed) throws Exception {
             return new Task(
                     new Name("Task " + seed),
-                    new Time("0" + (Math.abs(seed) % 30 + 1) + "/0" +
-                    (Math.abs(seed) % 12 + 1) + "/" + (Math.abs(seed) % 3000 + 1000)),
                     new Time("01/01/2012 10:59"),
+                    new Time("03/01/2012 10:59"),
                     new Priority("high"),
                     new UniqueTagList(new Tag("tag" + Math.abs(seed)), new Tag("tag" + Math.abs(seed + 1))),
                     new Status(0)
