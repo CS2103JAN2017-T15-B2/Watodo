@@ -3,9 +3,9 @@ package guitests;
 
 import org.junit.Test;
 
-import seedu.address.commons.exceptions.IllegalValueException;
-import seedu.address.logic.commands.ClearCommand;
-import seedu.address.logic.commands.UndoCommand;
+import watodo.commons.exceptions.IllegalValueException;
+import watodo.logic.commands.ClearCommand;
+import watodo.logic.commands.UndoCommand;
 
 public class UndoCommandTest extends TaskManagerGuiTest {
 

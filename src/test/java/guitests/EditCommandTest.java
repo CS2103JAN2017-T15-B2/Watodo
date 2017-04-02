@@ -2,22 +2,17 @@
 package guitests;
 
 // import static org.junit.Assert.assertTrue;
-// import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+// import static watodo.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 
 import org.junit.Test;
 
-// import guitests.guihandles.TaskCardHandle;
-
-import seedu.address.commons.core.Messages;
-import seedu.address.logic.commands.EditCommand;
-import seedu.address.model.tag.Tag;
-//import seedu.address.model.task.Address;
-//import seedu.address.model.task.ClockTime;
-import seedu.address.model.task.Name;
-// import seedu.address.model.task.Priority;
-import seedu.address.model.task.Time;
-import seedu.address.testutil.TaskBuilder;
-import seedu.address.testutil.TestTask;
+import watodo.commons.core.Messages;
+import watodo.logic.commands.EditCommand;
+import watodo.model.tag.Tag;
+import watodo.model.task.Name;
+import watodo.model.task.Time;
+import watodo.testutil.TaskBuilder;
+import watodo.testutil.TestTask;
 
 // TODO: reduce GUI tests by transferring some tests to be covered by lower level tests.
 public class EditCommandTest extends TaskManagerGuiTest {

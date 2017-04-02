@@ -1,12 +1,12 @@
 package guitests;
 
 import static org.junit.Assert.assertTrue;
-import static seedu.address.logic.commands.DeleteCommand.MESSAGE_DELETE_TASK_SUCCESS;
+import static watodo.logic.commands.DeleteCommand.MESSAGE_DELETE_TASK_SUCCESS;
 
 import org.junit.Test;
 
-import seedu.address.testutil.TestTask;
-import seedu.address.testutil.TestUtil;
+import watodo.testutil.TestTask;
+import watodo.testutil.TestUtil;
 
 public class DeleteCommandTest extends TaskManagerGuiTest {
 
