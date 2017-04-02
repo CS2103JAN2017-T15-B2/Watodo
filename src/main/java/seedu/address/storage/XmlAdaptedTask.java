@@ -1,6 +1,5 @@
 package seedu.address.storage;
 
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,13 +8,12 @@ import javax.xml.bind.annotation.XmlElement;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.tag.UniqueTagList;
-import seedu.address.model.task.ClockTime;
+import seedu.address.model.task.Time;
 import seedu.address.model.task.Name;
 import seedu.address.model.task.Priority;
 import seedu.address.model.task.ReadOnlyTask;
 import seedu.address.model.task.Status;
 import seedu.address.model.task.Task;
-import seedu.address.model.task.Time;
 
 /**
  * JAXB-friendly version of the Task.
@@ -26,18 +24,13 @@ public class XmlAdaptedTask {
     @XmlElement(required = true)
     private String name;
     @XmlElement(required = true)
-    private String time;
-    @XmlElement(required = true)
-    private String clockTime;
+    private String startTime;
     @XmlElement(required = true)
     private String endTime;
-    @XmlElement(required = true)
-    private String address;
     @XmlElement(required = true)
     private String status;
     @XmlElement(required = true)
     private String priority;
-
     @XmlElement
     private List<XmlAdaptedTag> tagged = new ArrayList<>();
 
@@ -55,9 +48,8 @@ public class XmlAdaptedTask {
      */
     public XmlAdaptedTask(ReadOnlyTask source) {
         name = source.getName().fullName;
-        time = source.getTime().value;
-        clockTime = source.getClockTime().value;
-        endTime = source.getEndTime().toString();
+        startTime = source.getStartTime().value;
+        endTime = source.getEndTime().value;
         priority = source.getPriority().priorityLevel;
         tagged = new ArrayList<>();
         for (Tag tag : source.getTags()) {
@@ -76,20 +68,12 @@ public class XmlAdaptedTask {
             taskTags.add(tag.toModelType());
         }
 
-        /*
-        logger.setLevel(Level.INFO);
-        logger.info("name: " + this.name);
-        logger.info("time: " + this.time);
-        logger.info("clockTime: " + this.clockTime);
-        */
-
         final Name name = new Name(this.name);
-        final Time time = new Time(this.time);
-        final ClockTime clockTime = new ClockTime(this.clockTime);
-        final LocalTime endTime = LocalTime.parse(this.endTime);
+        final Time startTime = new Time(this.startTime);
+        final Time endTime = new Time(this.endTime);
         final Priority priority = new Priority(this.priority);
         final UniqueTagList tags = new UniqueTagList(taskTags);
         final Status status = new Status(0);
-        return new Task(name, time, clockTime, endTime, priority, tags, status);
+        return new Task(name, startTime, endTime, priority, tags, status);
     }
 }

@@ -1,7 +1,5 @@
 package seedu.address.model.task;
 
-import java.time.LocalTime;
-
 import seedu.address.model.tag.UniqueTagList;
 
 /**
@@ -11,12 +9,9 @@ import seedu.address.model.tag.UniqueTagList;
 public interface ReadOnlyTask {
 
     Name getName();
-    Time getTime();
-    ClockTime getClockTime();
-    LocalTime getEndTime();
-    LocalTime getStartTime();
+    Time getStartTime();
+    Time getEndTime();
     Status getStatus();
-    //Address getAddress();
     Priority getPriority();
 
     /**
@@ -32,9 +27,8 @@ public interface ReadOnlyTask {
         return other == this // short circuit if same object
                 || (other != null // this is first to avoid NPE below
                 && other.getName().equals(this.getName()) // state checks here onwards
-                && other.getTime().equals(this.getTime())
+                && other.getStartTime().equals(this.getStartTime())
                 && other.getEndTime().equals(this.getEndTime())
-                && other.getClockTime().equals(this.getClockTime())
                 );
     }
 
@@ -44,10 +38,8 @@ public interface ReadOnlyTask {
     default String getAsText() {
         final StringBuilder builder = new StringBuilder();
         builder.append(getName())
-                .append(" Time: ")
-                .append(getTime())
-                .append(" ClockTime: ")
-                .append(getClockTime())
+                .append(" StartTime: ")
+                .append(getStartTime())
                 .append(" endTime: ")
                 .append(getEndTime())
                 .append(" Priority: ")

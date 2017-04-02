@@ -11,31 +11,31 @@ import seedu.address.commons.exceptions.IllegalValueException;
 public class ClockTime {
     //private final Logger logger = LogsCenter.getLogger(ClockTime.class);
 
-    public static final String MESSAGE_CLOCKTIME_CONSTRAINTS =
+    public static final String MESSAGE_START_TIME_CONSTRAINTS =
             "Clock time of task should be 24-hour form, eg: 23:59";
-    public static final String CLOCKTIME_VALIDATION_REGEX = "([01]?[0-9]|2[0-3]):[0-5][0-9]";
+    public static final String START_TIME_VALIDATION_REGEX = "([01]?[0-9]|2[0-3]):[0-5][0-9]";
 
     public final String value;
 
     /**
-     * Validates given clockTime.
+     * Validates given startTime.
      *
-     * @throws IllegalValueException if given clockTime address string is invalid.
+     * @throws IllegalValueException if given startTime address string is invalid.
      */
-    public ClockTime(String clockTime) throws IllegalValueException {
-        assert (clockTime != null);
-        String trimmedClockTime = clockTime.trim();
+    public ClockTime(String startTime) throws IllegalValueException {
+        assert (startTime != null);
+        String trimmedClockTime = startTime.trim();
         if (!isValidClockTime(trimmedClockTime)) {
-            throw new IllegalValueException(MESSAGE_CLOCKTIME_CONSTRAINTS);
+            throw new IllegalValueException(MESSAGE_START_TIME_CONSTRAINTS);
         }
         this.value = trimmedClockTime;
     }
 
     /**
-     * Returns if a given string is a valid task clockTime.
+     * Returns if a given string is a valid task startTime.
      */
     public static boolean isValidClockTime(String test) {
-        return test.matches(CLOCKTIME_VALIDATION_REGEX);
+        return test.matches(START_TIME_VALIDATION_REGEX);
     }
 
     @Override

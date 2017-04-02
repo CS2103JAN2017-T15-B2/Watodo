@@ -1,6 +1,5 @@
 package seedu.address.logic.commands;
 
-import java.time.LocalTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -8,7 +7,6 @@ import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.tag.UniqueTagList;
-import seedu.address.model.task.ClockTime;
 import seedu.address.model.task.Name;
 import seedu.address.model.task.Priority;
 import seedu.address.model.task.Status;
@@ -25,9 +23,9 @@ public class AddCommand extends Command {
 
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a task to the task manager. "
-            + "Parameters: NAME d/DATE c/CLOCKTIME p/PRIORITY [t/TAG]...\n"
+            + "Parameters: NAME d/DATE c/START_TIME p/PRIORITY [t/TAG]...\n"
             + "Example: " + COMMAND_WORD
-            + " John Doe d/01/01/2001 c/00:01 p/high t/friends";
+            + " Attend Pokemon Summit from/02/05/2017 10:00 to/02/05/2017 12:00 p/high t/friends";
 
     public static final String MESSAGE_SUCCESS = "New task added: %1$s";
     public static final String MESSAGE_DUPLICATE_TASK = "This task already exists in the task manager";
@@ -39,7 +37,7 @@ public class AddCommand extends Command {
      *
      * @throws IllegalValueException if any of the raw values are invalid
      */
-    public AddCommand(String name, String phone, String clocktime, String endTime, String priority, Set<String> tags)
+    public AddCommand(String name, String startTime, String endTime, String priority, Set<String> tags)
             throws IllegalValueException {
 
         final Set<Tag> tagSet = new HashSet<>();
@@ -48,9 +46,8 @@ public class AddCommand extends Command {
         }
         this.toAdd = new Task(
                 new Name(name),
-                new Time(phone),
-                new ClockTime(clocktime),
-                LocalTime.parse(endTime),
+                new Time(startTime),
+                new Time(endTime),
                 new Priority(priority),
                 new UniqueTagList(tagSet),
                 new Status(0)
