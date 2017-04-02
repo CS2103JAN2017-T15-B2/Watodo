@@ -16,9 +16,9 @@ import seedu.address.commons.util.StringUtil;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.tag.UniqueTagList;
 import seedu.address.model.task.Address;
-import seedu.address.model.task.Time;
 import seedu.address.model.task.Name;
 import seedu.address.model.task.Priority;
+import seedu.address.model.task.Time;
 
 /**
  * Contains utility methods used for parsing strings in the various *Parser classes

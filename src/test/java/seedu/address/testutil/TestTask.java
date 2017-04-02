@@ -2,11 +2,11 @@
 package seedu.address.testutil;
 
 import seedu.address.model.tag.UniqueTagList;
-import seedu.address.model.task.Time;
 import seedu.address.model.task.Name;
 import seedu.address.model.task.Priority;
 import seedu.address.model.task.ReadOnlyTask;
 import seedu.address.model.task.Status;
+import seedu.address.model.task.Time;
 
 /**
  * A mutable task object. For testing only.
