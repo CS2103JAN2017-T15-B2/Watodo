@@ -105,7 +105,7 @@ public class EditCommandTest extends TaskManagerGuiTest {
         // commandBox.runCommand("edit 1 p/abcd");
         // assertResultMessage(Priority.MESSAGE_PRIORITY_CONSTRAINTS);
 
-        commandBox.runCommand("edit 1 to/*&");
+        commandBox.runCommand("edit 1 t/*&");
         assertResultMessage(Tag.MESSAGE_TAG_CONSTRAINTS);
     }
 
