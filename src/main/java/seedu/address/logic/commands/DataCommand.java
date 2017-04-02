@@ -23,7 +23,7 @@ public class DataCommand extends Command {
             + "Parameters: PATH (system directory)\n"
             + "Example: " + COMMAND_WORD + "/Users/[username]/Documents/TaskManager";
 
-    public static final String MESSAGE_CHANGE_PATH_SUCCESS = "Changed data file location. You need to restart the app for changes to tae effect.";
+    public static final String MESSAGE_CHANGE_PATH_SUCCESS = "Changed data file location. You need to restart the app for changes to take effect.";
     public static final String MESSAGE_CHANGE_PATH_FAIL = "Config file at " + path +
             " is not in the correct format. \n"+"Using default config properties";
     private Config initializedConfig;
