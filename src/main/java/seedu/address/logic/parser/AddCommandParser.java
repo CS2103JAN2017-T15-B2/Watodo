@@ -28,15 +28,15 @@ public class AddCommandParser {
                 new ArgumentTokenizer(PREFIX_TIME, PREFIX_START_TIME, PREFIX_END_TIME, PREFIX_PRIORITY, PREFIX_TAG);
         argsTokenizer.tokenize(args);
         String priority;
-        
+
         //@@author A0143873Y
         //Making priority to be optionally null.
         try {
             priority = argsTokenizer.getValue(PREFIX_PRIORITY).get();
         } catch (NoSuchElementException nsee) {
             priority = null;
-        } 
-        
+        }
+
         try {
             return new AddCommand(
                     argsTokenizer.getPreamble().get(),
