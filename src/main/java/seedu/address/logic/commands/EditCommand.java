@@ -1,6 +1,5 @@
 package seedu.address.logic.commands;
 
-import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,8 +7,6 @@ import seedu.address.commons.core.Messages;
 import seedu.address.commons.util.CollectionUtil;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.tag.UniqueTagList;
-import seedu.address.model.task.Address;
-import seedu.address.model.task.ClockTime;
 import seedu.address.model.task.Name;
 import seedu.address.model.task.Priority;
 import seedu.address.model.task.ReadOnlyTask;
@@ -28,8 +25,8 @@ public class EditCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the task identified "
             + "by the index number used in the last task listing. "
             + "Existing values will be overwritten by the input values.\n"
-            + "Parameters: INDEX (must be a positive integer) [TASK-NAME] d/[DD/MM/YYYY] c/[HH:MM] t/[KEY-WORD]...\n"
-            + "Example: " + COMMAND_WORD + " 1 p/91234567 e/johndoe@yahoo.com";
+            + "Parameters: INDEX (positive) [TASK-NAME] from/{[DD/MM/YYYY] [HH:MM]} to/{[DD/MM/YYYY] [HH:MM]} p/[KEY-WORD]...\n"
+            + "Example: " + COMMAND_WORD + " 1 to/01/01/2018 t/changed tag";
 
     public static final String MESSAGE_EDIT_TASK_SUCCESS = "Edited Task: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
@@ -81,13 +78,12 @@ public class EditCommand extends Command {
         assert taskToEdit != null;
 
         Name updatedName = editTaskDescriptor.getName().orElseGet(taskToEdit::getName);
-        Time updatedTime = editTaskDescriptor.getTime().orElseGet(taskToEdit::getTime);
-        ClockTime updatedClockTime = editTaskDescriptor.getClockTime().orElseGet(taskToEdit::getClockTime);
-        LocalTime updatedEndTime = editTaskDescriptor.getEndTime().orElseGet(taskToEdit::getEndTime);
+        Time updatedStartTime = editTaskDescriptor.getStartTime().orElseGet(taskToEdit::getStartTime);
+        Time updatedEndTime = editTaskDescriptor.getEndTime().orElseGet(taskToEdit::getEndTime);
         Status updatedStatus = editTaskDescriptor.getStatus().orElseGet(taskToEdit::getStatus);
         Priority updatedPriority = editTaskDescriptor.getPriority().orElseGet(taskToEdit::getPriority);
         UniqueTagList updatedTags = editTaskDescriptor.getTags().orElseGet(taskToEdit::getTags);
-        return new Task(updatedName, updatedTime, updatedClockTime, updatedEndTime, updatedPriority,
+        return new Task(updatedName, updatedStartTime, updatedEndTime, updatedPriority,
                 updatedTags, updatedStatus);
     }
 
@@ -97,10 +93,8 @@ public class EditCommand extends Command {
      */
     public static class EditTaskDescriptor {
         private Optional<Name> name = Optional.empty();
-        private Optional<Time> phone = Optional.empty();
-        private Optional<ClockTime> email = Optional.empty();
-        private Optional<LocalTime> endTime = Optional.empty();
-        private Optional<Address> address = Optional.empty();
+        private Optional<Time> startTime = Optional.empty();
+        private Optional<Time> endTime = Optional.empty();
         private Optional<Priority> priority = Optional.empty();
         private Optional<UniqueTagList> tags = Optional.empty();
         private Optional<Status> status = Optional.empty();
@@ -109,10 +103,8 @@ public class EditCommand extends Command {
 
         public EditTaskDescriptor(EditTaskDescriptor toCopy) {
             this.name = toCopy.getName();
-            this.phone = toCopy.getTime();
-            this.email = toCopy.getClockTime();
+            this.startTime = toCopy.getStartTime();
             this.endTime = toCopy.getEndTime();
-            this.address = toCopy.getAddress();
             this.priority = toCopy.getPriority();
             this.tags = toCopy.getTags();
             this.status = toCopy.getStatus();
@@ -122,8 +114,8 @@ public class EditCommand extends Command {
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyPresent(this.name, this.phone, this.email,
-                    this.endTime, this.address, this.tags);
+            return CollectionUtil.isAnyPresent(this.name, this.startTime,
+                    this.endTime, this.tags);
         }
 
         public void setName(Optional<Name> name) {
@@ -135,31 +127,22 @@ public class EditCommand extends Command {
             return name;
         }
 
-        public void setTime(Optional<Time> phone) {
-            assert phone != null;
-            this.phone = phone;
-        }
-
-        public Optional<Time> getTime() {
-            return phone;
-        }
-
         //@@author A0143873Y
-        public void setClockTime(Optional<ClockTime> email) {
-            assert email != null;
-            this.email = email;
+        public void setStartTime(Optional<Time> startTime) {
+            assert startTime != null;
+            this.startTime = startTime;
         }
 
-        public Optional<ClockTime> getClockTime() {
-            return email;
+        public Optional<Time> getStartTime() {
+            return startTime;
         }
 
-        public void setEndTime(Optional<LocalTime> endTime) {
+        public void setEndTime(Optional<Time> endTime) {
             assert endTime != null;
             this.endTime = endTime;
         }
 
-        public Optional<LocalTime> getEndTime() {
+        public Optional<Time> getEndTime() {
             return endTime;
         }
         //@@author
@@ -171,15 +154,6 @@ public class EditCommand extends Command {
 
         public Optional<Priority> getPriority() {
             return priority;
-        }
-
-        public void setAddress(Optional<Address> address) {
-            assert address != null;
-            this.address = address;
-        }
-
-        public Optional<Address> getAddress() {
-            return address;
         }
 
         public void setStatus(Optional<Status> status) {

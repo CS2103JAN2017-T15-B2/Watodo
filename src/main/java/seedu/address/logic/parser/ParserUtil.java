@@ -1,6 +1,5 @@
 package seedu.address.logic.parser;
 
-import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -17,10 +16,9 @@ import seedu.address.commons.util.StringUtil;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.tag.UniqueTagList;
 import seedu.address.model.task.Address;
-import seedu.address.model.task.ClockTime;
+import seedu.address.model.task.Time;
 import seedu.address.model.task.Name;
 import seedu.address.model.task.Priority;
-import seedu.address.model.task.Time;
 
 /**
  * Contains utility methods used for parsing strings in the various *Parser classes
@@ -97,18 +95,18 @@ public class ParserUtil {
         return address.isPresent() ? Optional.of(new Address(address.get())) : Optional.empty();
     }
 
-    /**
-     * Parses a {@code Optional<String> clockTime} into an {@code Optional<ClockTime>} if {@code email} is present.
-     */
-    public static Optional<ClockTime> parseClockTime(Optional<String> email) throws IllegalValueException {
-        assert email != null;
-        return email.isPresent() ? Optional.of(new ClockTime(email.get())) : Optional.empty();
-    }
-
     //@@author A0143873Y
-    public static Optional<LocalTime> parseEndTime(Optional<String> endTime) throws IllegalValueException {
+    /**
+     * Parses a {@code Optional<String> startTime} into an {@code Optional<Time>} if {@code startTime} is present.
+     */
+    public static Optional<Time> parseStartTime(Optional<String> startTime) throws IllegalValueException {
+        assert startTime != null;
+        return startTime.isPresent() ? Optional.of(new Time(startTime.get())) : Optional.empty();
+    }
+    
+    public static Optional<Time> parseEndTime(Optional<String> endTime) throws IllegalValueException {
         assert endTime != null;
-        return endTime.isPresent() ? Optional.of(LocalTime.parse(endTime.get())) : Optional.empty();
+        return endTime.isPresent() ? Optional.of(new Time(endTime.get())) : Optional.empty();
     }
 
     public static Optional<Priority> parsePriority(Optional<String> priority) throws IllegalValueException {

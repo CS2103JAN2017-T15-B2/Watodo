@@ -29,11 +29,11 @@ public class EditCommandTest extends TaskManagerGuiTest {
     @Test
     public void edit_allFieldsSpecified_success() throws Exception {
 
-        String detailsToEdit = "Alice Pauline d/04/06/2013 c/13:40 p/high t/husband";
+        String detailsToEdit = "Alice Pauline from/04/06/2013 13:00 to/04/06/2013 13:40 p/high t/husband";
         int taskManagerIndex = 1;
 
-        TestTask editedTask = new TaskBuilder().withName("Alice Pauline").withTime("04/06/2013")
-                .withClockTime("13:40").withPriority("high").withTags("husband").build();
+        TestTask editedTask = new TaskBuilder().withName("Alice Pauline").withStartTime("04/06/2013 13:00")
+                .withEndTime("04/06/2013 13:40").withPriority("high").withTags("husband").build();
 
         assertEditSuccess(taskManagerIndex, taskManagerIndex, detailsToEdit, editedTask);
     }
@@ -69,8 +69,8 @@ public class EditCommandTest extends TaskManagerGuiTest {
         int taskManagerIndex = 2;
 
         TestTask taskToEdit = expectedTasksList[taskManagerIndex - 1];
-        TestTask editedTask = new TaskBuilder(taskToEdit).withName("Belle").withTime("04/06/2013").
-                withPriority("high").withTags("husband").build();
+        TestTask editedTask = new TaskBuilder(taskToEdit).withName("Belle").withStartTime("04/06/2013 13:00").
+                withEndTime("04/06/2013 13:40").withPriority("high").withTags("husband").build();
 
         assertEditSuccess(filteredTaskListIndex, taskManagerIndex, detailsToEdit, editedTask);
     }
@@ -99,13 +99,13 @@ public class EditCommandTest extends TaskManagerGuiTest {
         commandBox.runCommand("edit 1 *&");
         assertResultMessage(Name.MESSAGE_NAME_CONSTRAINTS);
 
-        commandBox.runCommand("edit 1 d/abcd");
+        commandBox.runCommand("edit 1 from/abcd");
         assertResultMessage(Time.MESSAGE_TIME_CONSTRAINTS);
 
         // commandBox.runCommand("edit 1 p/abcd");
         // assertResultMessage(Priority.MESSAGE_PRIORITY_CONSTRAINTS);
 
-        commandBox.runCommand("edit 1 t/*&");
+        commandBox.runCommand("edit 1 to/*&");
         assertResultMessage(Tag.MESSAGE_TAG_CONSTRAINTS);
     }
 

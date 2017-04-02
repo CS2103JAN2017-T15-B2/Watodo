@@ -1,15 +1,12 @@
 /* @@author A0119505J */
 package seedu.address.testutil;
 
-import java.time.LocalTime;
-
 import seedu.address.model.tag.UniqueTagList;
-import seedu.address.model.task.ClockTime;
+import seedu.address.model.task.Time;
 import seedu.address.model.task.Name;
 import seedu.address.model.task.Priority;
 import seedu.address.model.task.ReadOnlyTask;
 import seedu.address.model.task.Status;
-import seedu.address.model.task.Time;
 
 /**
  * A mutable task object. For testing only.
@@ -17,10 +14,8 @@ import seedu.address.model.task.Time;
 public class TestTask implements ReadOnlyTask {
 
     private Name name;
-    private ClockTime clockTime;
-    private Time time;
-    private LocalTime endTime;
-    private LocalTime startTime;
+    private Time endTime;
+    private Time startTime;
     private Priority priority;
     private UniqueTagList tags;
     private Status status;
@@ -34,8 +29,7 @@ public class TestTask implements ReadOnlyTask {
      */
     public TestTask(TestTask taskToCopy) {
         this.name = taskToCopy.getName();
-        this.time = taskToCopy.getTime();
-        this.clockTime = taskToCopy.getClockTime();
+        this.startTime = taskToCopy.getStartTime();
         this.endTime = taskToCopy.getEndTime();
         this.priority = taskToCopy.getPriority();
         this.tags = taskToCopy.getTags();
@@ -46,14 +40,6 @@ public class TestTask implements ReadOnlyTask {
         this.name = name;
     }
 
-    public void setTime(Time time) {
-        this.time = time;
-    }
-
-    //@@author A0143873Y
-    public void setClockTime(ClockTime clockTime) {
-        this.clockTime = clockTime;
-    }
     //@@author A0119505J
     public void setPriority(Priority priority) {
         this.priority = priority;
@@ -72,27 +58,20 @@ public class TestTask implements ReadOnlyTask {
         return name;
     }
 
-    @Override
-    public Time getTime() {
-        return time;
-    }
-
     //@@author A0143873Y
-    @Override
-    public ClockTime getClockTime() {
-        return clockTime;
+    public void setStartTime(Time startTime) {
+        this.startTime = startTime;
     }
-
-    public LocalTime getStartTime() {
+    public Time getStartTime() {
         return startTime;
     }
 
-    public void setEndTime(LocalTime endTime) {
+    public void setEndTime(Time endTime) {
         assert endTime != null;
         this.endTime = endTime;
     }
 
-    public LocalTime getEndTime() {
+    public Time getEndTime() {
         return endTime;
     }
     //@@author
@@ -119,8 +98,7 @@ public class TestTask implements ReadOnlyTask {
     public String getAddCommand() {
         StringBuilder sb = new StringBuilder();
         sb.append("add " + this.getName().fullName + " ");
-        sb.append("d/" + this.getTime().value + " ");
-        sb.append("c/" + this.getClockTime().value + " ");
+        sb.append("from/" + this.getStartTime().value + " ");
         sb.append("to/" + this.getEndTime().toString() + " ");
         sb.append("p/" + this.getPriority().priorityLevel + " ");
         this.getTags().asObservableList().stream().forEach(s -> sb.append("t/" + s.tagName + " "));

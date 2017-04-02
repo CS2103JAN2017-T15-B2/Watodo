@@ -41,9 +41,6 @@ import seedu.address.model.ReadOnlyTaskManager;
 import seedu.address.model.TaskManager;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.tag.UniqueTagList;
-import seedu.address.model.task.ClockTime;
-//import seedu.address.model.task.Address;
-//import seedu.address.model.task.ClockTime;
 import seedu.address.model.task.Name;
 import seedu.address.model.task.Priority;
 import seedu.address.model.task.ReadOnlyTask;
@@ -418,14 +415,14 @@ public class LogicManagerTest {
 
         Task adam() throws Exception {
             Name name = new Name("Adam Brown");
-            Time privateTime = new Time("12/12/2012");
-            ClockTime clockTime = new ClockTime("20:00");
+            Time startTime = new Time("01/01/2012 09:00");
+            Time endTime = new Time("01/01/2012 10:59");
             Priority priority = new Priority("high");
             Tag tag1 = new Tag("tag1");
             Tag tag2 = new Tag("longertag2");
             UniqueTagList tags = new UniqueTagList(tag1, tag2);
             Status status = new Status(0);
-            return new Task(name, privateTime, clockTime, priority, tags, status);
+            return new Task(name, startTime, endTime, priority, tags, status);
         }
 
         /**
@@ -440,7 +437,7 @@ public class LogicManagerTest {
                     new Name("Task " + seed),
                     new Time("0" + (Math.abs(seed) % 30 + 1) + "/0" +
                     (Math.abs(seed) % 12 + 1) + "/" + (Math.abs(seed) % 3000 + 1000)),
-                    new ClockTime("20:00"),
+                    new Time("01/01/2012 10:59"),
                     new Priority("high"),
                     new UniqueTagList(new Tag("tag" + Math.abs(seed)), new Tag("tag" + Math.abs(seed + 1))),
                     new Status(0)
@@ -538,8 +535,8 @@ public class LogicManagerTest {
         Task generateTaskWithName(String name) throws Exception {
             return new Task(
                     new Name(name),
-                    new Time("01/01/2012"),
-                    new ClockTime("20:00"),
+                    new Time("01/01/2012 09:00"),
+                    new Time("01/01/2012 10:59"),
                     new Priority("high"),
                     new UniqueTagList(new Tag("tag")),
                     new Status(0)

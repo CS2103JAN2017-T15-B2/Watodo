@@ -5,7 +5,6 @@ import java.util.Set;
 
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.tag.UniqueTagList;
-import seedu.address.model.task.ClockTime;
 import seedu.address.model.task.Name;
 import seedu.address.model.task.Priority;
 import seedu.address.model.task.ReadOnlyTask;
@@ -66,11 +65,11 @@ public class MarkCommand extends Command {
         }
         Status stat = new Status(flag);
         Name updatedName = taskToEdit.getName();
-        Time updatedTime = taskToEdit.getTime();
-        ClockTime updatedClockTime = taskToEdit.getClockTime();
+        Time updatedEndTime = taskToEdit.getEndTime();
+        Time updatedStartTime = taskToEdit.getStartTime();
         Status updatedStatus = stat;
         Priority updatedPriority = taskToEdit.getPriority();
         UniqueTagList updatedTags = taskToEdit.getTags();
-        return new Task(updatedName, updatedTime, updatedClockTime, updatedPriority, updatedTags, updatedStatus);
+        return new Task(updatedName, updatedStartTime, updatedEndTime, updatedPriority, updatedTags, updatedStatus);
     }
 }

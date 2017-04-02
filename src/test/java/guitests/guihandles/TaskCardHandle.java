@@ -18,8 +18,8 @@ public class TaskCardHandle extends GuiHandle {
     private static final String NAME_FIELD_ID = "#name";
     private static final String ADDRESS_FIELD_ID = "#address";
     private static final String TIME_FIELD_ID = "#time";
-    private static final String CLOCKTIME_FIELD_ID = "#clockTime";
-    private static final String ENDTIME_FIELD_ID = "#endTime";
+    private static final String START_TIME_FIELD_ID = "#startTime";
+    private static final String END_TIME_FIELD_ID = "#endTime";
     private static final String PRIORITY_FIELD_ID = "#priority";
     private static final String TAGS_FIELD_ID = "#tags";
 
@@ -47,12 +47,12 @@ public class TaskCardHandle extends GuiHandle {
     }
 
     //@@author A0143873Y
-    public String getClockTime() {
-        return getTextFromLabel(CLOCKTIME_FIELD_ID);
+    public String getStartTime() {
+        return getTextFromLabel(START_TIME_FIELD_ID);
     }
 
     public String getEndTime() {
-        return getTextFromLabel(ENDTIME_FIELD_ID);
+        return getTextFromLabel(END_TIME_FIELD_ID);
     }
     //@@author
 
@@ -86,8 +86,7 @@ public class TaskCardHandle extends GuiHandle {
 
     public boolean isSameTask(ReadOnlyTask task) {
         return getFullName().equals(task.getName().fullName)
-                && getTime().equals(task.getTime().value)
-                && getClockTime().equals(task.getClockTime().value)
+                && getStartTime().equals(task.getStartTime().value)
                 && getEndTime().equals(task.getEndTime().toString())
                 && getTags().equals(getTags(task.getTags()));
     }
@@ -97,8 +96,7 @@ public class TaskCardHandle extends GuiHandle {
         if (obj instanceof TaskCardHandle) {
             TaskCardHandle handle = (TaskCardHandle) obj;
             return getFullName().equals(handle.getFullName())
-                    && getTime().equals(handle.getTime())
-                    && getClockTime().equals(handle.getClockTime())
+                    && getStartTime().equals(handle.getStartTime().toString())
                     && getEndTime().equals(handle.getEndTime().toString())
                     && getAddress().equals(handle.getAddress())
                     && getPriority().equals(handle.getPriority())
