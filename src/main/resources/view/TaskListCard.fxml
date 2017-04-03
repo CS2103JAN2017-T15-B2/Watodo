@@ -33,10 +33,10 @@
 									<Label fx:id="id" styleClass="cell_big_label" />
 									<Label fx:id="name" styleClass="cell_big_label" text="\$first" />
 								</HBox>
+                        <Label fx:id="status" text="\$status" />
 							</children>
 						</HBox>
 						<FlowPane fx:id="tags" />
-						<Label fx:id="time" styleClass="cell_small_label" text="\$time" />
 						<Label fx:id="startTime" prefHeight="17.0" prefWidth="133.0" text="\$startTime" />
                   <Label fx:id="endTime" prefHeight="17.0" prefWidth="130.0" text="\$endTime" />
 					</children>
