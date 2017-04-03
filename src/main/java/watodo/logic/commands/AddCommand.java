@@ -23,7 +23,7 @@ public class AddCommand extends Command {
 
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a task to the task manager. "
-            + "Parameters: NAME d/DATE c/START_TIME p/PRIORITY [t/TAG]...\n"
+            + "Parameters: NAME from/START_TIME to/END_TIME p/PRIORITY [t/TAG]...\n"
             + "Example: " + COMMAND_WORD
             + " Attend Pokemon Summit from/02/05/2017 10:00 to/02/05/2017 12:00 p/high t/friends";
 
