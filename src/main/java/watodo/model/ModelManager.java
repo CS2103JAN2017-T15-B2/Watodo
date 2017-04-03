@@ -124,8 +124,15 @@ public class ModelManager extends ComponentManager implements Model {
         indicateTaskManagerChanged();
     }
 
-    public void markTask(int index, Task editedTask) throws UniqueTaskList.DuplicateTaskException {
+    public void markTask(int index, Task editedTask) throws TaskNotFoundException {
         taskManager.markTask(index, editedTask);
+        indicateTaskManagerChanged();
+    }
+
+    //@@author A0119505J
+    public void markTaskUndo(int index, Task editedTask) throws TaskNotFoundException {
+        taskManager.markTask(index, editedTask);
+        updateFilteredListToShowAll();
         indicateTaskManagerChanged();
     }
 

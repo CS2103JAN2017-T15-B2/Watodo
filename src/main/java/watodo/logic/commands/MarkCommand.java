@@ -11,7 +11,7 @@ import watodo.model.task.ReadOnlyTask;
 import watodo.model.task.Status;
 import watodo.model.task.Task;
 import watodo.model.task.Time;
-import watodo.model.task.UniqueTaskList.DuplicateTaskException;
+import watodo.model.task.UniqueTaskList.TaskNotFoundException;
 
 //@@author A0164394Y
 
@@ -22,7 +22,7 @@ import watodo.model.task.UniqueTaskList.DuplicateTaskException;
 public class MarkCommand extends Command {
 
     public static final String COMMAND_WORD = "mark";
-    public static final String MESSAGE_DUPLICATE_TASK = "This task already exists in the task manager.";
+    public static final String MESSAGE_INVALID_TASK = "This task is missing in the task manager.";
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Marks the task completed or not completed \n"
             + "Parameters: KEYWORD [MORE_KEYWORDS]...\n" + "Example: " + COMMAND_WORD
             + " task_number completed OR not_completed";
@@ -43,11 +43,13 @@ public class MarkCommand extends Command {
         ReadOnlyTask taskToEdit = lastShownList.get(filteredTaskListIndex);
         Task editedTask = createEditedTask(taskToEdit, parameters[1]);
 
+        //@@author A0119505J
         try {
             model.markTask(filteredTaskListIndex, editedTask);
-        } catch (DuplicateTaskException e) {
-            throw new CommandException(MESSAGE_DUPLICATE_TASK);
+        } catch (TaskNotFoundException e) {
+            throw new CommandException(MESSAGE_INVALID_TASK);
         }
+
         return new CommandResult(getMessageForTaskListShownSummary(model.getFilteredTaskList().size()));
     }
 
