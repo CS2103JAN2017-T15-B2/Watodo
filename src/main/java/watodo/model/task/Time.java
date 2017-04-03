@@ -42,7 +42,6 @@ public class Time {
             this.value = null;
             this.dateTime = null;
         }
-        
     }
 
     /**
@@ -66,7 +65,7 @@ public class Time {
         String time = ((Time) other).value;
         return other == this // short circuit if same object
                 || (other instanceof Time // instanceof handles nulls
-                && this.value == null ? time == null: this.value.equals(((Time) other).value)); 
+                && this.value == null ? time == null : this.value.equals(((Time) other).value));
     }
 
     @Override

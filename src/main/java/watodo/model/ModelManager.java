@@ -73,7 +73,6 @@ public class ModelManager extends ComponentManager implements Model {
         try {
             oldTaskList.setTasks(tasks);
         } catch (DuplicateTaskException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         taskManager.resetData(oldTaskList);
