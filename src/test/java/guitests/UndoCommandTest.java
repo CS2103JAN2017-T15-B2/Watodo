@@ -15,10 +15,14 @@ public class UndoCommandTest extends TaskManagerGuiTest {
         commandBox.runCommand("edit 20 Buy eggs");
         commandBox.runCommand("undo");
         assertResultMessage(UndoCommand.MESSAGE_FAILURE);
-        //undo one change
+        //undo add
         commandBox.runCommand("add Attend Pokemon Summit from/02/05/2017 10:00 to/02/05/2017 12:00 p/high t/friends");
         commandBox.runCommand("undo");
         assertResultMessage(UndoCommand.MESSAGE_SUCCESS);
+        //undo mark needs to be fixed
+        //commandBox.runCommand("mark 1 completed");
+        //commandBox.runCommand("undo");
+        //assertResultMessage(UndoCommand.MESSAGE_SUCCESS);
         commandBox.runCommand("undo");
         assertResultMessage(UndoCommand.MESSAGE_FAILURE);
     }

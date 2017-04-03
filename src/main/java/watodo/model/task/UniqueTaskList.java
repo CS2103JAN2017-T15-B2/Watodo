@@ -78,6 +78,19 @@ public class UniqueTaskList implements Iterable<Task> {
         return taskFoundAndDeleted;
     }
 
+    /**
+     * Marks a task.
+     *
+     * @throws TaskNotFoundException if the task to mark is missing in the list.
+     */
+    public void markTask(int index, Task editedTask) throws TaskNotFoundException {
+        assert editedTask != null;
+
+        if (!internalList.contains(editedTask)) {
+            throw new TaskNotFoundException();
+        }
+    }
+
     public void setTasks(UniqueTaskList replacement) {
         this.internalList.setAll(replacement.internalList);
     }
@@ -130,6 +143,7 @@ public class UniqueTaskList implements Iterable<Task> {
      * Signals that an operation targeting a specified task in the list would fail because
      * there is no such matching task in the list.
      */
-    public static class TaskNotFoundException extends Exception {}
+    public static class TaskNotFoundException extends Exception {
+    }
 
 }

@@ -16,6 +16,7 @@ import watodo.model.task.ReadOnlyTask;
 import watodo.model.task.Task;
 import watodo.model.task.UniqueTaskList;
 import watodo.model.task.UniqueTaskList.DuplicateTaskException;
+import watodo.model.task.UniqueTaskList.TaskNotFoundException;
 
 /**
  * Wraps all data at the address-book level
@@ -90,10 +91,10 @@ public class TaskManager implements ReadOnlyTaskManager {
 
     /**
      * Marks the status of the task given.
-     * @throws DuplicateTaskException
+     * @throws TaskNotFoundException
      */
-    public void markTask(int index, Task editedTask) throws DuplicateTaskException {
-        tasks.updateTask(index, editedTask);
+    public void markTask(int index, Task editedTask) throws TaskNotFoundException {
+        tasks.markTask(index, editedTask);
     }
 
     /**
@@ -161,7 +162,7 @@ public class TaskManager implements ReadOnlyTaskManager {
         tags.add(t);
     }
 
-//// util methods
+    // util methods
 
     @Override
     public String toString() {

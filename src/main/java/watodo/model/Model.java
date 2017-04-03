@@ -46,11 +46,13 @@ public interface Model {
     /** Updates the filter of the filtered task list to filter by the given keywords*/
     void updateFilteredTaskList(Set<String> keywords);
 
-    /** Updates the status
-     * @throws DuplicateTaskException */
-    void markTask(int index, Task editedTask) throws UniqueTaskList.DuplicateTaskException;
 
     //@@author A0119505J
+
+    /** Updates the status
+     * @throws TaskNotFoundException */
+    void markTask(int index, Task editedTask) throws TaskNotFoundException;
+
     void addTaskUndo(Task task) throws DuplicateTaskException;
 
     // void updateTaskUndo(Task taskToUpdate, TaskDetails taskDetails, StartTime startTime, EndTime endTime,
@@ -59,6 +61,8 @@ public interface Model {
     void deleteTaskUndo(ReadOnlyTask target) throws TaskNotFoundException;
 
     void clearTaskUndo(ArrayList<Task> tasks) throws TaskNotFoundException;
+
+    void markTaskUndo(int index, Task editedTask) throws TaskNotFoundException;
 
     LinkedList<UndoInfo> getUndoStack();
 

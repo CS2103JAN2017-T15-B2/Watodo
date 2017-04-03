@@ -25,7 +25,7 @@ public class UndoCommand extends Command {
     public static final int ADD_CMD_ID = 1;
     public static final int DEL_CMD_ID = 2;
     public static final int UPD_CMD_ID = 3;
-    public static final int DONE_CMD_ID = 4;
+    public static final int MARK_CMD_ID = 4;
     public static final int CLR_CMD_ID = 5;
     public static final int STR_CMD_ID = 6;
 
@@ -53,8 +53,8 @@ public class UndoCommand extends Command {
         // case UPD_CMD_ID:
             // undoUpdate(undoInfo.getTasks().get(CURRENT_TASK), undoInfo.getTasks().get(ORIGINAL_TASK_INDEX));
             // return new CommandResult(MESSAGE_SUCCESS);
-        // case DONE_CMD_ID:
-            // undoDone(undoInfo.getTasks().get(CURRENT_TASK));
+        // case MARK_CMD_ID:
+            // undoMark(undoInfo.getTasks().get(CURRENT_TASK));
             // return new CommandResult(MESSAGE_SUCCESS);
         case CLR_CMD_ID : {
             undoClear(undoInfo.getTasks());
@@ -85,7 +85,7 @@ public class UndoCommand extends Command {
         }
     }
 
-    private void undoAdd(Task task) {
+    private void undoDelete(Task task) {
         try {
             model.deleteTaskUndo(task);
         } catch (TaskNotFoundException e) {
@@ -93,7 +93,7 @@ public class UndoCommand extends Command {
         }
     }
 
-    private void undoDelete(Task task) {
+    private void undoAdd(Task task) {
         try {
             model.addTaskUndo(task);
         } catch (UniqueTaskList.DuplicateTaskException e) {
@@ -101,6 +101,13 @@ public class UndoCommand extends Command {
         }
     }
 
+    private void undoMark(int index, Task task) {
+        try {
+            model.markTaskUndo(index, task);
+        } catch (TaskNotFoundException e) {
+            assert false : "The target task cannot be missing";
+        }
+    }
     // private void undoUpdate(Task newTask, Task originalTask) {
         // Task stubTask = new Task (newTask.getTaskDetails(), newTask.getStartTime(), newTask.getEndTime(),
         // newTask.getPriority(), newTask.getRecurringFrequency());
@@ -111,14 +118,6 @@ public class UndoCommand extends Command {
             // stubTask.getEndTime(), stubTask.getPriority(), originalTask.getRecurringFrequency());
         // } catch (IllegalValueException e) {
             // e.printStackTrace();
-        // }
-    // }
-
-    // private void undoDone(ReadOnlyTask task) {
-        // try {
-            // model.markTaskAsIncomplete(task);
-        // } catch (TaskNotFoundException e) {
-            // assert false: "The target task cannot be missing";
         // }
     // }
 
