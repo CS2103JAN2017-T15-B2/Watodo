@@ -4,8 +4,6 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import watodo.model.task.Status;
-
 //@@author A0119505J
 public class StatusTest {
 

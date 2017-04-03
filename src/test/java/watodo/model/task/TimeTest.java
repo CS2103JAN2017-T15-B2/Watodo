@@ -8,7 +8,6 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 
 import watodo.commons.exceptions.IllegalValueException;
-import watodo.model.task.Time;
 
 //@@author A0143873Y
 public class TimeTest {

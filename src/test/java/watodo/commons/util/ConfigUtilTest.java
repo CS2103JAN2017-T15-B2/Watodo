@@ -15,8 +15,6 @@ import org.junit.rules.TemporaryFolder;
 
 import watodo.commons.core.Config;
 import watodo.commons.exceptions.DataConversionException;
-import watodo.commons.util.ConfigUtil;
-import watodo.commons.util.FileUtil;
 
 public class ConfigUtilTest {
 

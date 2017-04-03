@@ -16,7 +16,6 @@ import watodo.commons.util.FileUtil;
 import watodo.model.ReadOnlyTaskManager;
 import watodo.model.TaskManager;
 import watodo.model.task.Task;
-import watodo.storage.XmlTaskManagerStorage;
 import watodo.testutil.TypicalTestTasks;
 
 public class XmlTaskManagerStorageTest {

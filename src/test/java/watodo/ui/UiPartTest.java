@@ -12,7 +12,6 @@ import org.junit.rules.TemporaryFolder;
 
 import javafx.fxml.FXML;
 import watodo.MainApp;
-import watodo.ui.UiPart;
 
 public class UiPartTest {
 

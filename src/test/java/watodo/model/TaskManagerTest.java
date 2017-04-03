@@ -14,8 +14,6 @@ import org.junit.rules.ExpectedException;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import watodo.model.ReadOnlyTaskManager;
-import watodo.model.TaskManager;
 import watodo.model.tag.Tag;
 import watodo.model.task.ReadOnlyTask;
 import watodo.model.task.Task;

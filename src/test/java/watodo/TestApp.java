@@ -4,7 +4,6 @@ import java.util.function.Supplier;
 
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import watodo.MainApp;
 import watodo.commons.core.Config;
 import watodo.commons.core.GuiSettings;
 import watodo.model.ReadOnlyTaskManager;

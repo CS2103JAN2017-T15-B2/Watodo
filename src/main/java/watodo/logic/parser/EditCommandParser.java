@@ -15,8 +15,8 @@ import java.util.Optional;
 import watodo.commons.exceptions.IllegalValueException;
 import watodo.logic.commands.Command;
 import watodo.logic.commands.EditCommand;
-import watodo.logic.commands.IncorrectCommand;
 import watodo.logic.commands.EditCommand.EditTaskDescriptor;
+import watodo.logic.commands.IncorrectCommand;
 import watodo.model.tag.UniqueTagList;
 
 /**

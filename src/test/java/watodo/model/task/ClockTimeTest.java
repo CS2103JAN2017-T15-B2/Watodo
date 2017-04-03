@@ -5,8 +5,6 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import watodo.model.task.ClockTime;
-
 //@@author A0143873Y
 public class ClockTimeTest {
 

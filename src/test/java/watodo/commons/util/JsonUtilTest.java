@@ -7,8 +7,6 @@ import java.io.IOException;
 
 import org.junit.Test;
 
-import watodo.commons.util.FileUtil;
-import watodo.commons.util.JsonUtil;
 import watodo.testutil.SerializableTestClass;
 import watodo.testutil.TestUtil;
 

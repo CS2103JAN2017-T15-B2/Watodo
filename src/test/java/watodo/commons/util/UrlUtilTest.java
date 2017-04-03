@@ -8,8 +8,6 @@ import java.net.URL;
 
 import org.junit.Test;
 
-import watodo.commons.util.UrlUtil;
-
 /**
  * Tests the UrlUtil methods.
  */

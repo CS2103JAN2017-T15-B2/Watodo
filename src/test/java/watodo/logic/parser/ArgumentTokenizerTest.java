@@ -6,7 +6,6 @@ import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
-import watodo.logic.parser.ArgumentTokenizer;
 import watodo.logic.parser.ArgumentTokenizer.Prefix;
 
 public class ArgumentTokenizerTest {

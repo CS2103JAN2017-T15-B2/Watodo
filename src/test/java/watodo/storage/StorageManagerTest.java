@@ -17,10 +17,6 @@ import watodo.commons.events.storage.DataSavingExceptionEvent;
 import watodo.model.ReadOnlyTaskManager;
 import watodo.model.TaskManager;
 import watodo.model.UserPrefs;
-import watodo.storage.JsonUserPrefsStorage;
-import watodo.storage.Storage;
-import watodo.storage.StorageManager;
-import watodo.storage.XmlTaskManagerStorage;
 import watodo.testutil.EventsCollector;
 import watodo.testutil.TypicalTestTasks;
 

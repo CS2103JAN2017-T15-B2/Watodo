@@ -24,8 +24,6 @@ import watodo.commons.core.EventsCenter;
 import watodo.commons.events.model.TaskManagerChangedEvent;
 import watodo.commons.events.ui.JumpToListRequestEvent;
 import watodo.commons.events.ui.ShowHelpRequestEvent;
-import watodo.logic.Logic;
-import watodo.logic.LogicManager;
 import watodo.logic.commands.AddCommand;
 import watodo.logic.commands.ClearCommand;
 import watodo.logic.commands.Command;
