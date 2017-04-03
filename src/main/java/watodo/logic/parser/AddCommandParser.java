@@ -13,7 +13,13 @@ import watodo.commons.exceptions.IllegalValueException;
 import watodo.logic.commands.AddCommand;
 import watodo.logic.commands.Command;
 import watodo.logic.commands.IncorrectCommand;
+import watodo.time.parser.ISODateTimeParser;
+import watodo.time.parser.StandardDateTimeParser;
+import watodo.time.parser.TimeParserSelector;
+import watodo.time.parser.TodayTimeParser;
+import watodo.time.parser.TomorrowTimeParser;
 
+//@@author A0143873Y
 /**
  * Parses input arguments and creates a new AddCommand object
  */
@@ -24,12 +30,18 @@ public class AddCommandParser {
      * and returns an AddCommand object for execution.
      */
     public Command parse(String args) {
+        
+        TimeParserSelector timeParserSelector = new TimeParserSelector(
+                                                       new TodayTimeParser(), 
+                                                       new TomorrowTimeParser(), 
+                                                       new ISODateTimeParser(), 
+                                                       new StandardDateTimeParser());
+        
         ArgumentTokenizer argsTokenizer =
                 new ArgumentTokenizer(PREFIX_TIME, PREFIX_START_TIME, PREFIX_END_TIME, PREFIX_PRIORITY, PREFIX_TAG);
         argsTokenizer.tokenize(args);
 
-        //@@author A0143873Y
-        //Making priority to be optionally null.
+        //Making priority, startTime and endTime to be optionally null.
         String priority;
         String startTime;
         String endTime;
@@ -42,12 +54,18 @@ public class AddCommandParser {
         
         try {
             startTime = argsTokenizer.getValue(PREFIX_START_TIME).get();
+            if (timeParserSelector.canParse(startTime)){
+                startTime = timeParserSelector.delegateTimeParser(startTime);
+            }
         } catch (NoSuchElementException nsee) {
             startTime = null;
         }
         
         try {
             endTime = argsTokenizer.getValue(PREFIX_END_TIME).get();
+            if (timeParserSelector.canParse(endTime)){
+                endTime = timeParserSelector.delegateTimeParser(endTime);
+            }
         } catch (NoSuchElementException nsee) {
             endTime = null;
         }

@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
-//@@author A0144915A
+//@@author A0143873Y
 /**
  * Parse date and time in the form of "2016-10-01 2:00pm"
  */
