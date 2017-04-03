@@ -1,6 +1,7 @@
 package watodo.logic.parser;
 
 import static watodo.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static watodo.commons.core.Messages.MESSAGE_EVENT_TASK_WITHOUT_END_TIME;
 import static watodo.logic.parser.CliSyntax.PREFIX_END_TIME;
 import static watodo.logic.parser.CliSyntax.PREFIX_PRIORITY;
 import static watodo.logic.parser.CliSyntax.PREFIX_START_TIME;
@@ -24,6 +25,8 @@ import watodo.time.parser.TomorrowTimeParser;
  * Parses input arguments and creates a new AddCommand object
  */
 public class AddCommandParser {
+    
+    
 
     /**
      * Parses the given {@code String} of arguments in the context of the AddCommand
@@ -68,6 +71,10 @@ public class AddCommandParser {
             }
         } catch (NoSuchElementException nsee) {
             endTime = null;
+        }
+        
+        if(endTime == null && startTime != null){
+            return new IncorrectCommand(MESSAGE_EVENT_TASK_WITHOUT_END_TIME);
         }
 
         try {
