@@ -8,7 +8,7 @@ import watodo.commons.exceptions.IllegalValueException;
  */
 public class Status {
 
-    private static final String NOT_COMPLETED_MESSAGE = "Task is incomplete.";
+    private static final String NOT_COMPLETED_MESSAGE = "(Task is incomplete)";
     private static final String COMPLETED_MESSAGE = "Task is completed.";
     private static final String UNDEFINED_STATUS_MESSAGE = "An internal error has occured. Status not readable.";
     public final int status;

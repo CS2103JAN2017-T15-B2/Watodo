@@ -31,13 +31,18 @@ public class Time {
      * @throws IllegalValueException if given Time string is invalid.
      */
     public Time(String time) throws IllegalValueException {
-        assert time != null;
-        String trimmedTime = time.trim();
-        if (!isValidTime(trimmedTime)) {
-            throw new IllegalValueException(MESSAGE_TIME_CONSTRAINTS);
+        if (time != null) {
+            String trimmedTime = time.trim();
+            if (!isValidTime(trimmedTime)) {
+                throw new IllegalValueException(MESSAGE_TIME_CONSTRAINTS);
+            }
+            this.value = trimmedTime;
+            this.dateTime = LocalDateTime.parse(time, format);
+        } else {
+            this.value = null;
+            this.dateTime = null;
         }
-        this.value = trimmedTime;
-        this.dateTime = LocalDateTime.parse(time, format);
+        
     }
 
     /**
@@ -58,9 +63,10 @@ public class Time {
 
     @Override
     public boolean equals(Object other) {
+        String time = ((Time) other).value;
         return other == this // short circuit if same object
                 || (other instanceof Time // instanceof handles nulls
-                && this.value.equals(((Time) other).value)); // state check
+                && time == null ? this.value == null: this.value.equals(((Time) other).value)); 
     }
 
     @Override
