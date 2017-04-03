@@ -151,16 +151,28 @@ public class Task implements ReadOnlyTask {
     }
 
     //@@author A0143873Y
-    public boolean isFloating() {
-        return (this.endTime != null && this.endTime != null); //eventually will startTime will replace endTime.
+    /**
+     * Check whether this {@code Task} is todo.
+     * @return {@code true} if and only if this {@code Task} has neither startTime nor endTime.
+     */
+    public boolean isTodo() {
+        return startTime == null && endTime == null;
     }
 
+    /**
+     * Check whether this {@code Task} is deadline.
+     * @return {@code true} if and only if this {@code Task} has endTime but not startTime.
+     */
     public boolean isDeadline() {
-        return (this.endTime != null && this.endTime == null);
+        return startTime == null && endTime != null;
     }
 
+    /**
+     * Check whether this {@code Task} is an event.
+     * @return {@code true} if and only if this {@code Task} has both startTime and endTime.
+     */
     public boolean isEvent() {
-        return (this.endTime != null && this.endTime != null);
+        return startTime != null && endTime != null;
     }
     //@@author
 
