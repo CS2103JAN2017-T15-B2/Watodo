@@ -39,7 +39,7 @@ public class StandardDateTimeParser implements TimeParser {
      */
     @Override
     public String parse(String input) {
-        return LocalDateTime.parse(input, formatter).format(defaultFormatter);
+        return LocalDateTime.parse(input, formatter).toString();
     }
 
 }

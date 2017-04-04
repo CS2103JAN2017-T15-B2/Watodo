@@ -42,7 +42,7 @@ public class TodayTimeParser implements TimeParser {
         String time = input.split("\\s+")[1];
         String todayDateTime = todayDate + " " + time;
 
-        return LocalDateTime.parse(todayDateTime.toUpperCase(), formatter).format(defaultFormatter);
+        return LocalDateTime.parse(todayDateTime.toUpperCase(), formatter).toString();
     }
 
     public void setClock(Clock clock) {

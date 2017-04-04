@@ -7,8 +7,8 @@ import org.junit.Test;
 //@@author A0119505J
 public class StatusTest {
 
-    private static final String NOT_COMPLETED_MESSAGE = "Task is incomplete.";
-    private static final String COMPLETED_MESSAGE = "Task is completed.";
+    private static final String NOT_COMPLETED_MESSAGE = "(Task is incomplete)";
+    private static final String COMPLETED_MESSAGE = "(Task is completed)";
 
     @Test
     public void isStatusLevel() {

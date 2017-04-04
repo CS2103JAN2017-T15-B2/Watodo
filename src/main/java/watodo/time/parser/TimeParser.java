@@ -11,9 +11,9 @@ import watodo.model.task.Time;
  *
  */
 public interface TimeParser {
-    
+
     public static final DateTimeFormatter defaultFormatter = DateTimeFormatter.ofPattern(Time.PATTERN);
-    
+
     /**
      * Verify whether user input applies to the format of the respective
      * time parser.
@@ -22,8 +22,8 @@ public interface TimeParser {
      * @return true if the format fits and false otherwise.
      */
     public boolean applyTo(String time);
-    
-    
+
+
     /**
      * Parses the userInput string to a standardized string format that
      * is acceptable to be passed to a Time constructor.
