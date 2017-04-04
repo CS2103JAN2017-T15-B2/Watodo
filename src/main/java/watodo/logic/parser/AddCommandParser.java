@@ -25,8 +25,6 @@ import watodo.time.parser.TomorrowTimeParser;
  */
 public class AddCommandParser {
 
-    
-
     /**
      * Parses the given {@code String} of arguments in the context of the AddCommand
      * and returns an AddCommand object for execution.
