@@ -24,7 +24,7 @@ import watodo.time.parser.TomorrowTimeParser;
  * Parses input arguments and creates a new AddCommand object
  */
 public class AddCommandParser {
-    
+
     
 
     /**
@@ -32,13 +32,13 @@ public class AddCommandParser {
      * and returns an AddCommand object for execution.
      */
     public Command parse(String args) {
-        
+
         TimeParserSelector timeParserSelector = new TimeParserSelector(
-                                                       new TodayTimeParser(), 
-                                                       new TomorrowTimeParser(), 
-                                                       new ISODateTimeParser(), 
+                                                       new TodayTimeParser(),
+                                                       new TomorrowTimeParser(),
+                                                       new ISODateTimeParser(),
                                                        new StandardDateTimeParser());
-        
+
         ArgumentTokenizer argsTokenizer =
                 new ArgumentTokenizer(PREFIX_START_TIME, PREFIX_END_TIME, PREFIX_PRIORITY, PREFIX_TAG);
         argsTokenizer.tokenize(args);
@@ -71,7 +71,7 @@ public class AddCommandParser {
         } catch (NoSuchElementException nsee) {
             endTime = null;
         }
-        
+
         if(endTime == null && startTime != null){
             return new IncorrectCommand(MESSAGE_EVENT_TASK_WITHOUT_END_TIME);
         }

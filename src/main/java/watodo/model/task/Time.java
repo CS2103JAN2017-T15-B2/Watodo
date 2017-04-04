@@ -63,14 +63,14 @@ public class Time {
     @Override
     /**
      * compare Time, accept null values.
-     * @return 
+     * @return
      * true, if two are the same.
      */
     public boolean equals(Object other) {
         String time = ((Time) other).value;
         return other == this // short circuit if same object
                 || (other instanceof Time // instanceof handles nulls
-                && this.value == null ? time == null : this.value.equals(((Time) other).value)); 
+                && this.value == null ? time == null : this.value.equals(((Time) other).value));
     }
 
     @Override

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package watodo.time.parser;
 
 import java.time.LocalDateTime;
