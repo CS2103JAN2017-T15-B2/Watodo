@@ -42,7 +42,7 @@ public class TomorrowTimeParser implements TimeParser {
         String time = input.split("\\s+")[1];
         String tomorrowDateTime = tomorrowDate + " " + time;
 
-        return LocalDateTime.parse(tomorrowDateTime.toUpperCase(), formatter).toString();
+        return LocalDateTime.parse(tomorrowDateTime.toUpperCase(), formatter).format(defaultFormatter);
     }
 
     public void setClock(Clock clock) {

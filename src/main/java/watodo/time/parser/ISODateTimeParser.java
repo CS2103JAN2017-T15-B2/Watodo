@@ -37,6 +37,6 @@ public class ISODateTimeParser implements TimeParser {
      */
     @Override
     public String parse(String input) {
-        return LocalDateTime.parse(input.toUpperCase(), formatter).toString();
+        return LocalDateTime.parse(input.toUpperCase(), formatter).format(defaultFormatter);
     }
 }

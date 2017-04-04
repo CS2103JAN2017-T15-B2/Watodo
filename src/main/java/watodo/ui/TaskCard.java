@@ -31,7 +31,7 @@ public class TaskCard extends UiPart<Region> {
         name.setText(task.getName().fullName);
         id.setText(displayedIndex + ". ");
         startTime.setText(task.getStartTime().value);
-        endTime.setText(task.getEndTime().toString());
+        endTime.setText(task.getEndTime().value);
         status.setText(task.getStatus().toString());
         initTags(task);
     }
