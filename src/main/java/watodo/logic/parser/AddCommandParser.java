@@ -1,7 +1,7 @@
 package watodo.logic.parser;
 
-import static watodo.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static watodo.commons.core.Messages.MESSAGE_EVENT_TASK_WITHOUT_END_TIME;
+import static watodo.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static watodo.logic.parser.CliSyntax.PREFIX_END_TIME;
 import static watodo.logic.parser.CliSyntax.PREFIX_PRIORITY;
 import static watodo.logic.parser.CliSyntax.PREFIX_START_TIME;
@@ -54,7 +54,7 @@ public class AddCommandParser {
 
         try {
             startTime = argsTokenizer.getValue(PREFIX_START_TIME).get();
-            if (timeParserSelector.canParse(startTime)){
+            if (timeParserSelector.canParse(startTime)) {
                 startTime = timeParserSelector.delegateTimeParser(startTime);
             }
         } catch (NoSuchElementException nsee) {
@@ -63,14 +63,14 @@ public class AddCommandParser {
 
         try {
             endTime = argsTokenizer.getValue(PREFIX_END_TIME).get();
-            if (timeParserSelector.canParse(endTime)){
+            if (timeParserSelector.canParse(endTime)) {
                 endTime = timeParserSelector.delegateTimeParser(endTime);
             }
         } catch (NoSuchElementException nsee) {
             endTime = null;
         }
 
-        if(endTime == null && startTime != null){
+        if (endTime == null && startTime != null) {
             return new IncorrectCommand(MESSAGE_EVENT_TASK_WITHOUT_END_TIME);
         }
 

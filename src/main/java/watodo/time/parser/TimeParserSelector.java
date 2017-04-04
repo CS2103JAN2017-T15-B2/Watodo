@@ -11,7 +11,7 @@ public class TimeParserSelector {
 
     public TimeParserSelector(TimeParser... parsers) {
         parserList = new ArrayList<>();
-        for (TimeParser parser: parsers){
+        for (TimeParser parser: parsers) {
             parserList.add(parser);
         }
     }
