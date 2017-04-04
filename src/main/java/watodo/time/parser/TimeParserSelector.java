@@ -17,9 +17,11 @@ public class TimeParserSelector {
     }
 
     /**
-     * Check if the manager can parse some string
-     * @param userInput The string to check
-     * @return {@code true} if and only if at least one of the parsers can parse {@code userInput}
+     * Verify whether user input applies to the format of the respective
+     * time parser.
+     *
+     * @param input
+     * @return true if the format fits and false otherwise.
      */
     public boolean canParse(String userInput) {
         for (TimeParser parser: parserList) {
