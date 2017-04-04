@@ -11,7 +11,6 @@ public class CliSyntax {
 
     /* Prefix definitions */
     public static final Prefix PREFIX_PRIORITY = new Prefix("p/");
-    public static final Prefix PREFIX_TIME = new Prefix("d/");
     public static final Prefix PREFIX_TAG = new Prefix("t/");
     //@@author A0143873Y
     public static final Prefix PREFIX_START_TIME = new Prefix("from/");

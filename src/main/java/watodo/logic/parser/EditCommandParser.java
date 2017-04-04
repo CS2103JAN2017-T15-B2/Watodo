@@ -5,7 +5,6 @@ import static watodo.logic.parser.CliSyntax.PREFIX_END_TIME;
 import static watodo.logic.parser.CliSyntax.PREFIX_PRIORITY;
 import static watodo.logic.parser.CliSyntax.PREFIX_START_TIME;
 import static watodo.logic.parser.CliSyntax.PREFIX_TAG;
-import static watodo.logic.parser.CliSyntax.PREFIX_TIME;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -31,7 +30,7 @@ public class EditCommandParser {
     public Command parse(String args) {
         assert args != null;
         ArgumentTokenizer argsTokenizer =
-                new ArgumentTokenizer(PREFIX_TIME, PREFIX_START_TIME, PREFIX_END_TIME, PREFIX_PRIORITY, PREFIX_TAG);
+                new ArgumentTokenizer(PREFIX_START_TIME, PREFIX_END_TIME, PREFIX_PRIORITY, PREFIX_TAG);
         argsTokenizer.tokenize(args);
         List<Optional<String>> preambleFields = ParserUtil.splitPreamble(argsTokenizer.getPreamble().orElse(""), 2);
 

@@ -189,7 +189,7 @@ public class LogicManagerTest {
     @Test
     public void execute_add_invalidArgsFormat() {
         String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE);
-        assertCommandFailure("add wrong args wrong args", expectedMessage);
+        //assertCommandFailure("add wrong args wrong args", expectedMessage);  (Now we allow tasks with no time)
         assertCommandFailure("add Valid Name 12345 e/valid@email.butNoTimePrefix a/valid,address", expectedMessage);
         assertCommandFailure("add Valid Name p/12345 valid@email.butNoPrefix a/valid, address", expectedMessage);
         assertCommandFailure("add Valid Name p/12345 e/valid@email.butNoAddressPrefix valid, address", expectedMessage);
@@ -199,7 +199,7 @@ public class LogicManagerTest {
     public void execute_add_invalidTaskData() {
         assertCommandFailure("add []\\[;] d/12/12/2023",
                 Name.MESSAGE_NAME_CONSTRAINTS);
-        assertCommandFailure("add Valid Name d/not_numbers",
+        assertCommandFailure("add Valid Name from/not_numbers",
                 Time.MESSAGE_TIME_CONSTRAINTS);
         assertCommandFailure("add Valid Name d/12/12/2023 t/invalid_-[.tag",
                 Tag.MESSAGE_TAG_CONSTRAINTS);
@@ -451,7 +451,9 @@ public class LogicManagerTest {
 
             cmd.append(p.getName().toString());
 
-            cmd.append(" d/").append(p.getTime());
+            cmd.append(" from/").append(p.getStartTime());
+            
+            cmd.append(" to/").append(p.getEndTime());
 
             UniqueTagList tags = p.getTags();
             for (Tag t: tags) {
