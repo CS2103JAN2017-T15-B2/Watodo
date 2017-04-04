@@ -47,13 +47,13 @@ public class AddCommandParser {
         String priority;
         String startTime;
         String endTime;
-        
+
         try {
             priority = argsTokenizer.getValue(PREFIX_PRIORITY).get();
         } catch (NoSuchElementException nsee) {
             priority = null;
         }
-        
+
         try {
             startTime = argsTokenizer.getValue(PREFIX_START_TIME).get();
             if (timeParserSelector.canParse(startTime)){
@@ -62,7 +62,7 @@ public class AddCommandParser {
         } catch (NoSuchElementException nsee) {
             startTime = null;
         }
-        
+
         try {
             endTime = argsTokenizer.getValue(PREFIX_END_TIME).get();
             if (timeParserSelector.canParse(endTime)){

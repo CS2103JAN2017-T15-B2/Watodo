@@ -29,7 +29,7 @@ public class DataCommand extends Command {
     private Config initializedConfig;
 
     public DataCommand(String path) {
-        this.path = path;
+        DataCommand.path = path;
     }
 
 
@@ -42,7 +42,6 @@ public class DataCommand extends Command {
             initializedConfig.setTaskManagerFilePath(path);
             ConfigUtil.saveConfig(initializedConfig, Config.DEFAULT_CONFIG_FILE);
         } catch (DataConversionException | IOException e) {
-            // TODO Auto-generated catch block
             return new CommandResult(String.format(MESSAGE_CHANGE_PATH_FAIL));
         }
 

@@ -42,7 +42,6 @@ public class Time {
             this.value = null;
             this.dateTime = null;
         }
-        
     }
 
     /**

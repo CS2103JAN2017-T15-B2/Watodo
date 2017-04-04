@@ -132,6 +132,18 @@ Format: `exit`
 Task Manager data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.
 
+### 2.10. Undo command : `undo`
+
+Undo the most recent command in the Task Manager.<br>
+Format: `undo`
+
+> Irreversible.
+
+### 2.11. Mark command : `mark`
+
+Mark a task an completed or incomplted in the Task Manager.<br>
+Format: `mark 1 completed`
+
 ## 3. FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
@@ -152,16 +164,16 @@ There is no need to save manually.
   e.g. `search birthday party`
 
 * **List** : `list` <br>
-  e.g.
+  e.g. `list`
 
 * **Help** : `help` <br>
-  e.g.
+  e.g. `help`
 
 * **Edit** : `edit INDEX [NAME] [PARMAETER] [NEW VALUE]...` <br>
   e.g. `edit 1 -name go home`
 
-* **Done** : `done [INDEX]` <br>
-  e.g. `done 1`
+* **Mark** : `mark [INDEX] [PARAMETER]` <br>
+  e.g. `mark 1 completed`
 
-* **Undone** : `undone [INDEX]` <br>
-  e.g. `undone 1`
+* **Undo** : `undo` <br>
+  e.g. `undo`
