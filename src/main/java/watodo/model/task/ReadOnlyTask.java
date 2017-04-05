@@ -31,7 +31,13 @@ public interface ReadOnlyTask {
                 && other.getEndTime().equals(this.getEndTime())
                 );
     }
+    //@@author A0130138U
+    public boolean isTodo();
 
+    public boolean isDeadline();
+
+    public boolean isEvent();
+    
     /**
      * Formats the task as text, showing all contact details.
      */
