@@ -42,6 +42,7 @@ public class TaskCard extends UiPart<Region> {
     Image med = new Image(MED);
     Image high = new Image(HIGH);
 
+    //@@author A0130138U
     public TaskCard(ReadOnlyTask task, int displayedIndex) {
         super(FXML);
         name.setText(task.getName().fullName);
@@ -72,7 +73,6 @@ public class TaskCard extends UiPart<Region> {
         }
     }
 
-    //@@author A0130138U
     private void setBackground(ReadOnlyTask task) {
 
         if (task.getStatus().status == 1) {
