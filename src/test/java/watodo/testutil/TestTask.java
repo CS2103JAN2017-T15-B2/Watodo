@@ -74,6 +74,7 @@ public class TestTask implements ReadOnlyTask {
     public Time getEndTime() {
         return endTime;
     }
+    //@@author
     //@@author A0119505J
 
     public Priority getPriority() {
