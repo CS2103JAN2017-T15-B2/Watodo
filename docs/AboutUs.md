@@ -51,11 +51,15 @@ Other major contributions:<br>
 
 #### [Lin Minhui](http://github.com/lmh1234) <br>
 <img src="images/minhui.png" width="150"><br>
-Role: Developer<br>
-Components in charge of:<br>
+Role: Developer, Scheduling and tracking, Final version software, some documentation<br>
+Components in charge of: GUI<br>
 Features implemented: <br>
+   *Images for GUI icons
+   *Background color for Taskcard Panel
 Code written:<br>
+   *Codes for Images and colour for GUI
 Other major contributions:<br>
-
+   *Main author for Issue Tracker<br>
+   *Set up github.io
 
 refer to http://www.comp.nus.edu.sg/~cs2103/AY1617S2/contents/AboutUs.md for format<br>
