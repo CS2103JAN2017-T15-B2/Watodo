@@ -1,4 +1,3 @@
-//@@author A0119505J
 package guitests;
 
 import org.junit.Test;
@@ -7,6 +6,7 @@ import watodo.commons.exceptions.IllegalValueException;
 import watodo.logic.commands.ClearCommand;
 import watodo.logic.commands.UndoCommand;
 
+//@@author A0119505J
 public class UndoCommandTest extends TaskManagerGuiTest {
 
     @Test
@@ -34,5 +34,6 @@ public class UndoCommandTest extends TaskManagerGuiTest {
         commandBox.runCommand("undo");
         assertResultMessage(UndoCommand.MESSAGE_SUCCESS);
     }
+
 
 }
