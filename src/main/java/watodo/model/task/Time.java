@@ -54,7 +54,11 @@ public class Time {
 
     @Override
     public String toString() {
-        return this.dateTime.format(defaultFormatter);
+        if (this.dateTime != null) {
+            return this.dateTime.format(defaultFormatter);
+        } else {
+            return "-";
+        }
     }
 
     public String getStoredValue() {

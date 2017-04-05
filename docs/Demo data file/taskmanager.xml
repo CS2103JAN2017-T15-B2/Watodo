@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<taskmanager>
+    <tasks>
+        <name>Watch ee2021 webcast</name>
+        <startTime>02/05/2017 10:00</startTime>
+        <endTime>02/05/2017 12:00</endTime>
+        <priority>high</priority>
+        <tagged>webcast</tagged>
+    </tasks>
+    <tasks>
+        <name>Attend career fair</name>
+        <startTime>02/05/2017 12:00</startTime>
+        <endTime>02/05/2017 14:00</endTime>
+        <priority>high</priority>
+    </tasks>
+    <tasks>
+        <name>Finish proposal of hackathon</name>
+        <endTime>02/08/2017 12:00</endTime>
+        <priority>high</priority>
+        <tagged>hackathon</tagged>
+    </tasks>
+    <tasks>
+        <name>Make a career plan</name>
+        <priority>med</priority>
+        <tagged>profession</tagged>
+    </tasks>
+    <tasks>
+        <name>Report to police</name>
+        <endTime>02/05/2017 12:00</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>Jog</name>
+        <startTime>02/05/2017 16:00</startTime>
+        <endTime>02/05/2017 17:00</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>Get a haircut</name>
+        <priority>high</priority>
+        <tagged>friends</tagged>
+    </tasks>
+    <tasks>
+        <name>Call Jayson for the money he owed</name>
+        <endTime>22/05/2017 12:00</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>Research about Singapore market</name>
+        <startTime>02/09/2017 20:00</startTime>
+        <endTime>02/09/2017 22:00</endTime>
+        <priority>high</priority>
+        <tagged>friends</tagged>
+    </tasks>
+    <tasks>
+        <name>meditate</name>
+        <startTime>04/05/2017 22:00</startTime>
+        <endTime>04/05/2017 22:10</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>Watch cs2103 webcast</name>
+        <startTime>02/05/2017 10:00</startTime>
+        <endTime>02/05/2017 12:00</endTime>
+        <priority>high</priority>
+        <tagged>webcast</tagged>
+    </tasks>
+    <tasks>
+        <name>Attend pokemon fair</name>
+        <startTime>02/05/2017 12:00</startTime>
+        <endTime>02/05/2017 14:00</endTime>
+        <priority>high</priority>
+    </tasks>
+    <tasks>
+        <name>Finish planning of hackathon</name>
+        <endTime>02/08/2017 12:00</endTime>
+        <priority>high</priority>
+        <tagged>hackathon</tagged>
+    </tasks>
+    <tasks>
+        <name>Make a business plan</name>
+        <priority>med</priority>
+        <tagged>profession</tagged>
+    </tasks>
+    <tasks>
+        <name>Report to Principle</name>
+        <endTime>02/05/2017 12:00</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>Go Gyming</name>
+        <startTime>02/05/2017 16:00</startTime>
+        <endTime>02/05/2017 17:00</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>See doctor</name>
+        <priority>high</priority>
+        <tagged>friends</tagged>
+    </tasks>
+    <tasks>
+        <name>Call Qi Chen for the money he owed</name>
+        <endTime>22/05/2017 12:00</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>Research about Singapores Gay association</name>
+        <startTime>02/09/2017 20:00</startTime>
+        <endTime>02/09/2017 22:00</endTime>
+        <priority>high</priority>
+        <tagged>friends</tagged>
+    </tasks>
+    <tasks>
+        <name>meditate</name>
+        <startTime>09/05/2017 22:00</startTime>
+        <endTime>09/05/2017 22:10</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>Watch CS2010 webcast</name>
+        <startTime>02/05/2017 10:00</startTime>
+        <endTime>02/05/2017 12:00</endTime>
+        <priority>high</priority>
+        <tagged>webcast</tagged>
+    </tasks>
+    <tasks>
+        <name>Attend CCA fair</name>
+        <startTime>02/05/2017 12:00</startTime>
+        <endTime>02/05/2017 14:00</endTime>
+        <priority>high</priority>
+    </tasks>
+    <tasks>
+        <name>Finish phone calls of hackathon</name>
+        <endTime>02/08/2017 12:00</endTime>
+        <priority>high</priority>
+        <tagged>hackathon</tagged>
+    </tasks>
+    <tasks>
+        <name>Make a short plan</name>
+        <priority>med</priority>
+        <tagged>profession</tagged>
+    </tasks>
+    <tasks>
+        <name>Report to teacher</name>
+        <endTime>02/05/2017 12:00</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>Jog and exercise</name>
+        <startTime>02/05/2017 16:00</startTime>
+        <endTime>02/05/2017 17:00</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>Get a new laptop</name>
+        <priority>high</priority>
+        <tagged>friends</tagged>
+    </tasks>
+    <tasks>
+        <name>Call Akshay for consultation</name>
+        <endTime>22/05/2017 12:00</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>Research about nano technology</name>
+        <startTime>02/09/2017 20:00</startTime>
+        <endTime>02/09/2017 22:00</endTime>
+        <priority>high</priority>
+        <tagged>friends</tagged>
+    </tasks>
+    <tasks>
+        <name>Bboy train</name>
+        <startTime>04/05/2017 22:00</startTime>
+        <endTime>04/05/2017 22:10</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>Watch GES1002 webcast</name>
+        <startTime>02/05/2017 10:00</startTime>
+        <endTime>02/05/2017 12:00</endTime>
+        <priority>high</priority>
+        <tagged>webcast</tagged>
+    </tasks>
+    <tasks>
+        <name>Attend career fair 2</name>
+        <startTime>02/05/2017 12:00</startTime>
+        <endTime>02/05/2017 14:00</endTime>
+        <priority>high</priority>
+    </tasks>
+    <tasks>
+        <name>Finish 2 proposal of hackathon</name>
+        <endTime>02/08/2017 12:00</endTime>
+        <priority>high</priority>
+        <tagged>hackathon</tagged>
+    </tasks>
+    <tasks>
+        <name>Make 2 career plan</name>
+        <priority>med</priority>
+        <tagged>profession</tagged>
+    </tasks>
+    <tasks>
+        <name>Report to the police</name>
+        <endTime>02/05/2017 12:00</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>Jog and train</name>
+        <startTime>02/05/2017 16:00</startTime>
+        <endTime>02/05/2017 17:00</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>Get another haircut</name>
+        <priority>high</priority>
+        <tagged>friends</tagged>
+    </tasks>
+    <tasks>
+        <name>Call Jayson again for the money he owed</name>
+        <endTime>22/05/2017 12:00</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>Research about Singapore s black market</name>
+        <startTime>02/09/2017 20:00</startTime>
+        <endTime>02/09/2017 22:00</endTime>
+        <priority>high</priority>
+        <tagged>friends</tagged>
+    </tasks>
+    <tasks>
+        <name>meditate deeply</name>
+        <startTime>04/05/2017 22:00</startTime>
+        <endTime>04/05/2017 22:10</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>Watch webcast</name>
+        <startTime>02/05/2017 10:00</startTime>
+        <endTime>02/05/2017 12:00</endTime>
+        <priority>high</priority>
+        <tagged>webcast</tagged>
+    </tasks>
+    <tasks>
+        <name>Attend gay fair</name>
+        <startTime>02/05/2017 12:00</startTime>
+        <endTime>02/05/2017 14:00</endTime>
+        <priority>high</priority>
+    </tasks>
+    <tasks>
+        <name>Finish proposal of the Hackathon</name>
+        <endTime>02/08/2017 12:00</endTime>
+        <priority>high</priority>
+        <tagged>hackathon</tagged>
+    </tasks>
+    <tasks>
+        <name>Make career plans</name>
+        <priority>med</priority>
+        <tagged>profession</tagged>
+    </tasks>
+    <tasks>
+        <name>Make career plans again</name>
+        <priority>med</priority>
+        <tagged>profession</tagged>
+    </tasks>
+    <tasks>
+        <name>Respond to police</name>
+        <endTime>02/05/2017 12:00</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>Jog for fun</name>
+        <startTime>02/05/2017 16:00</startTime>
+        <endTime>02/05/2017 17:00</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>Get a new shirt</name>
+        <priority>high</priority>
+        <tagged>friends</tagged>
+    </tasks>
+    <tasks>
+        <name>Call Daniel</name>
+        <endTime>22/05/2017 12:00</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tasks>
+        <name>Study economics</name>
+        <startTime>02/09/2017 20:00</startTime>
+        <endTime>02/09/2017 22:00</endTime>
+        <priority>high</priority>
+        <tagged>friends</tagged>
+    </tasks>
+    <tasks>
+        <name>Graduation ball</name>
+        <startTime>04/05/2017 22:00</startTime>
+        <endTime>04/05/2017 22:10</endTime>
+        <priority>low</priority>
+    </tasks>
+    <tags>webcast</tags>
+    <tags>hackathon</tags>
+    <tags>profession</tags>
+    <tags>friends</tags>
+</taskmanager>
