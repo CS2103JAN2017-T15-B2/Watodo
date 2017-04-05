@@ -36,7 +36,7 @@ public class TaskCard extends UiPart<Region> {
         setBackground(task);
         initTags(task);
     }
-
+    //@@author A0130138U
     private void setBackground(ReadOnlyTask task) {
         if(task.isTodo()){
             cardPane.setStyle("-fx-background-color: green");
@@ -46,7 +46,8 @@ public class TaskCard extends UiPart<Region> {
             cardPane.setStyle("-fx-background-color: purple");
         }
     }
-
+    
+    //@@author
     private void initTags(ReadOnlyTask task) {
         task.getTags().forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
     }
