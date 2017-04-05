@@ -219,7 +219,6 @@ public class LogicManagerTest {
                 String.format(AddCommand.MESSAGE_SUCCESS, toBeAdded),
                 expectedAB,
                 expectedAB.getTaskList());
-
     }
 
     @Test
@@ -443,6 +442,7 @@ public class LogicManagerTest {
             );
         }
 
+        //@@author A0143873Y
         /** Generates the correct add command based on the Task given */
         String generateAddCommand(Task p) {
             StringBuffer cmd = new StringBuffer();
@@ -454,6 +454,8 @@ public class LogicManagerTest {
             cmd.append(" from/").append(p.getStartTime().toString());
 
             cmd.append(" to/").append(p.getEndTime().toString());
+            
+            cmd.append(" p/").append(p.getPriority().toString());
 
             UniqueTagList tags = p.getTags();
             for (Tag t: tags) {
@@ -462,6 +464,7 @@ public class LogicManagerTest {
 
             return cmd.toString();
         }
+        //@@author
 
         /**
          * Generates an TaskManager with auto-generated Tasks.
