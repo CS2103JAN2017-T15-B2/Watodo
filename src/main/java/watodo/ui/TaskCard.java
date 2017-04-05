@@ -2,6 +2,8 @@ package watodo.ui;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
@@ -24,16 +26,22 @@ public class TaskCard extends UiPart<Region> {
     @FXML
     private FlowPane tags;
     @FXML
-    private Label status;
+    private ImageView status;
+    
+    private static final String TICK = "/images/tick.png";
+    private static final String CROSS = "/images/cross.png";
 
+    Image tick = new Image(TICK);
+    Image cross = new Image(CROSS);
+    
     public TaskCard(ReadOnlyTask task, int displayedIndex) {
         super(FXML);
         name.setText(task.getName().fullName);
         id.setText(displayedIndex + ". ");
         startTime.setText(task.getStartTime().value);
         endTime.setText(task.getEndTime().value);
-        status.setText(task.getStatus().toString());
         setBackground(task);
+        status.getImage();
         initTags(task);
     }
 
