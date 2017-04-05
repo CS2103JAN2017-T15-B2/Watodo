@@ -29,7 +29,7 @@ public class TaskCard extends UiPart<Region> {
     private ImageView status;
     @FXML
     private ImageView priority;
-    
+
     private static final String TICK = "/images/tick.png";
     private static final String CROSS = "/images/cross.png";
     private static final String LOW = "/images/low.png";
@@ -41,7 +41,7 @@ public class TaskCard extends UiPart<Region> {
     Image low = new Image(LOW);
     Image med = new Image(MED);
     Image high = new Image(HIGH);
-    
+
     public TaskCard(ReadOnlyTask task, int displayedIndex) {
         super(FXML);
         name.setText(task.getName().fullName);
