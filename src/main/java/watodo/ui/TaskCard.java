@@ -25,7 +25,7 @@ public class TaskCard extends UiPart<Region> {
     private FlowPane tags;
     @FXML
     private Label status;
-    
+
     public TaskCard(ReadOnlyTask task, int displayedIndex) {
         super(FXML);
         name.setText(task.getName().fullName);
