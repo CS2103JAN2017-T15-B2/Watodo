@@ -89,10 +89,15 @@ public class TaskManager implements ReadOnlyTaskManager {
         tasks.add(p);
     }
 
+    // @@author A0164393Y
+
     /**
      * Marks the status of the task given.
+     *
      * @throws TaskNotFoundException
+     * @throws DuplicateTaskException
      */
+
     public void markTask(int index, Task editedTask) throws TaskNotFoundException {
         tasks.markTask(index, editedTask);
     }
@@ -181,6 +186,7 @@ public class TaskManager implements ReadOnlyTaskManager {
     }
 
     //@@author A0119505J
+    @Override
     public boolean isEmpty() {
         return tasks.isEmpty();
     }

@@ -47,10 +47,13 @@ public interface Model {
     void updateFilteredTaskList(Set<String> keywords);
 
 
-    //@@author A0119505J
+    // @@author A0164393Y
 
-    /** Updates the status
-     * @throws TaskNotFoundException */
+    /**
+     * Updates the status
+     *
+     * @throws TaskNotFoundException
+     */
     void markTask(int index, Task editedTask) throws TaskNotFoundException;
 
     void addTaskUndo(Task task) throws DuplicateTaskException;
