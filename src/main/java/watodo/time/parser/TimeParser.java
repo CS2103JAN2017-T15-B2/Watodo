@@ -12,7 +12,7 @@ import watodo.model.task.Time;
  */
 public interface TimeParser {
 
-    public static final DateTimeFormatter defaultFormatter = DateTimeFormatter.ofPattern(Time.PATTERN);
+    public static DateTimeFormatter defaultFormatter = DateTimeFormatter.ofPattern(Time.PATTERN);
 
     /**
      * Verify whether user input applies to the format of the respective

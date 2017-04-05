@@ -13,7 +13,7 @@ import watodo.commons.exceptions.IllegalValueException;
 
 //@@author A0143873Y
 public class Time {
-    public static final DateTimeFormatter defaultFormatter = DateTimeFormatter.ofPattern(Time.PATTERN);
+    public static DateTimeFormatter defaultFormatter = DateTimeFormatter.ofPattern(Time.PATTERN);
 
     public static final String PATTERN = "dd/MM/yyyy HH:mm";
     public static final String MESSAGE_TIME_CONSTRAINTS = "Task time should follow '" + PATTERN + "' format.";
