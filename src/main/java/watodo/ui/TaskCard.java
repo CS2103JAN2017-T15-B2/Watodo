@@ -41,8 +41,16 @@ public class TaskCard extends UiPart<Region> {
         startTime.setText(task.getStartTime().value);
         endTime.setText(task.getEndTime().value);
         setBackground(task);
-        status.getImage();
+        setStatusIcon(task);
         initTags(task);
+    }
+
+    private void setStatusIcon(ReadOnlyTask task) {
+        if(task.getStatus().status == 0){
+            status.setImage(cross);
+        }else if(task.getStatus().status == 1){
+            status.setImage(tick);
+        }
     }
 
     //@@author A0130138U
