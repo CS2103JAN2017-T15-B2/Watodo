@@ -54,7 +54,7 @@ public class UndoCommand extends Command {
             // undoUpdate(undoInfo.getTasks().get(CURRENT_TASK), undoInfo.getTasks().get(ORIGINAL_TASK_INDEX));
             // return new CommandResult(MESSAGE_SUCCESS);
         // case MARK_CMD_ID:
-            // undoMark(undoInfo.getTasks().get(CURRENT_TASK));
+            // undoMark(undoInfo.getTasks().get(CURRENT_TASK).index, undoInfo.getTasks().get(CURRENT_TASK));
             // return new CommandResult(MESSAGE_SUCCESS);
         case CLR_CMD_ID : {
             undoClear(undoInfo.getTasks());
@@ -85,7 +85,9 @@ public class UndoCommand extends Command {
         }
     }
 
-    private void undoDelete(Task task) {
+    // the naming convention here is the reverse
+    // developer MUST NOT change these two functions
+    private void undoAdd(Task task) {
         try {
             model.deleteTaskUndo(task);
         } catch (TaskNotFoundException e) {
@@ -93,7 +95,7 @@ public class UndoCommand extends Command {
         }
     }
 
-    private void undoAdd(Task task) {
+    private void undoDelete(Task task) {
         try {
             model.addTaskUndo(task);
         } catch (UniqueTaskList.DuplicateTaskException e) {
