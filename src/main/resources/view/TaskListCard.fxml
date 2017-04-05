@@ -30,6 +30,7 @@
 					<children>
 						<HBox alignment="CENTER_LEFT" spacing="5">
 							<children>
+                        <ImageView fx:id="priority" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
 								<HBox>
 									<Label fx:id="id" minHeight="35.0" prefHeight="35.0" styleClass="cell_big_label" />
 									<Label fx:id="name" minHeight="35.0" prefHeight="35.0" styleClass="cell_big_label" text="\$first" />

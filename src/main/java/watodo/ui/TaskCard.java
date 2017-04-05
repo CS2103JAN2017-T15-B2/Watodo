@@ -27,12 +27,20 @@ public class TaskCard extends UiPart<Region> {
     private FlowPane tags;
     @FXML
     private ImageView status;
+    @FXML
+    private ImageView priority;
     
     private static final String TICK = "/images/tick.png";
     private static final String CROSS = "/images/cross.png";
-
+    private static final String LOW = "/images/low.png";
+    private static final String MED = "/images/med.png";
+    private static final String HIGH = "/images/high.png";
+    
     Image tick = new Image(TICK);
     Image cross = new Image(CROSS);
+    Image low = new Image(LOW);
+    Image med = new Image(MED);
+    Image high = new Image(HIGH);
     
     public TaskCard(ReadOnlyTask task, int displayedIndex) {
         super(FXML);
@@ -42,7 +50,18 @@ public class TaskCard extends UiPart<Region> {
         endTime.setText(task.getEndTime().value);
         setBackground(task);
         setStatusIcon(task);
+        setPriorityIcon(task);
         initTags(task);
+    }
+
+    private void setPriorityIcon(ReadOnlyTask task) {
+        if(task.getPriority().priorityLevel == "high"){
+            priority.setImage(high);
+        }else if(task.getPriority().priorityLevel == "med"){
+            priority.setImage(med);
+        }else if(task.getPriority().priorityLevel == "low"){
+            priority.setImage(low);
+        }
     }
 
     private void setStatusIcon(ReadOnlyTask task) {
