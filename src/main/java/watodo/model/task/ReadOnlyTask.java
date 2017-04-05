@@ -31,8 +31,8 @@ public interface ReadOnlyTask {
                 && other.getEndTime().equals(this.getEndTime())
                 );
     }
-    
-    //@@author A0143873Y
+
+    //@@author A0130138U
     /**
      * Check whether this {@code Task} is todo.
      * @return {@code true} if and only if this {@code Task} has neither startTime nor endTime.
@@ -51,6 +51,7 @@ public interface ReadOnlyTask {
      */
     public boolean isEvent();
     //@@author
+
 
     /**
      * Formats the task as text, showing all contact details.

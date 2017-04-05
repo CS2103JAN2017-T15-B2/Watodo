@@ -33,9 +33,21 @@ public class TaskCard extends UiPart<Region> {
         startTime.setText(task.getStartTime().value);
         endTime.setText(task.getEndTime().value);
         status.setText(task.getStatus().toString());
+        setBackground(task);
         initTags(task);
     }
-
+    //@@author A0130138U
+    private void setBackground(ReadOnlyTask task) {
+        if(task.isTodo()){
+            cardPane.setStyle("-fx-background-color: green");
+        }else if(task.isDeadline()){
+            cardPane.setStyle("-fx-background-color: red");
+        }else if(task.isEvent()){
+            cardPane.setStyle("-fx-background-color: purple");
+        }
+    }
+    
+    //@@author
     private void initTags(ReadOnlyTask task) {
         task.getTags().forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
     }
