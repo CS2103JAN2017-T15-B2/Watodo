@@ -54,7 +54,7 @@ public class TaskCardHandle extends GuiHandle {
     public String getEndTime() {
         return getTextFromLabel(END_TIME_FIELD_ID);
     }
-    //@@author
+    //@@author A0119505J
 
     public String getPriority() {
         return getTextFromLabel(PRIORITY_FIELD_ID);
