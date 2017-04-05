@@ -36,6 +36,7 @@ public class TaskCard extends UiPart<Region> {
         setBackground(task);
         initTags(task);
     }
+    
     //@@author A0130138U
     private void setBackground(ReadOnlyTask task) {
         if(task.isTodo()){
