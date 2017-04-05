@@ -33,22 +33,10 @@ public interface ReadOnlyTask {
     }
 
     //@@author A0130138U
-    /**
-     * Check whether this {@code Task} is todo.
-     * @return {@code true} if and only if this {@code Task} has neither startTime nor endTime.
-     */
     public boolean isTodo();
 
-    /**
-     * Check whether this {@code Task} is deadline.
-     * @return {@code true} if and only if this {@code Task} has endTime but not startTime.
-     */
     public boolean isDeadline();
 
-    /**
-     * Check whether this {@code Task} is an event.
-     * @return {@code true} if and only if this {@code Task} has both startTime and endTime.
-     */
     public boolean isEvent();
     //@@author
 
