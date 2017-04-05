@@ -35,7 +35,7 @@ public class TaskCard extends UiPart<Region> {
     private static final String LOW = "/images/low.png";
     private static final String MED = "/images/med.png";
     private static final String HIGH = "/images/high.png";
-    
+
     Image tick = new Image(TICK);
     Image cross = new Image(CROSS);
     Image low = new Image(LOW);
