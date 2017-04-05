@@ -50,16 +50,30 @@ Format: `help`
 ### 2.2. Adding a task: `add`
 
 Adds a task to the Task Manager<br>
-Format: `add [TASK-NAME] d/[DD/MM/YYYY] c/[HH:MM] t/[KEY-WORD]...` <br>
+Standard format: `add [TASK-NAME] d/[DD/MM/YYYY] c/[HH:MM] t/[KEY-WORD]...` <br>
+Alternative format for 
 
+> * After the command word 'add', all fields are optional except name must be entered.
 > * Task can have any number of tags (including 0)
-> * Date should follow DD/MM/YYYY format
-> * Clock time is 24-hour format
-> * the sequence of input should strictly follow the format.
+> * Input field may not strictly follow the given order
 
-Examples:
+##### Supported Time Formats
 
-* `add school camp from 3pm today to 5pm tomorrow`
+| Time Format          | Example                |
+|----------------------|------------------------|
+| dd/MM/yyyy hh:mm     | 31/10/2017 16.30       |
+| dd MMMM yyyy hh.mma  | 31 Oct 2017 4.30pm     |
+| yyyy-MM-dd hh.mma    | 2017-12-19 4.30pm      |
+| today h.mma          | today 4.30pm           |
+| tmr h.mma            | tmr 4.30pm             |
+
+
+Examples: <br>
+* `add meditate `
+* `add complete tutorial 3 to/tmr 23.59pm`
+* `add Train pokemons from/today 9.00am to/tmr 10pm p/high t/imaginary`
+
+> * If a command includes the start time, it must have an end time, otherwise it is an invalid command.
 
 ### 2.3. Listing all tasks : `list`
 
