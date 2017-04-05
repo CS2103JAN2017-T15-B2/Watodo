@@ -40,11 +40,11 @@ public class TaskCard extends UiPart<Region> {
     //@@author A0130138U
     private void setBackground(ReadOnlyTask task) {
         if(task.isTodo()){
-            cardPane.setStyle("-fx-background-color: green");
+            cardPane.setStyle("-fx-background-color: #6699CC");
         }else if(task.isDeadline()){
-            cardPane.setStyle("-fx-background-color: red");
+            cardPane.setStyle("-fx-background-color: #E3CA73");
         }else if(task.isEvent()){
-            cardPane.setStyle("-fx-background-color: purple");
+            cardPane.setStyle("-fx-background-color: #7F9F7F");
         }
     }
 
