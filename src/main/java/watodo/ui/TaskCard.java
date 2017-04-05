@@ -46,7 +46,7 @@ public class TaskCard extends UiPart<Region> {
             cardPane.setStyle("-fx-background-color: purple");
         }
     }
-    
+
     //@@author
     private void initTags(ReadOnlyTask task) {
         task.getTags().forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
