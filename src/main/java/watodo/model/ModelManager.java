@@ -123,12 +123,16 @@ public class ModelManager extends ComponentManager implements Model {
         indicateTaskManagerChanged();
     }
 
+    // @@author A0164393Y
+
+    @Override
     public void markTask(int index, Task editedTask) throws TaskNotFoundException {
         taskManager.markTask(index, editedTask);
         indicateTaskManagerChanged();
     }
 
     //@@author A0119505J
+    @Override
     public void markTaskUndo(int index, Task editedTask) throws TaskNotFoundException {
         taskManager.markTask(index, editedTask);
         updateFilteredListToShowAll();
@@ -167,6 +171,7 @@ public class ModelManager extends ComponentManager implements Model {
 
     interface Expression {
         boolean satisfies(ReadOnlyTask task);
+        @Override
         String toString();
     }
 
@@ -191,6 +196,7 @@ public class ModelManager extends ComponentManager implements Model {
 
     interface Qualifier {
         boolean run(ReadOnlyTask task);
+        @Override
         String toString();
     }
 

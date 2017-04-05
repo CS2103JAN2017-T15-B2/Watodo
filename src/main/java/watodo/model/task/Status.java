@@ -2,6 +2,8 @@ package watodo.model.task;
 
 import watodo.commons.exceptions.IllegalValueException;
 
+//@@author A0164393Y
+
 /**
  * Represents a Task's status in the task manager. Guarantees: transaction
  * between states are doable.

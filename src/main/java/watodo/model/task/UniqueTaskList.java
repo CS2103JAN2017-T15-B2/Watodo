@@ -1,5 +1,6 @@
 package watodo.model.task;
 
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
@@ -78,10 +79,13 @@ public class UniqueTaskList implements Iterable<Task> {
         return taskFoundAndDeleted;
     }
 
+    // @@author A0164393Y
+
     /**
      * Marks a task.
      *
-     * @throws TaskNotFoundException if the task to mark is missing in the list.
+     * @throws TaskNotFoundException
+     *             if the task to mark is missing in the list.
      */
     public void markTask(int index, Task editedTask) throws TaskNotFoundException {
         assert editedTask != null;
@@ -89,6 +93,11 @@ public class UniqueTaskList implements Iterable<Task> {
         if (!internalList.contains(editedTask)) {
             throw new TaskNotFoundException();
         }
+
+        Task taskToUpdate = internalList.get(index);
+
+        taskToUpdate.setStatus(editedTask.getStatus());
+        internalList.set(index, taskToUpdate);
     }
 
     public void setTasks(UniqueTaskList replacement) {
