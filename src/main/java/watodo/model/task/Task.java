@@ -156,7 +156,7 @@ public class Task implements ReadOnlyTask {
      * @return {@code true} if and only if this {@code Task} has neither startTime nor endTime.
      */
     public boolean isTodo() {
-        return startTime == null && endTime == null;
+        return startTime.value == null && endTime.value == null;
     }
 
     /**
@@ -164,7 +164,7 @@ public class Task implements ReadOnlyTask {
      * @return {@code true} if and only if this {@code Task} has endTime but not startTime.
      */
     public boolean isDeadline() {
-        return startTime == null && endTime != null;
+        return startTime.value == null && endTime.value != null;
     }
 
     /**
@@ -172,7 +172,7 @@ public class Task implements ReadOnlyTask {
      * @return {@code true} if and only if this {@code Task} has both startTime and endTime.
      */
     public boolean isEvent() {
-        return startTime != null && endTime != null;
+        return startTime.value != null && endTime.value != null;
     }
     //@@author
 
