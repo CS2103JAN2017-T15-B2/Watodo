@@ -27,13 +27,13 @@ public class TaskCard extends UiPart<Region> {
     private FlowPane tags;
     @FXML
     private ImageView status;
-    
+
     private static final String TICK = "/images/tick.png";
     private static final String CROSS = "/images/cross.png";
 
     Image tick = new Image(TICK);
     Image cross = new Image(CROSS);
-    
+
     public TaskCard(ReadOnlyTask task, int displayedIndex) {
         super(FXML);
         name.setText(task.getName().fullName);
