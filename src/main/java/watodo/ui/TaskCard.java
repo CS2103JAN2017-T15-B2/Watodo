@@ -25,7 +25,7 @@ public class TaskCard extends UiPart<Region> {
     private FlowPane tags;
     @FXML
     private Label status;
-
+    
     public TaskCard(ReadOnlyTask task, int displayedIndex) {
         super(FXML);
         name.setText(task.getName().fullName);
@@ -39,7 +39,9 @@ public class TaskCard extends UiPart<Region> {
 
     //@@author A0130138U
     private void setBackground(ReadOnlyTask task) {
-        if(task.isTodo()){
+        if(task.getStatus().status == 1){
+            cardPane.setStyle("-fx-background-color: #C4C4B7");
+        }else if(task.isTodo()){
             cardPane.setStyle("-fx-background-color: #6699CC");
         }else if(task.isDeadline()){
             cardPane.setStyle("-fx-background-color: #E3CA73");
