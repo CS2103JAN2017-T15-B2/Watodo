@@ -56,19 +56,19 @@ public class TaskCard extends UiPart<Region> {
     }
 
     private void setPriorityIcon(ReadOnlyTask task) {
-        if (task.getPriority().priorityLevel == "high"){
+        if (task.getPriority().priorityLevel == "high") {
             priority.setImage(high);
-        } else if (task.getPriority().priorityLevel == "med"){
+        } else if (task.getPriority().priorityLevel == "med") {
             priority.setImage(med);
-        } else if (task.getPriority().priorityLevel == "low"){
+        } else if (task.getPriority().priorityLevel == "low") {
             priority.setImage(low);
         }
     }
 
     private void setStatusIcon(ReadOnlyTask task) {
-        if (task.getStatus().status == 0){
+        if (task.getStatus().status == 0) {
             status.setImage(cross);
-        } else if (task.getStatus().status == 1){
+        } else if (task.getStatus().status == 1) {
             status.setImage(tick);
         }
     }
