@@ -56,8 +56,8 @@ Role: Developer, Scheduling and tracking, Final version software, some documenta
 Components in charge of: GUI<br>
 
 Features implemented: <br>
-   *TaskCard.java<br>
-   *TaskListCard.fxml<br>
+   * TaskCard.java<br>
+   * TaskListCard.fxml<br>
 
 Code written:<br>
    * [functional codes](https://github.com/CS2103JAN2017-T15-B2/main/blob/master/collated/main/A0130138U.md)<br>
