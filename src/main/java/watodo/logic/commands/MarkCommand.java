@@ -38,7 +38,7 @@ public class MarkCommand extends Command {
         List<ReadOnlyTask> lastShownList = model.getFilteredTaskList();
 
         String[] parameters = keywords.toArray(new String[keywords.size()]);
-        int filteredTaskListIndex = Integer.parseInt(parameters[0]);
+        int filteredTaskListIndex = Integer.parseInt(parameters[0]) - 1;
 
         ReadOnlyTask taskToEdit = lastShownList.get(filteredTaskListIndex);
         Task editedTask = createEditedTask(taskToEdit, parameters[1]);
