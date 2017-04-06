@@ -32,10 +32,20 @@ Other major contributions:<br>
 #### [Li Wentong](http://github.com/Wentong-DST) <br>
 <img src="images/wentong.png" width="150"><br>
 Role: Developer, Integration, Scheduling and tracking, Final version software, some documentation <br>
-Components in charge of:<br>
+
+Components in charge of: logic, model, testing<br>
 Features implemented: <br>
+   * UndoCommand integration<br>
+   * Priority.java<br>
+   * Task partially coding<br>
+   * Design test cases for commands<br>
 Code written:<br>
+   * [functional codes](https://github.com/CS2103JAN2017-T15-B2/main/blob/master/collated/main/A0119505J.md)<br>
+   * [test codes](https://github.com/CS2103JAN2017-T15-B2/main/blob/master/collated/test/A0119505J.md)<br>
 Other major contributions:<br>
+   * Refactoring and code cleaning<br>
+   * Debug checkstyle errors<br>
+   * Monitor coverage and design corresponding test cases<br>
 
 -----
 

@@ -15,7 +15,6 @@ import watodo.commons.exceptions.IllegalValueException;
 import watodo.commons.util.StringUtil;
 import watodo.model.tag.Tag;
 import watodo.model.tag.UniqueTagList;
-import watodo.model.task.Address;
 import watodo.model.task.Name;
 import watodo.model.task.Priority;
 import watodo.model.task.Time;
@@ -85,14 +84,6 @@ public class ParserUtil {
     public static Optional<Time> parseTime(Optional<String> phone) throws IllegalValueException {
         assert phone != null;
         return phone.isPresent() ? Optional.of(new Time(phone.get())) : Optional.empty();
-    }
-
-    /**
-     * Parses a {@code Optional<String> address} into an {@code Optional<Address>} if {@code address} is present.
-     */
-    public static Optional<Address> parseAddress(Optional<String> address) throws IllegalValueException {
-        assert address != null;
-        return address.isPresent() ? Optional.of(new Address(address.get())) : Optional.empty();
     }
 
     //@@author A0143873Y
