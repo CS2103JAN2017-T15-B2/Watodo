@@ -60,11 +60,11 @@ public class TaskCard extends UiPart<Region> {
      * low as green, med as yellow and high as red
      */
     private void setPriorityIcon(ReadOnlyTask task) {
-        if (task.getPriority().priorityLevel == "high") {
+        if (task.getPriority().priorityLevel.equals("high")) {
             priority.setImage(high);
-        } else if (task.getPriority().priorityLevel == "med") {
+        } else if (task.getPriority().priorityLevel.equals("med")) {
             priority.setImage(med);
-        } else if (task.getPriority().priorityLevel == "low") {
+        } else if (task.getPriority().priorityLevel.equals("low")) {
             priority.setImage(low);
         }
     }
