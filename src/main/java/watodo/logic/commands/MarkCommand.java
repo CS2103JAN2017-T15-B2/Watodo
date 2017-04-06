@@ -39,8 +39,11 @@ public class MarkCommand extends Command {
 
         String[] parameters = keywords.toArray(new String[keywords.size()]);
         int filteredTaskListIndex = Integer.parseInt(parameters[0]) - 1;
-
-        ReadOnlyTask taskToEdit = lastShownList.get(filteredTaskListIndex);
+        ReadOnlyTask taskToEdit;
+        if (filteredTaskListIndex < lastShownList.size() && filteredTaskListIndex != -1)
+            taskToEdit = lastShownList.get(filteredTaskListIndex);
+        else
+            throw new CommandException(MESSAGE_INVALID_TASK);
         Task editedTask = createEditedTask(taskToEdit, parameters[1]);
 
         //@@author A0119505J
