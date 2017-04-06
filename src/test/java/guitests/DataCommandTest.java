@@ -8,14 +8,14 @@ import watodo.commons.core.Messages;
 public class DataCommandTest extends TaskManagerGuiTest {
 
     @Test
-    public void find_invalidCommand_fail() {
+    public void data_invalidCommand_fail() {
         commandBox.runCommand("changepath");
         assertResultMessage(Messages.MESSAGE_UNKNOWN_COMMAND);
     }
 
     @Test
     public void assertDataCommandSuccess() {
-        commandBox.runCommand("change_path /data");
+        commandBox.runCommand("change_path data");
         assertResultMessage("Changed data file location. You need to restart the app for changes to take effect.");
     }
 }
