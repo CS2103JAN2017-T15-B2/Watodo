@@ -56,12 +56,12 @@ Role: Developer, Scheduling and tracking, Final version software, some documenta
 Components in charge of: GUI<br>
 
 Features implemented: <br>
-   *Images for GUI icons<br>
-   *Background color for Taskcard Panel<br>
    *TaskCard.java<br>
-   
+   *TaskListCard.fxml<br>
+
 Code written:<br>
-   *[Codes for Images and colour for GUI](https://github.com/CS2103JAN2017-T15-B2/main/blob/master/collated/main/A0143873Y.md)<br>
+   * [functional codes](https://github.com/CS2103JAN2017-T15-B2/main/blob/master/collated/main/A0130138U.md)<br>
+   * [test codes](https://github.com/CS2103JAN2017-T15-B2/main/blob/master/collated/test/A0130138U.md)<br>
    
 Other major contributions:<br>
    *Main author for Issue Tracker<br>
