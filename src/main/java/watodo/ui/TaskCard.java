@@ -55,6 +55,10 @@ public class TaskCard extends UiPart<Region> {
         initTags(task);
     }
 
+    /**
+     * read priority of task and put priority icon on UI
+     * low as green, med as yellow and high as red
+     */
     private void setPriorityIcon(ReadOnlyTask task) {
         if (task.getPriority().priorityLevel == "high") {
             priority.setImage(high);
@@ -65,6 +69,10 @@ public class TaskCard extends UiPart<Region> {
         }
     }
 
+    /**
+     * read status of task and put status icon on UI
+     * completed as tick, uncompleted as cross
+     */
     private void setStatusIcon(ReadOnlyTask task) {
         if (task.getStatus().status == 0) {
             status.setImage(cross);
@@ -73,6 +81,10 @@ public class TaskCard extends UiPart<Region> {
         }
     }
 
+    /**
+     * Categorize task type by taskcard background color
+     * grey when task is completed
+     */
     private void setBackground(ReadOnlyTask task) {
 
         if (task.getStatus().status == 1) {
