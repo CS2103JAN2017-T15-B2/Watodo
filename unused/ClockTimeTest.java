@@ -28,7 +28,7 @@ public class ClockTimeTest {
         assertFalse(ClockTime.isValidClockTime("09:0:09"));
         assertFalse(ClockTime.isValidClockTime("A0:30")); // with alphabets
 
-        // valid clock Time
+        // valid clock Time, with boundary values
         assertTrue(ClockTime.isValidClockTime("00:00"));
         assertTrue(ClockTime.isValidClockTime("23:59")); // minimal
         assertTrue(ClockTime.isValidClockTime("19:59"));
