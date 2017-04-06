@@ -64,7 +64,7 @@ Code written:<br>
    * [test codes](https://github.com/CS2103JAN2017-T15-B2/main/blob/master/collated/test/A0130138U.md)<br>
    
 Other major contributions:<br>
-   *Main author for Issue Tracker<br>
-   *Set up github.io<br>
+   * Main author for Issue Tracker<br>
+   * Set up github.io<br>
 
 refer to http://www.comp.nus.edu.sg/~cs2103/AY1617S2/contents/AboutUs.md for format<br>
