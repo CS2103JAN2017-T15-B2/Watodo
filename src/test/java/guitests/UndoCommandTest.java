@@ -19,10 +19,6 @@ public class UndoCommandTest extends TaskManagerGuiTest {
         commandBox.runCommand("add Attend Pokemon Summit from/02/05/2017 10:00 to/02/05/2017 12:00 p/high t/friends");
         commandBox.runCommand("undo");
         assertResultMessage(UndoCommand.MESSAGE_SUCCESS);
-        //undo mark needs to be fixed
-        //commandBox.runCommand("mark 1 completed");
-        //commandBox.runCommand("undo");
-        //assertResultMessage(UndoCommand.MESSAGE_SUCCESS);
         commandBox.runCommand("undo");
         assertResultMessage(UndoCommand.MESSAGE_FAILURE);
     }
@@ -35,5 +31,23 @@ public class UndoCommandTest extends TaskManagerGuiTest {
         assertResultMessage(UndoCommand.MESSAGE_SUCCESS);
     }
 
+    @Test
+    public void undoDeleteTest() {
+        commandBox.runCommand("clear");
+        assertResultMessage(ClearCommand.MESSAGE_SUCCESS);
+        commandBox.runCommand("add Attend Pokemon from/02/05/2017 10:00 to/02/05/2017 12:00 p/high t/friends");
+        commandBox.runCommand("delete 1");
+        commandBox.runCommand("undo");
+        assertResultMessage(UndoCommand.MESSAGE_SUCCESS);
+    }
 
+    @Test
+    public void undoMarkTest() {
+        commandBox.runCommand("clear");
+        assertResultMessage(ClearCommand.MESSAGE_SUCCESS);
+        commandBox.runCommand("add Attend Pokemon from/02/05/2017 10:00 to/02/05/2017 12:00 p/high t/friends");
+        commandBox.runCommand("mark 1 completed");
+        commandBox.runCommand("undo");
+        assertResultMessage(UndoCommand.MESSAGE_SUCCESS);
+    }
 }
