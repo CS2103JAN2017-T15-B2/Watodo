@@ -50,7 +50,7 @@ Format: `help`
 ### 2.2. Adding a task: `add`
 
 Adds a task to the Task Manager<br>
-Standard format: `add [TASK-NAME] d/[DD/MM/YYYY] c/[HH:MM] t/[KEY-WORD]...` <br>
+Standard format: `add [TASK-NAME] from/[DD/MM/YYYY] [HH:MM] to/[DD/MM/YYYY] [HH:MM] p/[priority] t/[KEY-WORD]...`<br>
 Alternative format for 
 
 > * After the command word 'add', all fields are optional except name must be entered.
