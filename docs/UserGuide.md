@@ -51,22 +51,21 @@ Format: `help`
 
 Adds a task to the Task Manager<br>
 Standard format: `add [TASK-NAME] from/[DD/MM/YYYY] [HH:MM] to/[DD/MM/YYYY] [HH:MM] p/[priority] t/[KEY-WORD]...`<br>
-Alternative format for 
 
 > * After the command word 'add', all fields are optional except name must be entered.
+> * Three types of keyword for priority field allowed: 'low', 'med' and 'high'
 > * Task can have any number of tags (including 0)
-> * Input field may not strictly follow the given order
+> * Input field should strictly follow the given order
 
 ##### Supported Time Formats
 
 | Time Format          | Example                |
 |----------------------|------------------------|
-| dd/MM/yyyy hh:mm     | 31/10/2017 16.30       |
-| dd MMMM yyyy hh.mma  | 31 Oct 2017 4.30pm     |
-| yyyy-MM-dd hh.mma    | 2017-12-19 4.30pm      |
+| dd/MM/yyyy hh:mm     | 31/10/2017 16:30       |
+| dd MMM yyyy hh.mma   | 31 Oct 2017 4.30pm     |
+| yyyy-MM-dd hh.mma    | 2017-10-31 4.30pm      |
 | today h.mma          | today 4.30pm           |
 | tmr h.mma            | tmr 4.30pm             |
-
 
 Examples: <br>
 * `add meditate `
@@ -82,8 +81,10 @@ Format: `list`
 
 ### 2.4. Editing a task : `edit`
 
-Edits an existing task in the Task Manager.<br>
-Format: `edit [TASK-NAME] d/[DD/MM/YYYY] c/[HH:MM] t/[KEY-WORD]...`
+Edits an existing task in the Task Manager<br>
+Note: when editing the date & time of a task<br>
+both date and time must be put, only format allowed is dd/MM/yyyy hh:mm. e.g. 31/10/2017 16:30
+Format: `edit [INDEX] [TASK-NAME] from/[DD/MM/YYYY] [HH:MM] to/[DD/MM/YYYY] [HH:MM]p/[PRIORITY-LEVEL] t/[KEY-WORD]...`
 
 > * Edits the task at the specified `INDEX`.
     The index refers to the index number shown in the last task listing.<br>
@@ -93,11 +94,14 @@ Format: `edit [TASK-NAME] d/[DD/MM/YYYY] c/[HH:MM] t/[KEY-WORD]...`
 
 Examples:
 
-* `edit 1 -name go home`<br>
+* `edit 1 from/23/03/2017 19:00`<br>
   Change name of task at index 1 to "go home"
 
-* `edit 2 -start 3pm 5 sept -end 4pm 6 sept`<br>
+* `edit 1 from/23/03/2017 19:00 to/23/03/2017 19:10 p/high`<br>
   Change start and end times of timed tasks
+  
+* `edit 1 newTaskName`
+  Change the name of a task only
 
 
 ### 2.5. Finding all tasks containing any keyword in their name: `find`
@@ -166,8 +170,18 @@ Format: `mark 1 completed`
 
 ## 4. Command Summary
 
-* **Add**  `add NAME from [s/START_TIME] [s/START_DATE]  [e/END_TIME] [e/END_DATE]...` <br>
-  e.g. `add school camp from 3pm today to 5pm tomorrow`
+* **Add**  `add NAME from/[s/START_DATE] [START_TIME]  TO/END_DATE] [END_TIME]...` <br>
+  e.g. `add school camp from/03/04/2017 19:00 to/04/04/2017 20:00`<br>
+  add a todo Task<br>
+  `add get haircut`<br>
+  add an event task<br>
+  `add Attend CCA meeting from/today 3.00pm to/today 5.00pm`
+  `add call Darius to/2017-04-07 3.00pm`<br>
+ add a deadline task<br>
+  `add call Oguz to/today 3.00pm`<br>
+  `add call Min Hui to/tmr 3.00pm`<br>
+ add a deadline task with tags
+   `add call Wen Tong to/7 Apr 2017 3.00pm t/lunch`
 
 * **Clear** : `clear`
 
