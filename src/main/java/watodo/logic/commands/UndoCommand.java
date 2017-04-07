@@ -27,7 +27,6 @@ public class UndoCommand extends Command {
     public static final int UPD_CMD_ID = 3;
     public static final int MARK_CMD_ID = 4;
     public static final int CLR_CMD_ID = 5;
-    public static final int STR_CMD_ID = 6;
 
     private static final int CURRENT_TASK = 0;
     private UndoInfo undoInfo;
@@ -60,22 +59,10 @@ public class UndoCommand extends Command {
             undoClear(undoInfo.getTasks());
             return new CommandResult(MESSAGE_SUCCESS);
         }
-        // case STR_CMD_ID:
-            // undoSetStorage();
-            // return new CommandResult(MESSAGE_SUCCESS);
         default :
             return new CommandResult(MESSAGE_FAILURE);
         }
     }
-
-    // private void undoSetStorage() {
-        // try {
-            // String filePath = model.changeFileStorageUndo(undoInfo.getFilePath());
-            // undoInfo.setFilePath(filePath);
-        // } catch (IOException | ParseException | JSONException e) {
-            // e.printStackTrace();
-        // }
-    // }
 
     private void undoClear(ArrayList<Task> tasks) {
         try {
