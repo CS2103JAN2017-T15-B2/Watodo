@@ -37,8 +37,9 @@ public class Time {
             if (!isValidTime(trimmedTime)) {
                 throw new IllegalValueException(MESSAGE_TIME_CONSTRAINTS);
             }
-            this.value = trimmedTime;
-            this.dateTime = LocalDateTime.parse(time, format);
+            this.value = trimmedTime.equals("") ? null : trimmedTime;
+            this.dateTime = trimmedTime.equals("") ? null : LocalDateTime.parse(time, format);
+            //the 2 lines of codes above allows empty input to be interpreted as setting time as null
         } else {
             this.value = null;
             this.dateTime = null;
@@ -49,7 +50,7 @@ public class Time {
      * Returns true if a given string is a valid task Time string.
      */
     public static boolean isValidTime(String test) {
-        return test.matches(TIME_VALIDATION_REGEX);
+        return test.equals("") ? true : test.matches(TIME_VALIDATION_REGEX);
     }
 
     @Override
