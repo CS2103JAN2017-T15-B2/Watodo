@@ -98,8 +98,14 @@ public class TaskManager implements ReadOnlyTaskManager {
      * @throws DuplicateTaskException
      */
 
+    // @@author A0119505J
     public void markTask(int index, Task editedTask) throws TaskNotFoundException {
-        tasks.markTask(index, editedTask);
+        try {
+            tasks.markTask(index, editedTask);
+        } 
+        catch (TaskNotFoundException e) {
+            e.printStackTrace();
+        }    
     }
 
     /**
