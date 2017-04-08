@@ -5,6 +5,9 @@ import java.util.ArrayList;
 //@@author A0143873Y
 /**
  * Assigns time parsers based on user input.
+ * Applying Separation of Concerns Principle, this class gathers an ArrayList
+ * of TimeParser and help checks which one can parse the given time format before
+ * assigning.
  */
 public class TimeParserSelector {
     private ArrayList<TimeParser> parserList;

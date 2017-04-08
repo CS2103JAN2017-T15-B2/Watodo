@@ -1,4 +1,3 @@
-
 package watodo.time.parser;
 
 import java.time.format.DateTimeFormatter;
@@ -8,7 +7,7 @@ import watodo.model.task.Time;
 //@@author A0143873Y
 /**
  * All time parser classes must implement this interface
- *
+ * This adheres to Dependency Inversion Principle.
  */
 public interface TimeParser {
 

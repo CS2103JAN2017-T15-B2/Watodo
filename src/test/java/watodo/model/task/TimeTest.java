@@ -24,7 +24,7 @@ public class TimeTest {
         assertFalse(Time.isValidTime("01/08/1996 24:00")); // invalid hour
         assertFalse(Time.isValidTime("30/01/1996 23:60")); //invalid minute
 
-        // valid phone numbers
+        // valid date time values
         assertTrue(Time.isValidTime("06/01/2016 00:00"));
         assertTrue(Time.isValidTime("10/08/1996 05:00"));
         assertTrue(Time.isValidTime("01/12/2015 23:59"));
