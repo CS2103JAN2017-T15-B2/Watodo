@@ -29,5 +29,6 @@ public class PriorityTest {
         Priority priority1 = new Priority("");
         Priority priority2 = new Priority("low");
         assertTrue(priority1.priorityLevel == priority2.priorityLevel);
+        assertTrue(priority1.equals(priority2));
     }
 }

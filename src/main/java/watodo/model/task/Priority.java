@@ -40,9 +40,4 @@ public class Priority {
                                                                                          // check
     }
 
-    @Override
-    public int hashCode() {
-        return priorityLevel.hashCode();
-    }
-
 }
