@@ -22,5 +22,6 @@ public class StatusTest {
         Status testCase2 = new Status(1);
         assertTrue(testCase1.toString().equals(NOT_COMPLETED_MESSAGE));
         assertTrue(testCase2.toString().equals(COMPLETED_MESSAGE));
+        assertTrue(testCase1.isValidTransaction(1));
     }
 }
