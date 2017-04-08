@@ -26,6 +26,7 @@ public class MarkCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Marks the task completed or not completed \n"
             + "Parameters: KEYWORD [MORE_KEYWORDS]...\n" + "Example: " + COMMAND_WORD
             + " task_number completed OR not_completed";
+    public static final String MESSAGE_SUCCESS = "Marked task.";
 
     private final Set<String> keywords;
 
