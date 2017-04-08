@@ -103,6 +103,15 @@ Examples:
 * `edit 1 newTaskName`
   Change the name of a task only
 
+#####Converting the type of a task
+
+Edit command can as well be used to convert the category of tasks. For instance, a todo task can be converted to a deadline task by editing the endTime of it. 
+
+For example, a task with index 2 is a todo task. Entering the command below converts it into a deadline:<br>
+`edit 2 to/23/04/2017 19:00`
+
+To convert an Event task to a deadline task, the startTime of the task should be cancelled. This can be done by entering the following command, where we just leave the field after prefix "from/" empty.<br>
+`edit 3 from/`
 
 ### 2.5. Finding all tasks containing any keyword in their name: `find`
 
@@ -114,9 +123,9 @@ Format: `search [KEYWORD1]  ...`
 
 Examples:
 
-* `search birthday`<br>
+* `find birthday`<br>
   Search for tasks with "birthday" in description
-* `search birthday family`<br>
+* `find birthday family`<br>
   Search for tasks with "birthday" and "family" in description
 
 ### 2.6. Deleting a task : `delete`
