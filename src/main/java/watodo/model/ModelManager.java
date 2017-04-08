@@ -137,10 +137,10 @@ public class ModelManager extends ComponentManager implements Model {
     @Override
     public void markTaskUndo(Task task) throws TaskNotFoundException, UniqueTaskList.DuplicateTaskException {
         //taskManager.markTask(index, editedTask);
-    	taskManager.removeTask(task);
-    	Task editedTask = new Task(task.getName(), task.getStartTime(), task.getEndTime(), task.getPriority(),
-    			task.getTags(), new Status((1-task.getStatus().status)));
-    	taskManager.addTask(editedTask);  	
+        taskManager.removeTask(task);
+        Task editedTask = new Task(task.getName(), task.getStartTime(), task.getEndTime(), task.getPriority(),
+                task.getTags(), new Status((1 - task.getStatus().status)));
+        taskManager.addTask(editedTask);
         updateFilteredListToShowAll();
         indicateTaskManagerChanged();
     }

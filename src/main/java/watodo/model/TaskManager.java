@@ -102,10 +102,10 @@ public class TaskManager implements ReadOnlyTaskManager {
     public void markTask(int index, Task editedTask) throws TaskNotFoundException {
         try {
             tasks.markTask(index, editedTask);
-        } 
+        }
         catch (TaskNotFoundException e) {
             e.printStackTrace();
-        }    
+        }
     }
 
     /**
