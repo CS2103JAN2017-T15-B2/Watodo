@@ -56,16 +56,14 @@ public interface Model {
      */
     void markTask(int index, Task editedTask) throws TaskNotFoundException;
 
+    // @@author A0119505J
     void addTaskUndo(Task task) throws DuplicateTaskException;
-
-    // void updateTaskUndo(Task taskToUpdate, TaskDetails taskDetails, StartTime startTime, EndTime endTime,
-    //         Priority priority, String frequency) throws IllegalValueException;
 
     void deleteTaskUndo(ReadOnlyTask target) throws TaskNotFoundException;
 
     void clearTaskUndo(ArrayList<Task> tasks) throws TaskNotFoundException;
 
-    void markTaskUndo(int index, Task editedTask) throws TaskNotFoundException;
+    void markTaskUndo(Task task) throws TaskNotFoundException, UniqueTaskList.DuplicateTaskException;
 
     LinkedList<UndoInfo> getUndoStack();
 

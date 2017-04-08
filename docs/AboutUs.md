@@ -52,10 +52,18 @@ Other major contributions:<br>
 #### [Oguz Yuksek](http://github.com/yuksek) <br>
 <img src="images/OguzYuksek.png" width="150"><br>
 Role: Developer, Integration, Scheduling and tracking, Final version software, some documentation <br>
-Components in charge of:<br>
+Components in charge of: logic, model, testing, debugging, storage<br>
 Features implemented: <br>
+    * Status.java<br>
+    * MarkCommand integration for marking status<br>
+    * DataCommand integration for changing storage file<br>
 Code written:<br>
+    * [functional codes](https://github.com/CS2103JAN2017-T15-B2/main/blob/master/collated/main/A0164393Y.md)<br>
+    * [test codes](https://github.com/CS2103JAN2017-T15-B2/main/blob/master/collated/test/A0164393Y.md)<br>
 Other major contributions:<br>
+    * Major refactoring to convert AddressBook to TaskManager<br>
+    * Debug and fix most of the tests after a feature inplementation or refactoring<br>
+    * Monitor travis for failing tests<br>
 
 -----
 

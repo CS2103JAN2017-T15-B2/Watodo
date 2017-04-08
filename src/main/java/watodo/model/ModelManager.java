@@ -15,6 +15,7 @@ import watodo.commons.util.CollectionUtil;
 import watodo.commons.util.StringUtil;
 import watodo.logic.commands.UndoCommand;
 import watodo.model.task.ReadOnlyTask;
+import watodo.model.task.Status;
 import watodo.model.task.Task;
 import watodo.model.task.UniqueTaskList;
 import watodo.model.task.UniqueTaskList.DuplicateTaskException;
@@ -129,12 +130,17 @@ public class ModelManager extends ComponentManager implements Model {
     public void markTask(int index, Task editedTask) throws TaskNotFoundException {
         taskManager.markTask(index, editedTask);
         indicateTaskManagerChanged();
+        addToUndoStack(UndoCommand.MARK_CMD_ID, null, editedTask);
     }
 
     //@@author A0119505J
     @Override
-    public void markTaskUndo(int index, Task editedTask) throws TaskNotFoundException {
-        taskManager.markTask(index, editedTask);
+    public void markTaskUndo(Task task) throws TaskNotFoundException, UniqueTaskList.DuplicateTaskException {
+        //taskManager.markTask(index, editedTask);
+        taskManager.removeTask(task);
+        Task editedTask = new Task(task.getName(), task.getStartTime(), task.getEndTime(), task.getPriority(),
+                task.getTags(), new Status((1 - task.getStatus().status)));
+        taskManager.addTask(editedTask);
         updateFilteredListToShowAll();
         indicateTaskManagerChanged();
     }

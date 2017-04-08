@@ -52,9 +52,9 @@ public class UndoCommand extends Command {
         // case UPD_CMD_ID:
             // undoUpdate(undoInfo.getTasks().get(CURRENT_TASK), undoInfo.getTasks().get(ORIGINAL_TASK_INDEX));
             // return new CommandResult(MESSAGE_SUCCESS);
-        // case MARK_CMD_ID:
-            // undoMark(undoInfo.getTasks().get(CURRENT_TASK).index, undoInfo.getTasks().get(CURRENT_TASK));
-            // return new CommandResult(MESSAGE_SUCCESS);
+        case MARK_CMD_ID:
+            undoMark(undoInfo.getTasks().get(CURRENT_TASK));
+            return new CommandResult(MESSAGE_SUCCESS);
         case CLR_CMD_ID : {
             undoClear(undoInfo.getTasks());
             return new CommandResult(MESSAGE_SUCCESS);
@@ -90,25 +90,13 @@ public class UndoCommand extends Command {
         }
     }
 
-    private void undoMark(int index, Task task) {
+    private void undoMark(Task task) {
         try {
-            model.markTaskUndo(index, task);
-        } catch (TaskNotFoundException e) {
+            model.markTaskUndo(task);
+        } catch (TaskNotFoundException | UniqueTaskList.DuplicateTaskException e) {
             assert false : "The target task cannot be missing";
         }
     }
-    // private void undoUpdate(Task newTask, Task originalTask) {
-        // Task stubTask = new Task (newTask.getTaskDetails(), newTask.getStartTime(), newTask.getEndTime(),
-        // newTask.getPriority(), newTask.getRecurringFrequency());
-        // try {
-            // model.updateTaskUndo(newTask, originalTask.getTaskDetails(), originalTask.getStartTime(),
-            // originalTask.getEndTime(), originalTask.getPriority(), originalTask.getRecurringFrequency());
-            // model.updateTaskUndo(originalTask, stubTask.getTaskDetails(), stubTask.getStartTime(),
-            // stubTask.getEndTime(), stubTask.getPriority(), originalTask.getRecurringFrequency());
-        // } catch (IllegalValueException e) {
-            // e.printStackTrace();
-        // }
-    // }
 
 }
 
