@@ -10,12 +10,12 @@ import java.util.ArrayList;
  * assigning.
  */
 public class TimeParserSelector {
-    private ArrayList<TimeParser> parserList;
+    private ArrayList<TimeParser> parserMenu;
 
     public TimeParserSelector(TimeParser... parsers) {
-        parserList = new ArrayList<>();
+        parserMenu = new ArrayList<>();
         for (TimeParser parser: parsers) {
-            parserList.add(parser);
+            parserMenu.add(parser);
         }
     }
 
@@ -27,7 +27,7 @@ public class TimeParserSelector {
      * @return true if the format fits and false otherwise.
      */
     public boolean canParse(String userInput) {
-        for (TimeParser parser: parserList) {
+        for (TimeParser parser: parserMenu) {
             if (parser.applyTo(userInput)) {
                 return true;
             }
@@ -38,8 +38,8 @@ public class TimeParserSelector {
     /**
      * Assigns the appropriate time parser to the user input.
      */
-    public String delegateTimeParser(String userInput) {
-        for (TimeParser parser: parserList) {
+    public String assignTimeParser(String userInput) {
+        for (TimeParser parser: parserMenu) {
             if (parser.applyTo(userInput)) {
                 return parser.parse(userInput);
             }

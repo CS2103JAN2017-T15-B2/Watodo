@@ -15,7 +15,6 @@ public class TimeTest {
     @Test
     public void isValidTime() {
         // invalid phone numbers
-        assertFalse(Time.isValidTime("")); // empty string
         assertFalse(Time.isValidTime(" ")); // spaces only
         //boundary values
         assertFalse(Time.isValidTime("10/13/1996 05:00")); // invalid month
