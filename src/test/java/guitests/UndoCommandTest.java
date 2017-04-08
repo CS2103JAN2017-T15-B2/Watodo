@@ -51,10 +51,6 @@ public class UndoCommandTest extends TaskManagerGuiTest {
         assertResultMessage("1 tasks listed!");
         commandBox.runCommand("undo");
         assertResultMessage(UndoCommand.MESSAGE_SUCCESS);
-        commandBox.runCommand("mark 1 incomplete");
-        assertResultMessage("1 tasks listed!");
-        commandBox.runCommand("undo");
-        assertResultMessage(UndoCommand.MESSAGE_SUCCESS);
     }
 
     @Test
