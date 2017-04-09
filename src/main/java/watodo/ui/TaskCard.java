@@ -59,18 +59,18 @@ public class TaskCard extends UiPart<Region> {
     }
 
     private void mouseEvent(ReadOnlyTask task) {
-        cardPane.setOnMouseEntered(new EventHandler<MouseEvent>(){
+        cardPane.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEntered) {
                 cardPane.setStyle("-fx-background-color: grey");
-        };
-    });
-        cardPane.setOnMouseExited(new EventHandler<MouseEvent>(){
+            };
+        });
+        cardPane.setOnMouseExited(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseExited) {
                 setBackground(task);
-        };
-    });
+            };
+        });
     }
 
     /**
