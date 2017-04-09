@@ -1,9 +1,11 @@
 package watodo.ui;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
@@ -50,9 +52,25 @@ public class TaskCard extends UiPart<Region> {
         startTime.setText(task.getStartTime().value);
         endTime.setText(task.getEndTime().value);
         setBackground(task);
+        mouseEvent(task);
         setStatusIcon(task);
         setPriorityIcon(task);
         initTags(task);
+    }
+
+    private void mouseEvent(ReadOnlyTask task) {
+        cardPane.setOnMouseEntered(new EventHandler<MouseEvent>(){
+            @Override
+            public void handle(MouseEvent mouseEntered) {
+                cardPane.setStyle("-fx-background-color: grey");
+        };
+    });
+        cardPane.setOnMouseExited(new EventHandler<MouseEvent>(){
+            @Override
+            public void handle(MouseEvent mouseExited) {
+                setBackground(task);
+        };
+    });
     }
 
     /**
@@ -70,8 +88,8 @@ public class TaskCard extends UiPart<Region> {
     }
 
     /**
-     * read status of task and put status icon on UI
-     * completed as tick, uncompleted as cross
+     * Read status of task and put status icon on UI.
+     * Completed as tick, uncompleted as cross.
      */
     private void setStatusIcon(ReadOnlyTask task) {
         if (task.getStatus().status == 0) {
@@ -82,8 +100,9 @@ public class TaskCard extends UiPart<Region> {
     }
 
     /**
-     * Categorize task type by taskcard background color
-     * grey when task is completed
+     * Set taskcard's background color.
+     * Grey when task is completed.
+     * 
      */
     private void setBackground(ReadOnlyTask task) {
 
