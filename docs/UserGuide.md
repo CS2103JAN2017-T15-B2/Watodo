@@ -161,7 +161,7 @@ There is no need to save manually.
 
 ### 2.10. Undo command : `undo`
 
-Undo the most recent command in the Task Manager.<br>
+Undo the most recent command (add, delete, mark) in the Task Manager.<br>
 Format: `undo`
 
 > Irreversible.
@@ -210,7 +210,7 @@ Format: `mark 1 completed`
   e.g. `edit 1 -name go home`
 
 * **Mark** : `mark [INDEX] [PARAMETER]` <br>
-  e.g. `mark 1 completed`
+  e.g. `mark 1 completed`  `mark 1 incomplete` 
 
 * **Undo** : `undo` <br>
   e.g. `undo`
