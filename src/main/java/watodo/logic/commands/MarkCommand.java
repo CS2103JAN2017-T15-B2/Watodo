@@ -1,7 +1,6 @@
 package watodo.logic.commands;
 
 import java.util.List;
-import java.util.Set;
 
 import watodo.logic.commands.exceptions.CommandException;
 import watodo.model.tag.UniqueTagList;
@@ -28,9 +27,9 @@ public class MarkCommand extends Command {
             + " task_number completed OR not_completed";
     public static final String MESSAGE_SUCCESS = "Marked task: %1$s";
 
-    private final Set<String> keywords;
+    private final String[] keywords;
 
-    public MarkCommand(Set<String> keywords) {
+    public MarkCommand(String[] keywords) {
         this.keywords = keywords;
     }
 
@@ -38,7 +37,7 @@ public class MarkCommand extends Command {
     public CommandResult execute() throws CommandException {
         List<ReadOnlyTask> lastShownList = model.getFilteredTaskList();
 
-        String[] parameters = keywords.toArray(new String[keywords.size()]);
+        String[] parameters = keywords;
         int filteredTaskListIndex = Integer.parseInt(parameters[0]) - 1;
         ReadOnlyTask taskToEdit;
         if (filteredTaskListIndex < lastShownList.size() && filteredTaskListIndex != -1)
