@@ -14,9 +14,11 @@ public class MarkCommandTest extends TaskManagerGuiTest {
         assertResultMessage(ClearCommand.MESSAGE_SUCCESS);
         commandBox.runCommand("add Attend Pokemon from/02/05/2017 10:00 to/02/05/2017 12:00 p/high t/friends");
         commandBox.runCommand("mark 1 completed");
-        assertResultMessage("1 tasks listed!");
+        assertResultMessage("Marked task: Attend Pokemon StartTime: 02/05/2017 10:00 endTime: 02/05/2017 12:00"
+        		+ " Priority: high Tags: [friends]");
         commandBox.runCommand("mark 1 incomplete");
-        assertResultMessage("1 tasks listed!");
+        assertResultMessage("Marked task: Attend Pokemon StartTime: 02/05/2017 10:00 endTime: 02/05/2017 12:00"
+        		+ " Priority: high Tags: [friends]");
     }
 
     @Test
