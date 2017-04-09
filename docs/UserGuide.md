@@ -25,8 +25,8 @@ By : `Team CS2103 T15-B2`  &nbsp;&nbsp;&nbsp;&nbsp; Since: `Jan 2017`  &nbsp;&nb
    e.g. typing **`help`** and pressing <kbd>Enter</kbd> will open the help window.
 5. Some example commands you can try:
    * **`list`** : lists all tasks
-   * **`add`**` school camp from 3pm today to 5pm tomorrow :
-     adds a school camp task to the Task Manager.
+   * **`add`** submit report to/02/05/2017 12:00 p/high:
+     adds 'submit report' task as a deadline task to the Task Manager.
    * **`delete`**` 3` : deletes the 3rd task shown in the current list
    * **`exit`** : exits the app
 6. Refer to the [Features](#features) section below for details of each command.<br>
@@ -34,18 +34,11 @@ By : `Team CS2103 T15-B2`  &nbsp;&nbsp;&nbsp;&nbsp; Since: `Jan 2017`  &nbsp;&nb
 
 ## 2. Features
 
-> **Command Format**
->
-> * Words in `UPPER_CASE` are the parameters.
-> * Items in `SQUARE_BRACKETS` are optional.
-> * Items with `...` after them can have multiple instances.
-> * Parameters can be in any order.
-
 ### 2.1. Viewing help : `help`
 
-Format: `help`
-
-> Help is also shown if you enter an incorrect command e.g. `abcd`
+Enter command<br>
+`help`<br>
+A browser window with User Guide instructions will be popped out.
 
 ### 2.2. Adding a task: `add`
 
@@ -68,9 +61,9 @@ Standard format: `add [TASK-NAME] from/[DD/MM/YYYY] [HH:MM] to/[DD/MM/YYYY] [HH:
 | tmr h.mma            | tmr 4.30pm             |
 
 Examples: <br>
-* `add meditate `
-* `add complete tutorial 3 to/tmr 23.59pm`
-* `add Train pokemons from/today 9.00am to/tmr 10pm p/high t/imaginary`
+`add meditate`
+`add complete tutorial 3 to/tmr 23.59pm`
+`add Train pokemons from/today 9.00am to/tmr 10pm p/high t/imaginary`
 
 > * If a command includes the start time, it must have an end time, otherwise it is an invalid command.
 
@@ -116,14 +109,14 @@ To convert an Event task to a deadline task, the startTime of the task should be
 ### 2.5. Finding all tasks containing any keyword in their name: `find`
 
 Finds tasks whose names contain any of the given keywords.<br>
-Format: `search [KEYWORD1]  ...`
+Format: `find [KEYWORD1]  ...`
 
-> * Only the name is searched.
+> * Only the name field is searched.
 > * Only full words will be matched e.g. `Go Home` will not match `Going Home`
 
 Examples:
 
-* `find birthday`<br>
+* `find pokemon`<br>
   Search for tasks with "birthday" in description
 * `find birthday family`<br>
   Search for tasks with "birthday" and "family" in description
@@ -154,22 +147,20 @@ Format: `clear`
 Exits the program.<br>
 Format: `exit`
 
-### 2.9. Saving the data
+### 2.9. Undo command : `undo`
 
-Task Manager data are saved in the hard disk automatically after any command that changes the data.<br>
-There is no need to save manually.
+Enter<br>
+`undo`
+> Your previous action has been undone.
 
-### 2.10. Undo command : `undo`
+As we entered a clear command in the previous section, if we enter an undo, the deleted tasks will be restored.
 
-Undo the most recent command (add, delete, mark) in the Task Manager.<br>
-Format: `undo`
+Currently, `undo` can be used to undo `mark`, `delete`, `add` and `clear` commands only.
 
-> Irreversible.
-
-### 2.11. Mark command : `mark`
+### 2.10. Mark command : `mark`
 
 Mark a task an completed or incomplted in the Task Manager.<br>
-Format: `mark 1 completed`
+Format: `mark [INDEX] completed` and `mark [INDEX] incomplete`
 
 ## 3. FAQ
 
@@ -210,7 +201,7 @@ Format: `mark 1 completed`
   e.g. `edit 1 -name go home`
 
 * **Mark** : `mark [INDEX] [PARAMETER]` <br>
-  e.g. `mark 1 completed`  `mark 1 incomplete` 
+  e.g. `mark 1 completed` and `mark 10 incomplete` 
 
 * **Undo** : `undo` <br>
   e.g. `undo`

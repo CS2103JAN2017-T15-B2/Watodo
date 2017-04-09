@@ -119,13 +119,13 @@ The task with the index 1 has now been deleted.
 
 Enter<br>
 `mark 1 completed`
-> 
+> Marked Task: {Task details}
 
 This changes the status of the task 1 as complete, this is indicated by the red-cross changed to green tick, and the task card background color changed to gray.
 
 Enter<br>
 `mark 1 incomplete`
-> 
+> Marked Task: {Task details}
 
 This changes the status of the task 1 to incomplete, this is indicated by the green tick changed to red-cross, and the task card background color changed from gray to green.
 
