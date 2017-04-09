@@ -11,9 +11,10 @@ Role: Team Lead, Deliverables and deadlines, Developer <br>
 Components in charge of: logic, model, testing, storage, GUI design<br>
 
 Features implemented:<br>
+   * TimeParsers<br>
    * Make fields in AddCommand input optional<br>
    * AddCommand integration<br>
-   * Time.java<br>
+   * Time.java component<br>
    * Start Time and End Time<br>
 
 Code written: <br>
@@ -26,6 +27,7 @@ Other major contributions:<br>
    * Time Parsers package allowing alternative time formats<br>
    * Debugging travis errors<br>
    * Drafting class diagram of Logic component<br>
+   * Drafting TestScript.md for examiniation
 
 -----
 
