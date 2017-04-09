@@ -22,10 +22,10 @@ public class AddCommand extends Command {
     public static final String COMMAND_WORD = "add";
 
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a task to the task manager. "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a task to the task manager.\n"
             + "Parameters: NAME from/START_TIME to/END_TIME p/PRIORITY [t/TAG]...\n"
             + "Example: " + COMMAND_WORD
-            + " Attend Pokemon Summit from/02/05/2017 10:00 to/02/05/2017 12:00 p/high t/friends";
+            + " submit report to/02/05/2017 12:00 p/high";
 
     public static final String MESSAGE_SUCCESS = "New task added: %1$s";
     public static final String MESSAGE_DUPLICATE_TASK = "This task already exists in the task manager";
