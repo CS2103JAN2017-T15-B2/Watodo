@@ -76,9 +76,9 @@ Other major contributions:<br>
 
 #### [Lin Minhui](http://github.com/lmh1234) <br>
 <img src="images/minhui.png" width="150"><br>
-Role: Developer, Scheduling and tracking, Final version software, some documentation<br>
+Role: Developer, UI Designer, Scheduling and tracking, Final version software, some documentation<br>
 
-Components in charge of: GUI<br>
+Components in charge of: UI<br>
 
 Features implemented: <br>
    * TaskCard.java<br>
