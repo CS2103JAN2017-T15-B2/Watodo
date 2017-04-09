@@ -23,6 +23,7 @@
 
 * Some parts of this sample application were inspired by the excellent
   [Java FX tutorial](http://code.makery.ch/library/javafx-8-tutorial/) by *Marco Jakob*.
+* The implementation of TimeParse classes was also inspired by CS2103 project team W11-C1 from August 2016's project "Linenux"
 
 
 #### Licence : [MIT](LICENSE)

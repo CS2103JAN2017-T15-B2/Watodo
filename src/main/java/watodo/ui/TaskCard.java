@@ -102,7 +102,7 @@ public class TaskCard extends UiPart<Region> {
     /**
      * Set taskcard's background color.
      * Grey when task is completed.
-     * 
+     *
      */
     private void setBackground(ReadOnlyTask task) {
 
