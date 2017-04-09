@@ -45,9 +45,11 @@ ClearCommand
 
 UndoCommand
 (cannot undo edit commands)
-1. undo
-2. add do something -> undo
-
+1. clear
+2. add Attend CCA meeting from/today 3.00pm to/today 5.00pm -> undo
+3. delete 1 -> undo
+4. mark 1 completed -> undo
+4. clear -> undo
 
 
 HelpCommand(issue)

@@ -15,13 +15,13 @@ import watodo.logic.commands.MarkCommand;
 //@@author A0164393Y
 
 /**
- * Parses input arguments and creates a new FindCommand object
+ * Parses input arguments and creates a new MarkCommand object
  */
 public class MarkCommandParser {
 
     /**
-     * Parses the given {@code String} of arguments in the context of the FindCommand
-     * and returns an FindCommand object for execution.
+     * Parses the given {@code String} of arguments in the context of the MarkCommand
+     * and returns an MarkCommand object for execution.
      */
     public Command parse(String args) {
         final Matcher matcher = KEYWORDS_ARGS_FORMAT.matcher(args.trim());

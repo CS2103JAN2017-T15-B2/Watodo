@@ -5,6 +5,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import watodo.commons.exceptions.IllegalValueException;
+
 //@@author A0119505J
 public class PriorityTest {
 
@@ -20,5 +22,13 @@ public class PriorityTest {
         assertTrue(Priority.isPriorityLevel("high"));
         assertTrue(Priority.isPriorityLevel("med"));
         assertTrue(Priority.isPriorityLevel("low"));
+    }
+
+    @Test
+    public void isPriorityEqual() throws IllegalValueException {
+        Priority priority1 = new Priority("");
+        Priority priority2 = new Priority("low");
+        assertTrue(priority1.priorityLevel == priority2.priorityLevel);
+        assertTrue(priority1.equals(priority2));
     }
 }

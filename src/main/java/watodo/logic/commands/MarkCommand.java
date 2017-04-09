@@ -26,7 +26,7 @@ public class MarkCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Marks the task completed or not completed \n"
             + "Parameters: KEYWORD [MORE_KEYWORDS]...\n" + "Example: " + COMMAND_WORD
             + " task_number completed OR not_completed";
-    public static final String MESSAGE_SUCCESS = "Marked task.";
+    public static final String MESSAGE_SUCCESS = "Marked task: %1$s";
 
     private final Set<String> keywords;
 
@@ -54,7 +54,7 @@ public class MarkCommand extends Command {
             throw new CommandException(MESSAGE_INVALID_TASK);
         }
 
-        return new CommandResult(getMessageForTaskListShownSummary(model.getFilteredTaskList().size()));
+        return new CommandResult(String.format(MESSAGE_SUCCESS, editedTask));
     }
 
     /**

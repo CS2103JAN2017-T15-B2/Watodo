@@ -440,6 +440,20 @@ Use case ends.
 >2b1. System informs user that the input index is not valid.
 >Use case ends.
 
+#### Use case: undo the most recent command
+
+**MSS**
+
+1. User requests to undo the most recent command.
+2. System notifies user that the most recent command has been successfully undone.
+Use case ends.
+
+**Extensions**
+
+1a. Last command does not exist
+>1a1. System informs user that there is no command to undo.
+>Use case ends.
+
 ## Appendix C : Non Functional Requirements
 
 1. Should run with JRE7 or above, Windows 7 or above.
