@@ -1,7 +1,11 @@
-DataCommand
-1. change_path data/taskmanager.xml
-2. change_path SampleData.xml
-3. (change_path src/test/data/ManualTesting/SampleData.xml)
+1. to loading 50+ sample tasks from storage folder, make sure to copy SampleData.xml from {project root}\src\test\data\ManualTesting\TestScript.md to the same directory to this app’s jar file. After which, enter the following command:
+
+change_path SampleData.xml
+
+the following prompt should appear in the feedback display: 
+Changed data file location. You need to restart the app for changes to take effect.
+
+Close the window and reopen this app’s jar file. This task list panel should be populated by around 50 tasks as sample data.
 
 addCommand:
 add get haircut
@@ -41,9 +45,11 @@ ClearCommand
 
 UndoCommand
 (cannot undo edit commands)
-1. undo
-2. add do something -> undo
-
+1. clear
+2. add Attend CCA meeting from/today 3.00pm to/today 5.00pm -> undo
+3. delete 1 -> undo
+4. mark 1 completed -> undo
+4. clear -> undo
 
 
 HelpCommand(issue)
