@@ -34,14 +34,17 @@ Other major contributions:<br>
 Role: Developer, Integration, Scheduling and tracking, Final version software, some documentation <br>
 
 Components in charge of: logic, model, testing<br>
+
 Features implemented: <br>
    * UndoCommand integration<br>
    * Priority.java<br>
    * Task partially coding<br>
    * Design test cases for commands<br>
+
 Code written:<br>
    * [functional codes](https://github.com/CS2103JAN2017-T15-B2/main/blob/master/collated/main/A0119505J.md)<br>
    * [test codes](https://github.com/CS2103JAN2017-T15-B2/main/blob/master/collated/test/A0119505J.md)<br>
+
 Other major contributions:<br>
    * Refactoring and code cleaning<br>
    * Debug checkstyle errors<br>
@@ -52,14 +55,18 @@ Other major contributions:<br>
 #### [Oguz Yuksek](http://github.com/yuksek) <br>
 <img src="images/OguzYuksek.png" width="150"><br>
 Role: Developer, Integration, Scheduling and tracking, Final version software, some documentation <br>
+
 Components in charge of: logic, model, testing, debugging, storage<br>
+
 Features implemented: <br>
     * Status.java<br>
     * MarkCommand integration for marking status<br>
     * DataCommand integration for changing storage file<br>
+
 Code written:<br>
     * [functional codes](https://github.com/CS2103JAN2017-T15-B2/main/blob/master/collated/main/A0164393Y.md)<br>
     * [test codes](https://github.com/CS2103JAN2017-T15-B2/main/blob/master/collated/test/A0164393Y.md)<br>
+
 Other major contributions:<br>
     * Major refactoring to convert AddressBook to TaskManager<br>
     * Debug and fix most of the tests after a feature inplementation or refactoring<br>
@@ -84,5 +91,4 @@ Code written:<br>
 Other major contributions:<br>
    * Main author for Issue Tracker<br>
    * Set up github.io<br>
-
-refer to http://www.comp.nus.edu.sg/~cs2103/AY1617S2/contents/AboutUs.md for format<br>
+   
