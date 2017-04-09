@@ -49,7 +49,7 @@ public class UndoCommandTest extends TaskManagerGuiTest {
         commandBox.runCommand("add Attend Pokemon from/02/05/2017 10:00 to/02/05/2017 12:00 p/high t/friends");
         commandBox.runCommand("mark 1 completed");
         assertResultMessage("Marked task: Attend Pokemon StartTime: 02/05/2017 10:00 endTime: 02/05/2017 12:00"
-        		+ " Priority: high Tags: [friends]");
+                + " Priority: high Tags: [friends]");
         commandBox.runCommand("undo");
         assertResultMessage(UndoCommand.MESSAGE_SUCCESS);
     }
